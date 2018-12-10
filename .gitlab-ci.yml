@@ -4,7 +4,7 @@ stages:
 build:
   stage: build
   script:
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO | xcpretty
     - pod lib lint
   tags:
     - xcode

@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		020CDBC3EF254215CD619444 /* GeneralToolsFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GeneralToolsFramework.podspec; path = ../GeneralToolsFramework.podspec; sourceTree = "<group>"; };
-		3291152938CE0885C99E8580 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		020CDBC3EF254215CD619444 /* GeneralToolsFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GeneralToolsFramework.podspec; path = ../GeneralToolsFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3291152938CE0885C99E8580 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		35933EBFBFA1EBEE192D2F5B /* Pods_GeneralToolsFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7017C8F0C95AC4AFBD9CD2 /* Pods-GeneralToolsFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		59A744B904D4F099EF462366 /* Pods_GeneralToolsFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +45,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		61E774510E948040CB4DC122 /* Pods-GeneralToolsFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Tests/Pods-GeneralToolsFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0ACA4147B4588AC14EE721D /* Pods-GeneralToolsFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D3C7C544D7BAB9D812299155 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D3C7C544D7BAB9D812299155 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E2F197FA8330CC834A85C69F /* Pods-GeneralToolsFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Tests/Pods-GeneralToolsFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

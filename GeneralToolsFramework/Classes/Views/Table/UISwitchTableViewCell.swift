@@ -13,7 +13,7 @@ public class UISwitchTableViewCell: UITableViewCell {
     
     let theSwitch = UISwitch()
     
-    var switchTintColor: UIColor {
+    public var switchTintColor: UIColor {
         get {
             return theSwitch.tintColor
         }

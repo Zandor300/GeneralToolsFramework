@@ -22,7 +22,7 @@ public class UISwitchTableViewCell: UITableViewCell {
         }
     }
     
-    public var switchOnTintColor: UIColor {
+    public var switchOnTintColor: UIColor? {
         get {
             return theSwitch.onTintColor
         }

@@ -24,6 +24,8 @@
 		E686852FF354B5E065D7293FB2D349E6 /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A0B692BB33D5074D18509EC9F50BB /* UIRoundedButton.swift */; };
 		FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */; };
 		FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */; };
+		FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5D21CA8DE5006F2EEF /* Version.swift */; };
+		FCCE2D6021CA8E32006F2EEF /* Float+DutchString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */; };
 		FE74C756E2178FB127D5A265BF9E2A4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14040659DB5339631480E9752B5BCE84 /* Security.framework */; };
 		FEC2F813FF686E4FA18EA7C5EA0F082A /* Pods-GeneralToolsFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43828FF1D2BE578D2612B6EC75F97F2D /* Pods-GeneralToolsFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -90,6 +92,8 @@
 		FC78D87FD1B1C37E4ECCEC6F1B7EE5AD /* GeneralToolsFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeneralToolsFramework.xcconfig; sourceTree = "<group>"; };
 		FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contains.swift"; sourceTree = "<group>"; };
 		FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FCCE2D5D21CA8DE5006F2EEF /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+DutchString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				6CE08D139C67025AA67DF119E1B14B4B /* String+Hashing.swift */,
 				FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */,
 				FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */,
+				FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -199,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				6E8691E09C34AC2355AEEFF7A33C2E16 /* NetworkActivityHandler.swift */,
+				FCCE2D5D21CA8DE5006F2EEF /* Version.swift */,
 			);
 			name = Utilities;
 			path = GeneralToolsFramework/Classes/Utilities;
@@ -438,8 +444,10 @@
 				FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */,
 				638464296CD6860590888D2C23E1271B /* NetworkActivityHandler.swift in Sources */,
 				0EB0B7B68CC8DE5F81D8F9FF38EE3B62 /* String+Hashing.swift in Sources */,
+				FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */,
 				C4E5B1A886791FFB86B4AFFDB347A0C5 /* UIBlueButton.swift in Sources */,
 				E686852FF354B5E065D7293FB2D349E6 /* UIRoundedButton.swift in Sources */,
+				FCCE2D6021CA8E32006F2EEF /* Float+DutchString.swift in Sources */,
 				A6734BE3CF976B28E5BA080C9985EEC0 /* UISwitchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

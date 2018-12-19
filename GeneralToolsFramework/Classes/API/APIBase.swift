@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class APIBase {
+open class APIBase {
     
     private let baseUrl: String
     

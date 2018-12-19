@@ -11,7 +11,7 @@ open class BaseAPI {
     
     private let baseUrl: String
     
-    init(baseUrl: String) {
+    public init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 extension UIColor {
     
-    convenience init(hexString:String) {
+    public convenience init(hexString:String) {
         let hexString:NSString = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) as NSString
         let scanner            = Scanner(string: hexString as String)
         
@@ -32,7 +32,7 @@ extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:1)
     }
     
-    func toHexString() -> String {
+    public func toHexString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0

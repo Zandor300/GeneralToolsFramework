@@ -1,6 +1,6 @@
 # GeneralToolsFramework
 
-[![CI Status](https://img.shields.io/travis/Zandor Smith/GeneralToolsFramework.svg?style=flat)](https://travis-ci.org/Zandor Smith/GeneralToolsFramework)
+[![CI Status](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/badges/master/build.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework)
 [![Version](https://img.shields.io/cocoapods/v/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)

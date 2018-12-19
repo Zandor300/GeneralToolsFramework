@@ -20,7 +20,7 @@
 		A58CC17D80E3AA2BE08BA820D49D4203 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7286781D33068611C6845FA7F8EF3386 /* Foundation.framework */; };
 		A6734BE3CF976B28E5BA080C9985EEC0 /* UISwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616E94098E3F9D982A2262404658D8DA /* UISwitchTableViewCell.swift */; };
 		C4E5B1A886791FFB86B4AFFDB347A0C5 /* UIBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B84568602136C76E97DAF400804889 /* UIBlueButton.swift */; };
-		E2020A05597D425C4DD0A8F62441A18C /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B350E6DA27182D109CDAF9E31D9B2 /* APIBase.swift */; };
+		E2020A05597D425C4DD0A8F62441A18C /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B350E6DA27182D109CDAF9E31D9B2 /* BaseAPI.swift */; };
 		E686852FF354B5E065D7293FB2D349E6 /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A0B692BB33D5074D18509EC9F50BB /* UIRoundedButton.swift */; };
 		FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */; };
 		FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */; };
@@ -64,7 +64,7 @@
 		616E94098E3F9D982A2262404658D8DA /* UISwitchTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewCell.swift; sourceTree = "<group>"; };
 		617C10D7EAA83DA772577CDEFACF1175 /* Pods-GeneralToolsFramework_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GeneralToolsFramework_Tests.modulemap"; sourceTree = "<group>"; };
 		656A0B692BB33D5074D18509EC9F50BB /* UIRoundedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIRoundedButton.swift; sourceTree = "<group>"; };
-		667B350E6DA27182D109CDAF9E31D9B2 /* APIBase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		667B350E6DA27182D109CDAF9E31D9B2 /* BaseAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		6CE08D139C67025AA67DF119E1B14B4B /* String+Hashing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Hashing.swift"; sourceTree = "<group>"; };
 		6E8691E09C34AC2355AEEFF7A33C2E16 /* NetworkActivityHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkActivityHandler.swift; sourceTree = "<group>"; };
 		7286781D33068611C6845FA7F8EF3386 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -228,7 +228,7 @@
 		8A10EC6E2BC19F5C35B8CEAED5F6C297 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				667B350E6DA27182D109CDAF9E31D9B2 /* APIBase.swift */,
+				667B350E6DA27182D109CDAF9E31D9B2 /* BaseAPI.swift */,
 			);
 			name = API;
 			path = GeneralToolsFramework/Classes/API;
@@ -432,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2020A05597D425C4DD0A8F62441A18C /* APIBase.swift in Sources */,
+				E2020A05597D425C4DD0A8F62441A18C /* BaseAPI.swift in Sources */,
 				FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */,
 				11CD06E05372C9AB2A0E81FAF521FA5C /* GeneralToolsFramework-dummy.m in Sources */,
 				FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  APIBase.swift
+//  BaseAPI.swift
 //  GeneralToolsFramework
 //
 //  Created by Zandor Smith on 10/12/2018.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class APIBase {
+open class BaseAPI {
     
     private let baseUrl: String
     

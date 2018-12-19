@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIRoundedButton : UIButton {
+public class UIRoundedButton : UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

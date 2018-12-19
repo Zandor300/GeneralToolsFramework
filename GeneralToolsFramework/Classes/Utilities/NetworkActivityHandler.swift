@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NetworkActivityHandler {
+public class NetworkActivityHandler {
     
     static var count: Int = 0
     

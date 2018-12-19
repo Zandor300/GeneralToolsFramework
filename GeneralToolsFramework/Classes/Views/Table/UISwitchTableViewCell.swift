@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UISwitchTableViewCell: UITableViewCell {
+public class UISwitchTableViewCell: UITableViewCell {
     
     var callback: (Bool) -> () = { state in }
     

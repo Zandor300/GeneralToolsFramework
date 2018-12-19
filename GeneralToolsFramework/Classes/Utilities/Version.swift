@@ -7,9 +7,9 @@
 
 import Foundation
 
-class Version {
+public class Version {
     
-    static func getCurrentVersion() -> Version {
+    public static func getCurrentVersion() -> Version {
         let version = (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String)! + "-" + (Bundle.main.infoDictionary!["CFBundleVersion"] as? String)!
         return Version(version: version)
     }
@@ -19,7 +19,7 @@ class Version {
     var patch: Int = 0
     var buildNumber: Int = 0
     
-    init(version: String) {
+    public init(version: String) {
         let split1 = version.split(separator: "-")
         buildNumber = Int(split1[1])!
         
@@ -31,7 +31,7 @@ class Version {
         }
     }
     
-    func compare(otherVersion: Version) -> VersionComparison {
+    public func compare(otherVersion: Version) -> VersionComparison {
         print("Comparing " + toString() + " with " + otherVersion.toString() + "...")
         if otherVersion.major > major {
             return VersionComparison.HIGHER
@@ -53,21 +53,21 @@ class Version {
         return VersionComparison.LOWER
     }
     
-    func toString() -> String {
+    public func toString() -> String {
         if patch != 0 {
             return String(major) + "." + String(minor) + "." + String(patch) + "-" + String(buildNumber)
         }
         return String(major) + "." + String(minor) + "-" + String(buildNumber)
     }
     
-    func toNiceStringWithBuild() -> String {
+    public func toNiceStringWithBuild() -> String {
         if patch != 0 {
             return String(major) + "." + String(minor) + "." + String(patch) + " (" + String(buildNumber) + ")"
         }
         return String(major) + "." + String(minor) + " (" + String(buildNumber) + ")"
     }
     
-    func toNiceString() -> String {
+    public func toNiceString() -> String {
         if patch != 0 {
             return String(major) + "." + String(minor) + "." + String(patch)
         }
@@ -76,7 +76,7 @@ class Version {
     
 }
 
-enum VersionComparison {
+public enum VersionComparison {
     case HIGHER
     case LOWER
     case EQUAL

@@ -11,12 +11,12 @@ public class NetworkActivityHandler {
     
     static var count: Int = 0
     
-    static func pushNetworkActivity() {
+    public static func pushNetworkActivity() {
         count += 1
         updateActivityIndicator()
     }
     
-    static func popNetworkActivity() {
+    public static func popNetworkActivity() {
         count -= 1
         updateActivityIndicator()
     }

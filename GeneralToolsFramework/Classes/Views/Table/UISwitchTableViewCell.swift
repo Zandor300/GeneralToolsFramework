@@ -22,7 +22,7 @@ class UISwitchTableViewCell: UITableViewCell {
         }
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setupSwitch()
     }
@@ -42,7 +42,7 @@ class UISwitchTableViewCell: UITableViewCell {
         theSwitch.setOn(state, animated: animated)
     }
     
-    public func addSwitchTarget(target: Any?, action: Selector, for event: UIControlEvents) {
+    public func addSwitchTarget(target: Any?, action: Selector, for event: UIControl.Event) {
         theSwitch.addTarget(target, action: action, for: event)
     }
     

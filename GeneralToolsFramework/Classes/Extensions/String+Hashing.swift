@@ -11,7 +11,7 @@ import Foundation
 // https://stackoverflow.com/a/32166735/5544222
 // https://stackoverflow.com/a/25762128/5544222
 // https://stackoverflow.com/a/38788437/5544222
-extension String {
+/*extension String {
     
     func md5(string: String) -> Data {
         let messageData = string.data(using:.utf8)!
@@ -62,4 +62,4 @@ extension String {
         return hexString
     }
     
-}
+ }*/

@@ -1,9 +1,9 @@
 {
   "name": "GeneralToolsFramework",
   "version": "0.1.0",
-  "summary": "A short description of GeneralToolsFramework.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Zandor Smith/GeneralToolsFramework",
+  "summary": "Contains general tools used in iOS apps.",
+  "description": "Contains general tools that Zandor Smith uses in his iOS apps.",
+  "homepage": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "Zandor Smith": "info@zsinfo.nl"
   },
   "source": {
-    "git": "https://github.com/Zandor Smith/GeneralToolsFramework.git",
+    "git": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "GeneralToolsFramework/Classes/**/*"
+  "swift_version": "4.2",
+  "source_files": "GeneralToolsFramework/Classes/**/*",
+  "frameworks": [
+    "UIKit",
+    "Security"
+  ]
 }

@@ -159,6 +159,9 @@
 		F09B16AD86CD09DBCB44FF5CC415938E /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451E08D10D9859266EEFBF6749F5AA48 /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F127F5B5070F8CBBFE0BA307C1016AE4 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA927ABEA5A603E8961BF9D9EE2F03F5 /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FAAAF873E97697F69371391E3FBD00F7 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEB2127A47162166BDABA88DB4578CD /* XCTestSuite+QuickTestSuiteBuilder.m */; };
+		FCCE2D4D21CA627D006F2EEF /* UISwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D4C21CA627D006F2EEF /* UISwitchTableViewCell.swift */; };
+		FCCE2D5121CA62C6006F2EEF /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5021CA62C6006F2EEF /* UIRoundedButton.swift */; };
+		FCCE2D5321CA62E5006F2EEF /* UIBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5221CA62E5006F2EEF /* UIBlueButton.swift */; };
 		FCCEC35321BECC1D007C9BD3 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEC35221BECC1D007C9BD3 /* APIBase.swift */; };
 		FCCEC35721BEDBF7007C9BD3 /* String+Hashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEC35621BEDBF7007C9BD3 /* String+Hashing.swift */; };
 		FCCEC35921BEDCAB007C9BD3 /* NetworkActivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCEC35821BEDCAB007C9BD3 /* NetworkActivityHandler.swift */; };
@@ -417,9 +420,12 @@
 		F603B296227BBABC70245D537E904B4F /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 		F893250228CB5A19E805F4C333611455 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		FA927ABEA5A603E8961BF9D9EE2F03F5 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
-		FCCEC35221BECC1D007C9BD3 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIBase.swift; path = GeneralToolsFramework/Classes/APIBase.swift; sourceTree = "<group>"; };
-		FCCEC35621BEDBF7007C9BD3 /* String+Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Hashing.swift"; path = "GeneralToolsFramework/Classes/String+Hashing.swift"; sourceTree = "<group>"; };
-		FCCEC35821BEDCAB007C9BD3 /* NetworkActivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkActivityHandler.swift; path = GeneralToolsFramework/Classes/NetworkActivityHandler.swift; sourceTree = "<group>"; };
+		FCCE2D4C21CA627D006F2EEF /* UISwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchTableViewCell.swift; sourceTree = "<group>"; };
+		FCCE2D5021CA62C6006F2EEF /* UIRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedButton.swift; sourceTree = "<group>"; };
+		FCCE2D5221CA62E5006F2EEF /* UIBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlueButton.swift; sourceTree = "<group>"; };
+		FCCEC35221BECC1D007C9BD3 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		FCCEC35621BEDBF7007C9BD3 /* String+Hashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hashing.swift"; sourceTree = "<group>"; };
+		FCCEC35821BEDCAB007C9BD3 /* NetworkActivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityHandler.swift; sourceTree = "<group>"; };
 		FDA030634701A34F233F8D4099BFE8E3 /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickSpecBase/QuickSpecBase.m; sourceTree = "<group>"; };
 		FEB2367FCAB46389690E53656C7EDF47 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		FFB2BEC29F189C83CF9DF20FDD5E0E30 /* GeneralToolsFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeneralToolsFramework.modulemap; sourceTree = "<group>"; };
@@ -790,9 +796,10 @@
 		D72B40E7D1814C1562031D3816B3D996 /* GeneralToolsFramework */ = {
 			isa = PBXGroup;
 			children = (
-				FCCEC35221BECC1D007C9BD3 /* APIBase.swift */,
-				FCCEC35621BEDBF7007C9BD3 /* String+Hashing.swift */,
-				FCCEC35821BEDCAB007C9BD3 /* NetworkActivityHandler.swift */,
+				FCCE2D4B21CA6270006F2EEF /* Views */,
+				FCCE2D4A21CA623C006F2EEF /* Extensions */,
+				FCCE2D4921CA6228006F2EEF /* Utilities */,
+				FCCE2D4821CA6204006F2EEF /* API */,
 				0E3B37C374E9C768C6647DD52C7DD397 /* Pod */,
 				41BFA2B49ACD678B3E79CBE449E2EE92 /* Support Files */,
 			);
@@ -863,6 +870,56 @@
 				6A2ED9B51C38A55C1DC0BE43CBF88424 /* Support Files */,
 			);
 			path = Quick;
+			sourceTree = "<group>";
+		};
+		FCCE2D4821CA6204006F2EEF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEC35221BECC1D007C9BD3 /* APIBase.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FCCE2D4921CA6228006F2EEF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEC35821BEDCAB007C9BD3 /* NetworkActivityHandler.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCCE2D4A21CA623C006F2EEF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEC35621BEDBF7007C9BD3 /* String+Hashing.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCCE2D4B21CA6270006F2EEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCCE2D4F21CA62BA006F2EEF /* Button */,
+				FCCE2D4E21CA629E006F2EEF /* Table */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCCE2D4E21CA629E006F2EEF /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				FCCE2D4C21CA627D006F2EEF /* UISwitchTableViewCell.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		FCCE2D4F21CA62BA006F2EEF /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FCCE2D5021CA62C6006F2EEF /* UIRoundedButton.swift */,
+				FCCE2D5221CA62E5006F2EEF /* UIBlueButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		FE6D762EE2AC03344A454DF956C25C91 /* Support Files */ = {
@@ -1291,6 +1348,9 @@
 				163DC390363C339936B3114C72FE6716 /* SwiftSupport.swift in Sources */,
 				AFF108D6E8D891F7B8148CA0158B2A23 /* UIApplication+StrictKeyWindow.m in Sources */,
 				4C022C88B9E8D527B1426B5281756EDE /* UIImage+Compare.m in Sources */,
+				FCCE2D4D21CA627D006F2EEF /* UISwitchTableViewCell.swift in Sources */,
+				FCCE2D5321CA62E5006F2EEF /* UIBlueButton.swift in Sources */,
+				FCCE2D5121CA62C6006F2EEF /* UIRoundedButton.swift in Sources */,
 				E4877E179010E4E588B6E9E61B047B60 /* UIImage+Diff.m in Sources */,
 				EA2C5FBB576DBC67BE3E2F5897704BBF /* UIImage+Snapshot.m in Sources */,
 			);

@@ -29,6 +29,7 @@ Contains general tools that Zandor Smith uses in his iOS apps.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'GeneralToolsFramework/Classes/**/*'
   

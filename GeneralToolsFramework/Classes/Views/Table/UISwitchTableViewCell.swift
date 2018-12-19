@@ -13,12 +13,21 @@ public class UISwitchTableViewCell: UITableViewCell {
     
     let theSwitch = UISwitch()
     
-    public var switchTintColor: UIColor {
+    public var switchOffTintColor: UIColor {
         get {
             return theSwitch.tintColor
         }
         set {
             theSwitch.tintColor = newValue
+        }
+    }
+    
+    public var switchOnTintColor: UIColor {
+        get {
+            return theSwitch.onTintColor
+        }
+        set {
+            theSwitch.onTintColor = newValue
         }
     }
     

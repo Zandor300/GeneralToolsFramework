@@ -15,7 +15,7 @@ open class BaseAPI {
         self.baseUrl = baseUrl
     }
     
-    func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+    public func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         
         URLSession.shared.dataTask(with: URL(string: baseUrl + url)!, completionHandler: {
@@ -28,7 +28,7 @@ open class BaseAPI {
         }).resume()
     }
     
-    func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+    public func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         
         let postContentString = generatePostContentString(postContent: postContent)

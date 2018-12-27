@@ -22,8 +22,8 @@ public class UIBlueButton : UIRoundedButton {
     override func setupLayout() {
         super.setupLayout()
         applyGradient(colors: [
-            UIColor(red: 41, green: 145, blue: 254, alpha: 1).cgColor,
-            UIColor(red: 9, green: 121, blue: 254, alpha: 1).cgColor
+            UIColor(red: 41 / 255, green: 145 / 255, blue: 254 / 255, alpha: 1).cgColor,
+            UIColor(red: 9 / 255, green: 121 / 255, blue: 254 / 255, alpha: 1).cgColor
         ])
     }
     

@@ -27,6 +27,7 @@
 		FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5D21CA8DE5006F2EEF /* Version.swift */; };
 		FCCE2D6021CA8E32006F2EEF /* Float+DutchString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */; };
 		FCCE2D6221CAB69A006F2EEF /* MKMapView+Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */; };
+		FCF793C421D65CDD0078CAEA /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF793C321D65CDD0078CAEA /* BuildConfig.swift */; };
 		FE74C756E2178FB127D5A265BF9E2A4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14040659DB5339631480E9752B5BCE84 /* Security.framework */; };
 		FEC2F813FF686E4FA18EA7C5EA0F082A /* Pods-GeneralToolsFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43828FF1D2BE578D2612B6EC75F97F2D /* Pods-GeneralToolsFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		FCCE2D5D21CA8DE5006F2EEF /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+DutchString.swift"; sourceTree = "<group>"; };
 		FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Focus.swift"; sourceTree = "<group>"; };
+		FCF793C321D65CDD0078CAEA /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				6E8691E09C34AC2355AEEFF7A33C2E16 /* NetworkActivityHandler.swift */,
 				FCCE2D5D21CA8DE5006F2EEF /* Version.swift */,
+				FCF793C321D65CDD0078CAEA /* BuildConfig.swift */,
 			);
 			name = Utilities;
 			path = GeneralToolsFramework/Classes/Utilities;
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF793C421D65CDD0078CAEA /* BuildConfig.swift in Sources */,
 				E2020A05597D425C4DD0A8F62441A18C /* BaseAPI.swift in Sources */,
 				FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */,
 				11CD06E05372C9AB2A0E81FAF521FA5C /* GeneralToolsFramework-dummy.m in Sources */,

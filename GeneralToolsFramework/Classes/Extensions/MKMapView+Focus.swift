@@ -12,18 +12,22 @@ import MapKit
 extension MKMapView {
     
     /// When we call this function, we have already added the annotations to the map, and just want all of them to be displayed.
-    public func fitAll() {
+    public func fitAll(animated: Bool) {
         var zoomRect            = MKMapRect.null;
         for annotation in annotations {
             let annotationPoint = MKMapPoint(annotation.coordinate)
             let pointRect       = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0.01, height: 0.01);
             zoomRect            = zoomRect.union(pointRect);
         }
-        setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: true)
+        setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: animated)
+    }
+    
+    public func fitAll() {
+        fitAll(animated: true)
     }
     
     /// We call this function and give it the annotations we want added to the map. we display the annotations if necessary
-    public func fitAll(in annotations: [MKAnnotation], andShow show: Bool) {
+    public func fitAll(in annotations: [MKAnnotation], andShow show: Bool, animated: Bool) {
         var zoomRect:MKMapRect  = MKMapRect.null
         
         for annotation in annotations {
@@ -39,7 +43,11 @@ extension MKMapView {
         if(show) {
             addAnnotations(annotations)
         }
-        setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: true)
+        setVisibleMapRect(zoomRect, edgePadding: UIEdgeInsets(top: 100, left: 100, bottom: 100, right: 100), animated: animated)
+    }
+    
+    public func fitAll(in annotations: [MKAnnotation], andShow show: Bool) {
+        fitAll(in: annotations, andShow: show, animated: true)
     }
     
 }

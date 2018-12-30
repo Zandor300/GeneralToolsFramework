@@ -9,6 +9,14 @@ import UIKit
 
 public class UIBlueButton : UIRoundedButton {
     
+    let gradientLayer = CAGradientLayer()
+    
+    override public var bounds: CGRect {
+        didSet {
+            updateGradientFrame()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
@@ -28,13 +36,16 @@ public class UIBlueButton : UIRoundedButton {
     }
     
     func applyGradient(colors: [CGColor]) {
-        let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-        gradientLayer.frame = self.bounds
+        updateGradientFrame()
         gradientLayer.cornerRadius = self.layer.cornerRadius
         self.layer.addSublayer(gradientLayer)
+    }
+    
+    func updateGradientFrame() {
+        gradientLayer.frame = self.bounds
     }
     
 }

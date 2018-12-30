@@ -22,6 +22,8 @@
 		C4E5B1A886791FFB86B4AFFDB347A0C5 /* UIBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B84568602136C76E97DAF400804889 /* UIBlueButton.swift */; };
 		E2020A05597D425C4DD0A8F62441A18C /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B350E6DA27182D109CDAF9E31D9B2 /* BaseAPI.swift */; };
 		E686852FF354B5E065D7293FB2D349E6 /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656A0B692BB33D5074D18509EC9F50BB /* UIRoundedButton.swift */; };
+		FC675E4F21D8FFDF00053750 /* String+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC675E4E21D8FFDF00053750 /* String+Float.swift */; };
+		FC675E5121D900A700053750 /* Int+OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC675E5021D900A700053750 /* Int+OptionalString.swift */; };
 		FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */; };
 		FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */; };
 		FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5D21CA8DE5006F2EEF /* Version.swift */; };
@@ -91,6 +93,8 @@
 		EB665FA2169FBACC8ED9C0110DBC2549 /* Pods-GeneralToolsFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeneralToolsFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7B84568602136C76E97DAF400804889 /* UIBlueButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIBlueButton.swift; sourceTree = "<group>"; };
+		FC675E4E21D8FFDF00053750 /* String+Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Float.swift"; sourceTree = "<group>"; };
+		FC675E5021D900A700053750 /* Int+OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+OptionalString.swift"; sourceTree = "<group>"; };
 		FC78D87FD1B1C37E4ECCEC6F1B7EE5AD /* GeneralToolsFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeneralToolsFramework.xcconfig; sourceTree = "<group>"; };
 		FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contains.swift"; sourceTree = "<group>"; };
 		FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -154,9 +158,11 @@
 			children = (
 				6CE08D139C67025AA67DF119E1B14B4B /* String+Hashing.swift */,
 				FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */,
+				FC675E4E21D8FFDF00053750 /* String+Float.swift */,
 				FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */,
 				FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */,
 				FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */,
+				FC675E5021D900A700053750 /* Int+OptionalString.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -445,9 +451,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF793C421D65CDD0078CAEA /* BuildConfig.swift in Sources */,
+				FC675E4F21D8FFDF00053750 /* String+Float.swift in Sources */,
 				E2020A05597D425C4DD0A8F62441A18C /* BaseAPI.swift in Sources */,
 				FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */,
 				11CD06E05372C9AB2A0E81FAF521FA5C /* GeneralToolsFramework-dummy.m in Sources */,
+				FC675E5121D900A700053750 /* Int+OptionalString.swift in Sources */,
 				FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */,
 				FCCE2D6221CAB69A006F2EEF /* MKMapView+Focus.swift in Sources */,
 				638464296CD6860590888D2C23E1271B /* NetworkActivityHandler.swift in Sources */,

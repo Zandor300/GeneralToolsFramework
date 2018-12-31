@@ -23,7 +23,10 @@ public class UITextFieldTableViewCell: UITableViewCell {
 
     override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.textField.becomeFirstResponder()
+        
+        if selected {
+            self.textField.becomeFirstResponder()
+        }
     }
     
     func setupTextField() {

@@ -9,9 +9,13 @@ import Foundation
 
 open class BaseAPI {
     
-    private let baseUrl: String
+    private var baseUrl: String
     
     public init(baseUrl: String) {
+        self.baseUrl = baseUrl
+    }
+    
+    public func setBaseUrl(baseUrl: String) {
         self.baseUrl = baseUrl
     }
     

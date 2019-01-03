@@ -28,6 +28,25 @@ open class BaseAPI {
         }).resume()
     }
     
+    public func doGetApiCall(url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+        NetworkActivityHandler.pushNetworkActivity()
+        
+        var request = URLRequest(url: URL(string: baseUrl + url)!)
+        request.httpMethod = "GET"
+        for (key, value) in httpHeaderFields {
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {
+            (data, response, error) in
+            self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
+                onCompletion(data)
+            }, onError: {
+                onError()
+            })
+        }).resume()
+    }
+    
     public func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         
@@ -40,6 +59,32 @@ open class BaseAPI {
         var request = URLRequest(url: URL(string: baseUrl + url)!)
         request.httpMethod = "POST"
         request.httpBody = postContentString!.data(using: .utf8)
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {
+            (data, response, error) in
+            self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
+                onCompletion(data)
+            }, onError: {
+                onError()
+            })
+        }).resume()
+    }
+    
+    public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+        NetworkActivityHandler.pushNetworkActivity()
+        
+        let postContentString = generatePostContentString(postContent: postContent)
+        if postContentString == nil {
+            onError()
+            return
+        }
+        
+        var request = URLRequest(url: URL(string: baseUrl + url)!)
+        request.httpMethod = "POST"
+        request.httpBody = postContentString!.data(using: .utf8)
+        for (key, value) in httpHeaderFields {
+            request.setValue(value, forHTTPHeaderField: key)
+        }
         
         URLSession.shared.dataTask(with: request, completionHandler: {
             (data, response, error) in

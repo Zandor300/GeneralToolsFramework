@@ -15,32 +15,41 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     
     public var checked: Bool = false {
         didSet {
-            if callback(checked) {
-                if checked {
+            if !temporaryCallbackDisabled && !callback(checked) {
+                temporaryCallbackDisabled = true
+                checked = !checked
+                temporaryCallbackDisabled = false
+                return
+            }
+            if checked {
+                DispatchQueue.main.async {
                     self.accessoryType = .checkmark
-                    if sectionIsGroup {
-                        let tableView = self.tableView
-                        if tableView == nil {
-                            return
-                        }
-                        let indexPath = tableView!.indexPath(for: self)
-                        if indexPath == nil {
-                            return
-                        }
-                        var targetIndexPath = IndexPath(row: 0, section: indexPath!.section)
-                        while let targetCell = tableView!.cellForRow(at: targetIndexPath) {
-                            if targetCell != self {
-                                (targetCell as? UISelectCheckmarkTableViewCell)?.checked = false
-                            }
-                            targetIndexPath = IndexPath(row: targetIndexPath.row + 1, section: indexPath!.section)
-                        }
+                }
+                if sectionIsGroup {
+                    let tableView = self.tableView
+                    if tableView == nil {
+                        return
                     }
-                } else {
+                    let indexPath = tableView!.indexPath(for: self)
+                    if indexPath == nil {
+                        return
+                    }
+                    var targetIndexPath = IndexPath(row: 0, section: indexPath!.section)
+                    while let targetCell = tableView!.cellForRow(at: targetIndexPath) {
+                        if targetCell != self {
+                            (targetCell as? UISelectCheckmarkTableViewCell)?.checked = false
+                        }
+                        targetIndexPath = IndexPath(row: targetIndexPath.row + 1, section: indexPath!.section)
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
                     self.accessoryType = .none
                 }
             }
         }
     }
+    private var temporaryCallbackDisabled = false
     public var allowDeselect: Bool = false
     public var sectionIsGroup: Bool = false
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UISelectCheckmarkTableViewCell: UITableViewCell {
+public class UISelectCheckmarkTableViewCell: UITableViewCell {
     
     private var checked: Bool = false {
         didSet {
@@ -29,7 +29,7 @@ class UISelectCheckmarkTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
             if allowDeselect {

@@ -25,6 +25,8 @@
 		FC39810F21DA7E2B009CC9DD /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39810E21DA7E2B009CC9DD /* UITextFieldTableViewCell.swift */; };
 		FC675E4F21D8FFDF00053750 /* String+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC675E4E21D8FFDF00053750 /* String+Float.swift */; };
 		FC675E5121D900A700053750 /* Int+OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC675E5021D900A700053750 /* Int+OptionalString.swift */; };
+		FCA93C4D21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA93C4C21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift */; };
+		FCA93C4F21DF89BC00E4FC91 /* UITableViewCell+GetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA93C4E21DF89BC00E4FC91 /* UITableViewCell+GetTableView.swift */; };
 		FCCE2D5521CA7A20006F2EEF /* String+Contains.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */; };
 		FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */; };
 		FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5D21CA8DE5006F2EEF /* Version.swift */; };
@@ -98,6 +100,8 @@
 		FC675E4E21D8FFDF00053750 /* String+Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Float.swift"; sourceTree = "<group>"; };
 		FC675E5021D900A700053750 /* Int+OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+OptionalString.swift"; sourceTree = "<group>"; };
 		FC78D87FD1B1C37E4ECCEC6F1B7EE5AD /* GeneralToolsFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeneralToolsFramework.xcconfig; sourceTree = "<group>"; };
+		FCA93C4C21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISelectCheckmarkTableViewCell.swift; sourceTree = "<group>"; };
+		FCA93C4E21DF89BC00E4FC91 /* UITableViewCell+GetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+GetTableView.swift"; sourceTree = "<group>"; };
 		FCCE2D5421CA7A20006F2EEF /* String+Contains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Contains.swift"; sourceTree = "<group>"; };
 		FCCE2D5621CA7A79006F2EEF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FCCE2D5D21CA8DE5006F2EEF /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */,
 				FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */,
 				FC675E5021D900A700053750 /* Int+OptionalString.swift */,
+				FCA93C4E21DF89BC00E4FC91 /* UITableViewCell+GetTableView.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -210,6 +215,7 @@
 			children = (
 				616E94098E3F9D982A2262404658D8DA /* UISwitchTableViewCell.swift */,
 				FC39810E21DA7E2B009CC9DD /* UITextFieldTableViewCell.swift */,
+				FCA93C4C21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -461,9 +467,11 @@
 				11CD06E05372C9AB2A0E81FAF521FA5C /* GeneralToolsFramework-dummy.m in Sources */,
 				FC675E5121D900A700053750 /* Int+OptionalString.swift in Sources */,
 				FCCE2D5721CA7A79006F2EEF /* UIColor+Hex.swift in Sources */,
+				FCA93C4F21DF89BC00E4FC91 /* UITableViewCell+GetTableView.swift in Sources */,
 				FCCE2D6221CAB69A006F2EEF /* MKMapView+Focus.swift in Sources */,
 				638464296CD6860590888D2C23E1271B /* NetworkActivityHandler.swift in Sources */,
 				0EB0B7B68CC8DE5F81D8F9FF38EE3B62 /* String+Hashing.swift in Sources */,
+				FCA93C4D21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift in Sources */,
 				FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */,
 				C4E5B1A886791FFB86B4AFFDB347A0C5 /* UIBlueButton.swift in Sources */,
 				E686852FF354B5E065D7293FB2D349E6 /* UIRoundedButton.swift in Sources */,

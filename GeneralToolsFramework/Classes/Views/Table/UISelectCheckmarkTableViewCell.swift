@@ -9,19 +9,24 @@ import UIKit
 
 public class UISelectCheckmarkTableViewCell: UITableViewCell {
     
-    var callback: (Bool) -> (Bool) = { state in
+    var callbackOn: () -> (Bool) = {
+        return true
+    }
+    var callbackOff: () -> (Bool) = {
         return true
     }
     
     public var checked: Bool = false {
         didSet {
-            if !temporaryCallbackDisabled && !callback(checked) {
-                temporaryCallbackDisabled = true
-                checked = !checked
-                temporaryCallbackDisabled = false
-                return
-            }
             if checked {
+                if !temporaryCallbackDisabled {
+                    if !callbackOn() {
+                        temporaryCallbackDisabled = true
+                        checked = false
+                        temporaryCallbackDisabled = false
+                        return
+                    }
+                }
                 DispatchQueue.main.async {
                     self.accessoryType = .checkmark
                 }
@@ -43,6 +48,14 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
                     }
                 }
             } else {
+                if !temporaryCallbackDisabled {
+                    if !callbackOff() {
+                        temporaryCallbackDisabled = true
+                        checked = true
+                        temporaryCallbackDisabled = false
+                        return
+                    }
+                }
                 DispatchQueue.main.async {
                     self.accessoryType = .none
                 }
@@ -72,8 +85,12 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
         }
     }
     
-    public func setStateChangedCallback(callback: @escaping (Bool) -> (Bool)) {
-        self.callback = callback
+    public func setStateOnCallback(callback: @escaping () -> (Bool)) {
+        self.callbackOn = callback
+    }
+    
+    public func setStateOffCallback(callback: @escaping () -> (Bool)) {
+        self.callbackOff = callback
     }
     
 }

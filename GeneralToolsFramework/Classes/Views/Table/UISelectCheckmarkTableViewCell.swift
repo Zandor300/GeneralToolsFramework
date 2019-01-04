@@ -19,17 +19,12 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     public var checked: Bool = false {
         didSet {
             if checked {
-                if !temporaryCallbackDisabled {
-                    if !callbackOn() {
-                        temporaryCallbackDisabled = true
-                        checked = false
-                        temporaryCallbackDisabled = false
-                        return
-                    }
+                if !callbackOn() {
+                    checked = false
+                    self.updateCheckmark()
+                    return
                 }
-                DispatchQueue.main.async {
-                    self.accessoryType = .checkmark
-                }
+                self.updateCheckmark()
                 if sectionIsGroup {
                     let tableView = self.tableView
                     if tableView == nil {
@@ -42,23 +37,20 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
                     var targetIndexPath = IndexPath(row: 0, section: indexPath!.section)
                     while let targetCell = tableView!.cellForRow(at: targetIndexPath) {
                         if targetCell != self {
-                            (targetCell as? UISelectCheckmarkTableViewCell)?.checked = false
+                            let cell = targetCell as? UISelectCheckmarkTableViewCell
+                            cell?.checked = false
+                            cell?.updateCheckmark()
                         }
                         targetIndexPath = IndexPath(row: targetIndexPath.row + 1, section: indexPath!.section)
                     }
                 }
             } else {
-                if !temporaryCallbackDisabled {
-                    if !callbackOff() {
-                        temporaryCallbackDisabled = true
-                        checked = true
-                        temporaryCallbackDisabled = false
-                        return
-                    }
+                if !callbackOff() {
+                    checked = true
+                    self.updateCheckmark()
+                    return
                 }
-                DispatchQueue.main.async {
-                    self.accessoryType = .none
-                }
+                self.updateCheckmark()
             }
         }
     }
@@ -72,6 +64,18 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    private func updateCheckmark() {
+        DispatchQueue.main.async {
+            if self.checked {
+                self.accessoryType = .checkmark
+                print("Checkmark on " + (self.textLabel?.text ?? "unknown"))
+            } else {
+                self.accessoryType = .none
+                print("No checkmark on " + (self.textLabel?.text ?? "unknown"))
+            }
+        }
     }
     
     override public func setSelected(_ selected: Bool, animated: Bool) {

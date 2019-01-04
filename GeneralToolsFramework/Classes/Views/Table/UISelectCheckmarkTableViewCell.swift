@@ -9,6 +9,8 @@ import UIKit
 
 public class UISelectCheckmarkTableViewCell: UITableViewCell {
     
+    var callback: (Bool) -> () = { state in }
+    
     public var checked: Bool = false {
         didSet {
             if checked {
@@ -33,6 +35,7 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
             } else {
                 self.accessoryType = .none
             }
+            callback(checked)
         }
     }
     public var allowDeselect: Bool = false
@@ -55,6 +58,10 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
                 checked = true
             }
         }
+    }
+    
+    public func setStateChangedCallback(callback: @escaping (Bool) -> ()) {
+        self.callback = callback
     }
     
 }

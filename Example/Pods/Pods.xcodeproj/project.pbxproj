@@ -33,6 +33,7 @@
 		FCCE2D6021CA8E32006F2EEF /* Float+DutchString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */; };
 		FCCE2D6221CAB69A006F2EEF /* MKMapView+Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */; };
 		FCE0318821DFC056000589DF /* Date+MySQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0318721DFC056000589DF /* Date+MySQL.swift */; };
+		FCE0318C21E11F9F000589DF /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0318B21E11F9F000589DF /* KeychainService.swift */; };
 		FCF793C421D65CDD0078CAEA /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF793C321D65CDD0078CAEA /* BuildConfig.swift */; };
 		FE74C756E2178FB127D5A265BF9E2A4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14040659DB5339631480E9752B5BCE84 /* Security.framework */; };
 		FEC2F813FF686E4FA18EA7C5EA0F082A /* Pods-GeneralToolsFramework_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43828FF1D2BE578D2612B6EC75F97F2D /* Pods-GeneralToolsFramework_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -109,6 +110,7 @@
 		FCCE2D5F21CA8E32006F2EEF /* Float+DutchString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+DutchString.swift"; sourceTree = "<group>"; };
 		FCCE2D6121CAB69A006F2EEF /* MKMapView+Focus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Focus.swift"; sourceTree = "<group>"; };
 		FCE0318721DFC056000589DF /* Date+MySQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+MySQL.swift"; sourceTree = "<group>"; };
+		FCE0318B21E11F9F000589DF /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FCF793C321D65CDD0078CAEA /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 				6E8691E09C34AC2355AEEFF7A33C2E16 /* NetworkActivityHandler.swift */,
 				FCCE2D5D21CA8DE5006F2EEF /* Version.swift */,
 				FCF793C321D65CDD0078CAEA /* BuildConfig.swift */,
+				FCE0318B21E11F9F000589DF /* KeychainService.swift */,
 			);
 			name = Utilities;
 			path = GeneralToolsFramework/Classes/Utilities;
@@ -475,6 +478,7 @@
 				FCCE2D6221CAB69A006F2EEF /* MKMapView+Focus.swift in Sources */,
 				638464296CD6860590888D2C23E1271B /* NetworkActivityHandler.swift in Sources */,
 				0EB0B7B68CC8DE5F81D8F9FF38EE3B62 /* String+Hashing.swift in Sources */,
+				FCE0318C21E11F9F000589DF /* KeychainService.swift in Sources */,
 				FCA93C4D21DF844300E4FC91 /* UISelectCheckmarkTableViewCell.swift in Sources */,
 				FCCE2D5E21CA8DE5006F2EEF /* Version.swift in Sources */,
 				C4E5B1A886791FFB86B4AFFDB347A0C5 /* UIBlueButton.swift in Sources */,

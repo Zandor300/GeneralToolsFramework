@@ -31,4 +31,52 @@ public extension Date {
         }
     }
     
+    public var mysqlDateString: String {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self)
+        
+        let year = String(components.year!)
+        var month = String(components.month!)
+        var day = String(components.day!)
+        
+        if month.count < 2 {
+            month = "0" + month
+        }
+        if day.count < 2 {
+            day = "0" + day
+        }
+        
+        return year + "-" + month + "-" + day
+    }
+    
+    public var mysqlDateTimeString: String {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
+        
+        let year = String(components.year!)
+        var month = String(components.month!)
+        var day = String(components.day!)
+        var hour = String(components.hour!)
+        var minute = String(components.minute!)
+        var second = String(components.second!)
+        
+        if month.count < 2 {
+            month = "0" + month
+        }
+        if day.count < 2 {
+            day = "0" + day
+        }
+        if hour.count < 2 {
+            hour = "0" + hour
+        }
+        if minute.count < 2 {
+            minute = "0" + minute
+        }
+        if second.count < 2 {
+            second = "0" + second
+        }
+        
+        return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
+    }
+    
 }

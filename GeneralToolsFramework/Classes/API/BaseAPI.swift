@@ -74,6 +74,42 @@ open class BaseAPI {
         }).resume()
     }
     
+    public func doPostUploadApiCall(url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+        NetworkActivityHandler.pushNetworkActivity()
+        
+        let boundary = "Boundary-\(NSUUID().uuidString)"
+        
+        var body = Data()
+        
+        for (key, value) in postContent {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
+            body.append("\(value)\r\n".data(using: .utf8)!)
+        }
+        
+        body.append("--\(boundary)\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Disposition:form-data; name=\"file\"; filename=\"\(upload.name)\"\r\n".data(using: String.Encoding.utf8)!)
+        body.append("Content-Type: \(upload.type.rawValue)\r\n\r\n".data(using: String.Encoding.utf8)!)
+        body.append(upload.data)
+        body.append("\r\n".data(using: String.Encoding.utf8)!)
+        
+        body.append("--\(boundary)--\r\n".data(using: String.Encoding.utf8)!)
+        
+        var request = URLRequest(url: URL(string: baseUrl + url)!)
+        request.httpMethod = "POST"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.httpBody = body
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {
+            (data, response, error) in
+            self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
+                onCompletion(data)
+            }, onError: {
+                onError()
+            })
+        }).resume()
+    }
+    
     public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         

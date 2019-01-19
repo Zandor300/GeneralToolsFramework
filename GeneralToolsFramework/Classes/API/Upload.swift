@@ -18,7 +18,7 @@ public class Upload {
     let data: Data
     let type: UploadType
     
-    init(name: String, data: Data, type: UploadType) {
+    public init(name: String, data: Data, type: UploadType) {
         self.name = name
         self.data = data
         self.type = type

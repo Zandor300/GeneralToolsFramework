@@ -22,6 +22,8 @@ open class BaseAPI {
     public func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         
+        print("Performing GET api call to url: " + url)
+        
         URLSession.shared.dataTask(with: URL(string: baseUrl + url)!, completionHandler: {
             (data, response, error) in
             self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
@@ -34,6 +36,8 @@ open class BaseAPI {
     
     public func doGetApiCall(url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
+        
+        print("Performing GET api call to url: " + url)
         
         var request = URLRequest(url: URL(string: baseUrl + url)!)
         request.httpMethod = "GET"
@@ -53,6 +57,8 @@ open class BaseAPI {
     
     public func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
+        
+        print("Performing POST api call to url: " + url)
         
         let postContentString = generatePostContentString(postContent: postContent)
         if postContentString == nil {
@@ -76,6 +82,8 @@ open class BaseAPI {
     
     public func doPostUploadApiCall(url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
+        
+        print("Performing POST UPLOAD api call to url: " + url)
         
         let boundary = "Boundary-\(NSUUID().uuidString)"
         
@@ -112,6 +120,8 @@ open class BaseAPI {
     
     public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
+        
+        print("Performing POST api call to url: " + url)
         
         let postContentString = generatePostContentString(postContent: postContent)
         if postContentString == nil {

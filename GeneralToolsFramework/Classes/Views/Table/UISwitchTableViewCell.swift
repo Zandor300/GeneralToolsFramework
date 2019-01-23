@@ -31,6 +31,15 @@ public class UISwitchTableViewCell: UITableViewCell {
         }
     }
     
+    public var state: Bool {
+        get {
+            return theSwitch.isOn
+        }
+        set {
+            self.setSwitchState(state: newValue, animated: false)
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         setupSwitch()

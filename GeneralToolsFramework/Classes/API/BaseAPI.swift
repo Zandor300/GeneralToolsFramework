@@ -10,6 +10,7 @@ import Foundation
 open class BaseAPI {
     
     private var baseUrl: String
+    public var printResponse: Bool = false
     
     public init(baseUrl: String) {
         self.baseUrl = baseUrl
@@ -178,7 +179,9 @@ open class BaseAPI {
             return
         }
         
-        print(contents!)
+        if printResponse {
+            print(contents!)
+        }
         NetworkActivityHandler.popNetworkActivity()
         onCompletion(data!)
     }

@@ -24,8 +24,11 @@ open class BaseAPI {
         self.addConnectivityCheckURL(url: URL(string: "https://web4.zsnode.com/success.html")!)
         
         connectivity.startNotifier()
+        print("Started connectivity notifier")
         
-        connectivity.checkConnectivity(completion: nil)
+        connectivity.checkConnectivity { (state) in
+            print("Forced connectivity check response: " + self.connectivity.description)
+        }
     }
     
     public func setBaseUrl(baseUrl: String) {

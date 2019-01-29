@@ -1,5 +1,13 @@
 stages:
+  - setup
   - build
+
+setup:
+  stage: setup
+  script:
+    - pod repo update
+  tags:
+    - xcode
 
 build:
   stage: build

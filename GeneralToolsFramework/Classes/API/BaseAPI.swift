@@ -42,6 +42,11 @@ open class BaseAPI {
     }
     
     public func doGetApiCall(url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+        if !connectivity.isConnected {
+            onError(.NoInternet)
+            return
+        }
+        
         NetworkActivityHandler.pushNetworkActivity()
         
         print("Performing GET api call to url: " + url)
@@ -67,6 +72,11 @@ open class BaseAPI {
     }
     
     public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+        if !connectivity.isConnected {
+            onError(.NoInternet)
+            return
+        }
+        
         NetworkActivityHandler.pushNetworkActivity()
         
         print("Performing POST api call to url: " + url)
@@ -95,6 +105,11 @@ open class BaseAPI {
     }
     
     public func doPostUploadApiCall(url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+        if !connectivity.isConnected {
+            onError(.NoInternet)
+            return
+        }
+        
         NetworkActivityHandler.pushNetworkActivity()
         
         print("Performing POST UPLOAD api call to url: " + url)

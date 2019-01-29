@@ -21,18 +21,7 @@ open class BaseAPI {
     }
     
     public func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
-        NetworkActivityHandler.pushNetworkActivity()
-        
-        print("Performing GET api call to url: " + url)
-        
-        URLSession.shared.dataTask(with: URL(string: baseUrl + url)!, completionHandler: {
-            (data, response, error) in
-            self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
-                onCompletion(data)
-            }, onError: {
-                onError()
-            })
-        }).resume()
+        self.doGetApiCall(url: url, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
     
     public func doGetApiCall(url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
@@ -57,6 +46,10 @@ open class BaseAPI {
     }
     
     public func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
+        self.doPostApiCall(url: url, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
+    }
+    
+    public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
         NetworkActivityHandler.pushNetworkActivity()
         
         print("Performing POST api call to url: " + url)
@@ -70,6 +63,9 @@ open class BaseAPI {
         var request = URLRequest(url: URL(string: baseUrl + url)!)
         request.httpMethod = "POST"
         request.httpBody = postContentString!.data(using: .utf8)
+        for (key, value) in httpHeaderFields {
+            request.setValue(value, forHTTPHeaderField: key)
+        }
         
         URLSession.shared.dataTask(with: request, completionHandler: {
             (data, response, error) in
@@ -108,34 +104,6 @@ open class BaseAPI {
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = body
-        
-        URLSession.shared.dataTask(with: request, completionHandler: {
-            (data, response, error) in
-            self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in
-                onCompletion(data)
-            }, onError: {
-                onError()
-            })
-        }).resume()
-    }
-    
-    public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping () -> ()) {
-        NetworkActivityHandler.pushNetworkActivity()
-        
-        print("Performing POST api call to url: " + url)
-        
-        let postContentString = generatePostContentString(postContent: postContent)
-        if postContentString == nil {
-            onError()
-            return
-        }
-        
-        var request = URLRequest(url: URL(string: baseUrl + url)!)
-        request.httpMethod = "POST"
-        request.httpBody = postContentString!.data(using: .utf8)
-        for (key, value) in httpHeaderFields {
-            request.setValue(value, forHTTPHeaderField: key)
-        }
         
         URLSession.shared.dataTask(with: request, completionHandler: {
             (data, response, error) in

@@ -49,7 +49,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing GET api call to url: " + url)
+        print("Performing GET api call to url: " + baseUrl + url)
         
         var request = URLRequest(url: URL(string: baseUrl + url)!)
         request.httpMethod = "GET"
@@ -79,7 +79,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing POST api call to url: " + url)
+        print("Performing POST api call to url: " + baseUrl + url)
         
         let postContentString = generatePostContentString(postContent: postContent)
         if postContentString == nil {
@@ -112,7 +112,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing POST UPLOAD api call to url: " + url)
+        print("Performing POST UPLOAD api call to url: " + baseUrl + url)
         
         let boundary = "Boundary-\(NSUUID().uuidString)"
         

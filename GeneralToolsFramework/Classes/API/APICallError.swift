@@ -11,5 +11,6 @@ public enum APICallError {
     case NoInternet
     case ServerUnavailable
     case ReceivedException
+    case PostContentInvalid
     case Unknown
 }

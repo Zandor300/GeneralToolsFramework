@@ -73,7 +73,7 @@ open class BaseAPI {
         
         let postContentString = generatePostContentString(postContent: postContent)
         if postContentString == nil {
-            onError()
+            onError(.PostContentInvalid)
             return
         }
         

@@ -12,6 +12,9 @@ setup:
 build:
   stage: build
   script:
+    - cd Example/
+    - pod install
+    - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO | xcpretty
     - pod lib lint
   tags:

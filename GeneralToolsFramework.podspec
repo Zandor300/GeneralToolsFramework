@@ -39,5 +39,5 @@ Contains general tools that Zandor Smith uses in his iOS apps.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Security'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Connectivity', '~> 2.1'
 end

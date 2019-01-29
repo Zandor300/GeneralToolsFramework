@@ -1,6 +1,6 @@
 {
   "name": "GeneralToolsFramework",
-  "version": "0.1.0",
+  "version": "0.1.35",
   "summary": "Contains general tools used in iOS apps.",
   "description": "Contains general tools that Zandor Smith uses in his iOS apps.",
   "homepage": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git",
-    "tag": "0.1.0"
+    "tag": "0.1.35"
   },
   "platforms": {
     "ios": "8.0"
@@ -23,5 +23,10 @@
   "frameworks": [
     "UIKit",
     "Security"
-  ]
+  ],
+  "dependencies": {
+    "Connectivity": [
+      "~> 2.1"
+    ]
+  }
 }

@@ -143,9 +143,11 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

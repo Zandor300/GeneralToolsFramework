@@ -1,16 +1,24 @@
 PODS:
-  - GeneralToolsFramework (0.1.0)
+  - Connectivity (2.1.0)
+  - GeneralToolsFramework (0.1.35):
+    - Connectivity (~> 2.1)
 
 DEPENDENCIES:
+  - Connectivity (~> 2.1)
   - GeneralToolsFramework (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Connectivity
 
 EXTERNAL SOURCES:
   GeneralToolsFramework:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GeneralToolsFramework: c0764af5ae1b6a5d1d3d2febf0452cf9e1d6a3f5
+  Connectivity: ae16e766bf476d48e3636e6a0bd2fa8c3e6a0602
+  GeneralToolsFramework: 1ad53e012a7c46bce994f721c43a9bd5080ea1ce
 
-PODFILE CHECKSUM: 4ddf0df399bf9f53632a75791b5b124ab7d42f59
+PODFILE CHECKSUM: 154ff620124647f97072f1bdc35660e2916818bd
 
 COCOAPODS: 1.5.2

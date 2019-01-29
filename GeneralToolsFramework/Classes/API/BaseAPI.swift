@@ -23,9 +23,9 @@ open class BaseAPI {
         self.addConnectivityCheckURL(url: URL(string: "https://web3.zsnode.com/success.html")!)
         self.addConnectivityCheckURL(url: URL(string: "https://web4.zsnode.com/success.html")!)
         
-        print("")
-        
         connectivity.startNotifier()
+        
+        connectivity.checkConnectivity(completion: nil)
     }
     
     public func setBaseUrl(baseUrl: String) {

@@ -25,10 +25,6 @@ open class BaseAPI {
         
         connectivity.startNotifier()
         print("Started connectivity notifier")
-        
-        connectivity.checkConnectivity { (state) in
-            print("Forced connectivity check response: " + self.connectivity.description)
-        }
     }
     
     public func setBaseUrl(baseUrl: String) {
@@ -38,6 +34,12 @@ open class BaseAPI {
     public func addConnectivityCheckURL(url: URL) {
         connectivity.connectivityURLs.append(url)
         print(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
+    }
+    
+    public func forceConnectivityCheck(onCompletion: @escaping () -> ()) {
+        connectivity.checkConnectivity { (state) in
+            onCompletion()
+        }
     }
     
     public func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {

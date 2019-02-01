@@ -51,6 +51,7 @@
 		F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D96E86BAFEB2131F567A530ACD9D87 /* UIRoundedButton.swift */; };
 		FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */; };
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
+		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
 		FCF219C6220071ED00708104 /* APICallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF219C422006E0600708104 /* APICallError.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		EE691B648E14A3C4AD3E3C1521370E91 /* UIBlueButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIBlueButton.swift; sourceTree = "<group>"; };
 		EFF830D03B839361F12D0FA17E41E9E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
 		FCF219C422006E0600708104 /* APICallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -407,6 +409,7 @@
 				3E6E025A03D6BFD1504F64BCA5979CFA /* String+Hashing.swift */,
 				776184228164A82385C9D4EDBCAFC6BA /* UIColor+Hex.swift */,
 				A0BBAD440ACDF3EA758F476E7E8549C8 /* UITableViewCell+GetTableView.swift */,
+				FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -600,6 +603,7 @@
 				20BD337531F70E86965A952D81F93719 /* String+Contains.swift in Sources */,
 				688E5DC39C900F1B9647A66912A30CE9 /* String+Float.swift in Sources */,
 				2DEC9634B0C68786F99D25D6DC7F5C93 /* String+Hashing.swift in Sources */,
+				FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */,
 				662B9665C6A1CC61895720D17639206E /* UIBlueButton.swift in Sources */,
 				415FC232514E53298A3C744F53886F51 /* UIColor+Hex.swift in Sources */,
 				F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */,

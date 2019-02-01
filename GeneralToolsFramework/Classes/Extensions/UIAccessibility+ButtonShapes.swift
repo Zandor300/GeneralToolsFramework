@@ -9,7 +9,7 @@ import UIKit
 
 public extension UIAccessibility {
     
-    public var isButtonShapesEnabled: Bool {
+    public static var isButtonShapesEnabled: Bool {
         let button = UIButton()
         button.setTitle("Button Shapes", for: .normal)
         return button.titleLabel?.attributedText?.attribute(NSAttributedString.Key.underlineStyle, at: 0, effectiveRange: nil) != nil

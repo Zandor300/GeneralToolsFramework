@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIAccessibility {
+public extension UIAccessibility {
     
     public var isButtonShapesEnabled: Bool {
         let button = UIButton()

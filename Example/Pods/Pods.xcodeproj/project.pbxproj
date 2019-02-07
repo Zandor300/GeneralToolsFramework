@@ -52,6 +52,8 @@
 		FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */; };
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
+		FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D52220C416900E98016 /* Float+Round.swift */; };
+		FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D54220C41B200E98016 /* Double+Round.swift */; };
 		FCF219C6220071ED00708104 /* APICallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF219C422006E0600708104 /* APICallError.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +163,8 @@
 		EFF830D03B839361F12D0FA17E41E9E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
+		FC7F4D52220C416900E98016 /* Float+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Round.swift"; sourceTree = "<group>"; };
+		FC7F4D54220C41B200E98016 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		FCF219C422006E0600708104 /* APICallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,6 +414,8 @@
 				776184228164A82385C9D4EDBCAFC6BA /* UIColor+Hex.swift */,
 				A0BBAD440ACDF3EA758F476E7E8549C8 /* UITableViewCell+GetTableView.swift */,
 				FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */,
+				FC7F4D52220C416900E98016 /* Float+Round.swift */,
+				FC7F4D54220C41B200E98016 /* Double+Round.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -633,8 +639,10 @@
 				55AFEAF478C720FB741AFAA85E4D8046 /* ConnectivityFramework.swift in Sources */,
 				14F3FEDCFC717DD753D94195397FC20C /* ConnectivityPercentage.swift in Sources */,
 				044940D2507A60C1D4820322BA750D62 /* ConnectivityResponseValidationMode.swift in Sources */,
+				FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */,
 				C62147147FE0363B574E7BF97C8664B1 /* ConnectivityResponseValidator.swift in Sources */,
 				CCAA16DBB4463AD44D619AF2D2F1D772 /* ConnectivityStatus.swift in Sources */,
+				FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */,
 				DC3E500E2269AFE5374C7C617C6FCF66 /* NotificationNameAdditions.swift in Sources */,
 				C0081D3A310918FDDDFA9A2BC1ED536E /* Reachability.m in Sources */,
 			);

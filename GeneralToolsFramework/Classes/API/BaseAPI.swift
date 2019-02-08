@@ -11,42 +11,44 @@ import Connectivity
 open class BaseAPI {
     
     private var baseUrl: String
-    public var printResponse: Bool = false
+    private var apiName: String
+    public var printResponses: Bool = false
     
     private let connectivity = Connectivity()
     
-    public init(baseUrl: String) {
+    public init(baseUrl: String, name: String) {
         self.baseUrl = baseUrl
+        self.apiName = name
         
         connectivity.framework = .network
         
-        self.addConnectivityCheckURL(url: URL(string: "https://web3.zsnode.com/success.html")!)
-        self.addConnectivityCheckURL(url: URL(string: "https://web4.zsnode.com/success.html")!)
+        self.addConnectivityCheckURL(URL(string: "https://web3.zsnode.com/success.html")!)
+        self.addConnectivityCheckURL(URL(string: "https://web4.zsnode.com/success.html")!)
         
         connectivity.startNotifier()
-        print("Started connectivity notifier")
+        printWithPrefix("Started connectivity notifier")
     }
     
-    public func setBaseUrl(baseUrl: String) {
+    public func setBaseUrl(_ baseUrl: String) {
         self.baseUrl = baseUrl
     }
     
-    public func addConnectivityCheckURL(url: URL) {
+    public func addConnectivityCheckURL(_ url: URL) {
         connectivity.connectivityURLs.append(url)
-        print(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
+        printWithPrefix(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
     }
     
-    public func forceConnectivityCheck(onCompletion: @escaping () -> ()) {
+    public func forceConnectivityCheck(_ onCompletion: @escaping () -> ()) {
         connectivity.checkConnectivity { (state) in
             onCompletion()
         }
     }
     
-    public func doGetApiCall(url: String, onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
-        self.doGetApiCall(url: url, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
+    public func doGetApiCall(_ url: String, onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+        self.doGetApiCall(url, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
     
-    public func doGetApiCall(url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+    public func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
         if !connectivity.isConnected {
             onError(.NoInternet)
             return
@@ -54,7 +56,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing GET api call to url: " + baseUrl + url)
+        printWithPrefix("Performing GET api call to url: " + baseUrl + url)
         
         var request = URLRequest(url: URL(string: baseUrl + url)!)
         request.httpMethod = "GET"
@@ -72,11 +74,11 @@ open class BaseAPI {
         }).resume()
     }
     
-    public func doPostApiCall(url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
-        self.doPostApiCall(url: url, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
+    public func doPostApiCall(_ url: String, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+        self.doPostApiCall(url, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
     
-    public func doPostApiCall(url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+    public func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
         if !connectivity.isConnected {
             onError(.NoInternet)
             return
@@ -84,7 +86,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing POST api call to url: " + baseUrl + url)
+        printWithPrefix("Performing POST api call to url: " + baseUrl + url)
         
         let postContentString = generatePostContentString(postContent: postContent)
         if postContentString == nil {
@@ -109,7 +111,7 @@ open class BaseAPI {
         }).resume()
     }
     
-    public func doPostUploadApiCall(url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
+    public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
         if !connectivity.isConnected {
             onError(.NoInternet)
             return
@@ -117,7 +119,7 @@ open class BaseAPI {
         
         NetworkActivityHandler.pushNetworkActivity()
         
-        print("Performing POST UPLOAD api call to url: " + baseUrl + url)
+        printWithPrefix("Performing POST UPLOAD api call to url: " + baseUrl + url)
         
         let boundary = "Boundary-\(NSUUID().uuidString)"
         
@@ -154,17 +156,17 @@ open class BaseAPI {
     
     private func handleDataTask(data: Data?, response: URLResponse?, error: Error?, onCompletion: @escaping (Data) -> (), onError: @escaping (APICallError) -> ()) {
         if let _ = data, error != nil {
-            print("Network error.")
-            print("error=\(String(describing: error))")
+            printWithPrefix("Network error.")
+            printWithPrefix("error=\(String(describing: error))")
             NetworkActivityHandler.popNetworkActivity()
             onError(.ServerUnavailable)
             return
         }
         
         if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-            print("Invalid http status code.")
-            print("statusCode should be 200, but is \(httpStatus.statusCode)")
-            print("response = \(String(describing: response))")
+            printWithPrefix("Invalid http status code.")
+            printWithPrefix("statusCode should be 200, but is \(httpStatus.statusCode)")
+            printWithPrefix("response = \(String(describing: response))")
             NetworkActivityHandler.popNetworkActivity()
             onError(.ServerUnavailable)
             return
@@ -184,8 +186,8 @@ open class BaseAPI {
             return
         }
         
-        if printResponse {
-            print(contents!)
+        if printResponses {
+            printWithPrefix(contents!)
         }
         NetworkActivityHandler.popNetworkActivity()
         onCompletion(data!)
@@ -203,6 +205,10 @@ open class BaseAPI {
             }
         }
         return string
+    }
+    
+    func printWithPrefix(_ string: String) {
+        print("[" + self.apiName + "] " + string)
     }
     
 }

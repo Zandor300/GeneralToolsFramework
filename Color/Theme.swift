@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Theme {
+public class Theme {
     
     public static let shared = Theme()
     

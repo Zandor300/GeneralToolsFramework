@@ -51,7 +51,7 @@
 		F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D96E86BAFEB2131F567A530ACD9D87 /* UIRoundedButton.swift */; };
 		FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */; };
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
-		FC3B6954220F17400015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
+		FC3B6955220F18430015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
 		FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D52220C416900E98016 /* Float+Round.swift */; };
 		FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D54220C41B200E98016 /* Double+Round.swift */; };
@@ -616,6 +616,7 @@
 				A16BF188E7694F217437314CBA476E39 /* KeychainService.swift in Sources */,
 				BB5E51A1F980681FDBBCAE5879577934 /* MKMapView+Focus.swift in Sources */,
 				266BF3914D6EA969E21C29722F686EE3 /* NetworkActivityHandler.swift in Sources */,
+				FC3B6955220F18430015336C /* Theme.swift in Sources */,
 				FCF219C6220071ED00708104 /* APICallError.swift in Sources */,
 				20BD337531F70E86965A952D81F93719 /* String+Contains.swift in Sources */,
 				688E5DC39C900F1B9647A66912A30CE9 /* String+Float.swift in Sources */,
@@ -654,7 +655,6 @@
 				C62147147FE0363B574E7BF97C8664B1 /* ConnectivityResponseValidator.swift in Sources */,
 				CCAA16DBB4463AD44D619AF2D2F1D772 /* ConnectivityStatus.swift in Sources */,
 				FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */,
-				FC3B6954220F17400015336C /* Theme.swift in Sources */,
 				DC3E500E2269AFE5374C7C617C6FCF66 /* NotificationNameAdditions.swift in Sources */,
 				C0081D3A310918FDDDFA9A2BC1ED536E /* Reachability.m in Sources */,
 			);

@@ -51,6 +51,7 @@
 		F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D96E86BAFEB2131F567A530ACD9D87 /* UIRoundedButton.swift */; };
 		FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */; };
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
+		FC3B6954220F17400015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
 		FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D52220C416900E98016 /* Float+Round.swift */; };
 		FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D54220C41B200E98016 /* Double+Round.swift */; };
@@ -162,6 +163,7 @@
 		EE691B648E14A3C4AD3E3C1521370E91 /* UIBlueButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIBlueButton.swift; sourceTree = "<group>"; };
 		EFF830D03B839361F12D0FA17E41E9E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC3B6953220F17400015336C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
 		FC7F4D52220C416900E98016 /* Float+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Round.swift"; sourceTree = "<group>"; };
 		FC7F4D54220C41B200E98016 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		F1092C283F29CDB66C257A5B102271EB /* GeneralToolsFramework */ = {
 			isa = PBXGroup;
 			children = (
+				FC3B6952220F17310015336C /* Color */,
 				66DD439FA59B58B7C6EA6E41EA4BB167 /* API */,
 				D0AA29F964BD54F183000FBF05B3BDCB /* Extensions */,
 				5DA1E0FB05ADE2D0FD83CE91AB0EA342 /* Pod */,
@@ -449,6 +452,14 @@
 				191453F2E9306A63146CDC3B742C82F2 /* Connectivity */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC3B6952220F17310015336C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B6953220F17400015336C /* Theme.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +654,7 @@
 				C62147147FE0363B574E7BF97C8664B1 /* ConnectivityResponseValidator.swift in Sources */,
 				CCAA16DBB4463AD44D619AF2D2F1D772 /* ConnectivityStatus.swift in Sources */,
 				FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */,
+				FC3B6954220F17400015336C /* Theme.swift in Sources */,
 				DC3E500E2269AFE5374C7C617C6FCF66 /* NotificationNameAdditions.swift in Sources */,
 				C0081D3A310918FDDDFA9A2BC1ED536E /* Reachability.m in Sources */,
 			);

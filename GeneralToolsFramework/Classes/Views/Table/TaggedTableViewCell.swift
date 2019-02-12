@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class TaggedTableViewCell: UITableViewCell {
+open class TaggedTableViewCell: UITableViewCell {
     
     public var tagView: UITagView? {
         get {

@@ -53,6 +53,14 @@
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
 		FC3B6955220F18430015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
+		FC733D962213842A007E5A37 /* ZSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D942213840B007E5A37 /* ZSTagView.swift */; };
+		FC733D982213851C007E5A37 /* TaggedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D972213851C007E5A37 /* TaggedTableViewCell.swift */; };
+		FC733D9A22138554007E5A37 /* BlueLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D9922138554007E5A37 /* BlueLinkTableViewCell.swift */; };
+		FC733D9C22138586007E5A37 /* RedLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D9B22138586007E5A37 /* RedLinkTableViewCell.swift */; };
+		FC733D9E221385F3007E5A37 /* LinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D9D221385F3007E5A37 /* LinkTableViewCell.swift */; };
+		FC733DA022138713007E5A37 /* UIViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D9F22138713007E5A37 /* UIViewController+Dismiss.swift */; };
+		FC733DA22213875E007E5A37 /* UIAlertController+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */; };
+		FC733DA42213879A007E5A37 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA32213879A007E5A37 /* UIImage+Size.swift */; };
 		FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D52220C416900E98016 /* Float+Round.swift */; };
 		FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D54220C41B200E98016 /* Double+Round.swift */; };
 		FCF219C6220071ED00708104 /* APICallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF219C422006E0600708104 /* APICallError.swift */; };
@@ -165,6 +173,14 @@
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC3B6953220F17400015336C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
+		FC733D942213840B007E5A37 /* ZSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZSTagView.swift; sourceTree = "<group>"; };
+		FC733D972213851C007E5A37 /* TaggedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedTableViewCell.swift; sourceTree = "<group>"; };
+		FC733D9922138554007E5A37 /* BlueLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLinkTableViewCell.swift; sourceTree = "<group>"; };
+		FC733D9B22138586007E5A37 /* RedLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedLinkTableViewCell.swift; sourceTree = "<group>"; };
+		FC733D9D221385F3007E5A37 /* LinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkTableViewCell.swift; sourceTree = "<group>"; };
+		FC733D9F22138713007E5A37 /* UIViewController+Dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dismiss.swift"; sourceTree = "<group>"; };
+		FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+UIImageView.swift"; sourceTree = "<group>"; };
+		FC733DA32213879A007E5A37 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		FC7F4D52220C416900E98016 /* Float+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Round.swift"; sourceTree = "<group>"; };
 		FC7F4D54220C41B200E98016 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		FCF219C422006E0600708104 /* APICallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallError.swift; sourceTree = "<group>"; };
@@ -233,6 +249,10 @@
 				ED0127F25C6CF1FAE7872253CB3DDD32 /* UISelectCheckmarkTableViewCell.swift */,
 				5243A443CD8BA5F714B4162028865D0A /* UISwitchTableViewCell.swift */,
 				E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */,
+				FC733D972213851C007E5A37 /* TaggedTableViewCell.swift */,
+				FC733D9D221385F3007E5A37 /* LinkTableViewCell.swift */,
+				FC733D9922138554007E5A37 /* BlueLinkTableViewCell.swift */,
+				FC733D9B22138586007E5A37 /* RedLinkTableViewCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -382,6 +402,7 @@
 		B78B563C4371574CA104D84C00F1FBD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC733D942213840B007E5A37 /* ZSTagView.swift */,
 				04DFFDF39CCC2CCEC5A1B1274616C040 /* Button */,
 				0D6372A575635DC3E3C094379EFABF04 /* Table */,
 			);
@@ -418,6 +439,9 @@
 				FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */,
 				FC7F4D52220C416900E98016 /* Float+Round.swift */,
 				FC7F4D54220C41B200E98016 /* Double+Round.swift */,
+				FC733D9F22138713007E5A37 /* UIViewController+Dismiss.swift */,
+				FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */,
+				FC733DA32213879A007E5A37 /* UIImage+Size.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -612,19 +636,27 @@
 				1709BD23FBB7877191C614E7F14DA0E9 /* Date+MySQL.swift in Sources */,
 				3E0FFBDB2C633C02E47FE5B75B961431 /* Float+DutchString.swift in Sources */,
 				131DBFD0F6CF12B0948CB2EFA818B9DA /* GeneralToolsFramework-dummy.m in Sources */,
+				FC733D9A22138554007E5A37 /* BlueLinkTableViewCell.swift in Sources */,
 				919D636F0577F7DAEC9C0A64FB00B1D1 /* Int+OptionalString.swift in Sources */,
 				A16BF188E7694F217437314CBA476E39 /* KeychainService.swift in Sources */,
 				BB5E51A1F980681FDBBCAE5879577934 /* MKMapView+Focus.swift in Sources */,
+				FC733D9E221385F3007E5A37 /* LinkTableViewCell.swift in Sources */,
 				266BF3914D6EA969E21C29722F686EE3 /* NetworkActivityHandler.swift in Sources */,
+				FC733DA022138713007E5A37 /* UIViewController+Dismiss.swift in Sources */,
 				FC3B6955220F18430015336C /* Theme.swift in Sources */,
 				FCF219C6220071ED00708104 /* APICallError.swift in Sources */,
 				20BD337531F70E86965A952D81F93719 /* String+Contains.swift in Sources */,
 				688E5DC39C900F1B9647A66912A30CE9 /* String+Float.swift in Sources */,
 				2DEC9634B0C68786F99D25D6DC7F5C93 /* String+Hashing.swift in Sources */,
 				FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */,
+				FC733D982213851C007E5A37 /* TaggedTableViewCell.swift in Sources */,
+				FC733D9C22138586007E5A37 /* RedLinkTableViewCell.swift in Sources */,
+				FC733DA42213879A007E5A37 /* UIImage+Size.swift in Sources */,
+				FC733DA22213875E007E5A37 /* UIAlertController+UIImageView.swift in Sources */,
 				662B9665C6A1CC61895720D17639206E /* UIBlueButton.swift in Sources */,
 				415FC232514E53298A3C744F53886F51 /* UIColor+Hex.swift in Sources */,
 				F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */,
+				FC733D962213842A007E5A37 /* ZSTagView.swift in Sources */,
 				724A8A49BB751D2610F66BA0B36E525B /* UISelectCheckmarkTableViewCell.swift in Sources */,
 				73ED328CB68F890FB3C7A326B355DA21 /* UISwitchTableViewCell.swift in Sources */,
 				754E78A1778981C814B6C3DBD1A99E16 /* UITableViewCell+GetTableView.swift in Sources */,

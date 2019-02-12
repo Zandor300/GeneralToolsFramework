@@ -9,9 +9,9 @@ import UIKit
 
 open class TaggedTableViewCell: UITableViewCell {
     
-    public var tagView: UITagView? {
+    public var tagView: ZSTagView? {
         get {
-            return self.accessoryView as? UITagView
+            return self.accessoryView as? ZSTagView
         }
         set {
             self.accessoryView = newValue

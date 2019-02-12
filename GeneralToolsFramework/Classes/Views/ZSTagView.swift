@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class UITagView: UIView {
+public class ZSTagView: UIView {
     
     var label: UILabel
     

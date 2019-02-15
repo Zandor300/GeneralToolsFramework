@@ -14,11 +14,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Installation
 
 GeneralToolsFramework is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => '0.1.30'
+pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => '0.2.18'
 ```
+
+and run `pod install` in the directory where your `Podfile` is located.
 
 ## Author
 

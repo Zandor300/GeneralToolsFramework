@@ -5,11 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
+
+GeneralToolsFramework is using the [Connectivity](https://cocoapods.org/pods/Connectivity) pod for it's API. It, by default, adds a couple of additional endpoints to Connectivity for it to use:
+- https://web3.zsnode.com/success.html
+- https://web4.zsnode.com/success.html
 
 ## Installation
 

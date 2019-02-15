@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Contains general tools that Zandor Smith uses in his iOS apps.
+I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I use these classes all the time, I descided to write my own Cocoapod with all these classes.
                        DESC
 
   s.homepage         = 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework'

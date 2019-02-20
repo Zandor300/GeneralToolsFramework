@@ -9,7 +9,7 @@ import UIKit
 
 open class WhiteNavigationController: UINavigationController {
     
-    var barBlur: WhiteNavigationBarBlur? = nil
+    public var barBlur: WhiteNavigationBarBlur? = nil
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ open class WhiteNavigationController: UINavigationController {
     
 }
 
-class WhiteNavigationBarBlur: UIVisualEffectView {
+public class WhiteNavigationBarBlur: UIVisualEffectView {
     
     let whiteView = UIView()
     
@@ -66,7 +66,7 @@ class WhiteNavigationBarBlur: UIVisualEffectView {
         self.whiteView.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         if let navigationBar = self.navigationBar {
             let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
             

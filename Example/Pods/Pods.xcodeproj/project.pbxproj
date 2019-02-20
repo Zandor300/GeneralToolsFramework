@@ -51,6 +51,7 @@
 		F4899AE69922AEBE576352ED3116414A /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D96E86BAFEB2131F567A530ACD9D87 /* UIRoundedButton.swift */; };
 		FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */; };
 		FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32D9FE6EE8A53F1C1ADC4DEDEDD68F7 /* UITextFieldTableViewCell.swift */; };
+		FC074391221DC32C004A5867 /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC074390221DC32C004A5867 /* UIColor+Lerp.swift */; };
 		FC3B6955220F18430015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
 		FC733D962213842A007E5A37 /* ZSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D942213840B007E5A37 /* ZSTagView.swift */; };
@@ -173,6 +174,7 @@
 		EE691B648E14A3C4AD3E3C1521370E91 /* UIBlueButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIBlueButton.swift; sourceTree = "<group>"; };
 		EFF830D03B839361F12D0FA17E41E9E2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F0617A59BD284A5FF5801C0BFD0C9DA1 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FC074390221DC32C004A5867 /* UIColor+Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lerp.swift"; sourceTree = "<group>"; };
 		FC3B6953220F17400015336C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
 		FC733D942213840B007E5A37 /* ZSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZSTagView.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */,
 				FC733DA32213879A007E5A37 /* UIImage+Size.swift */,
 				FC733DA522138CCE007E5A37 /* UINavigationBar+LargeTitleHeight.swift */,
+				FC074390221DC32C004A5867 /* UIColor+Lerp.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -694,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC074391221DC32C004A5867 /* UIColor+Lerp.swift in Sources */,
 				C37F7398BA072E508E43646F3C6D5D6B /* Connectivity-dummy.m in Sources */,
 				C3AA94C20AAF768272B79772991F3A01 /* Connectivity.swift in Sources */,
 				55AFEAF478C720FB741AFAA85E4D8046 /* ConnectivityFramework.swift in Sources */,

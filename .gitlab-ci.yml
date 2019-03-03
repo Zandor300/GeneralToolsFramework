@@ -24,7 +24,7 @@ build:
 docs:
   stage: docs
   before_script:
-    - sudo gem install jazzy
+    - gem install jazzy
   script:
     - jazzy --output public
   tags:

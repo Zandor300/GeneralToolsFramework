@@ -1,6 +1,7 @@
 stages:
   - setup
   - build
+  - docs
 
 setup:
   stage: setup
@@ -19,3 +20,16 @@ build:
     - pod lib lint
   tags:
     - xcode
+
+docs:
+  stage: docs
+  before_script:
+    - sudo gem install jazzy
+  script:
+    - jazzy --output public
+  tags:
+    - xcode
+  artifacts:
+    paths:
+      - public
+  allow_failure: true

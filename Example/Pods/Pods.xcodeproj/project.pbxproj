@@ -492,7 +492,8 @@
 			children = (
 				FC3B6953220F17400015336C /* Theme.swift */,
 			);
-			path = Color;
+			name = Color;
+			path = GeneralToolsFramework/Classes/Color;
 			sourceTree = "<group>";
 		};
 		FC733DA722138CF2007E5A37 /* NavigationController */ = {

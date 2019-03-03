@@ -23,10 +23,8 @@ build:
 
 docs:
   stage: docs
-  before_script:
-    - gem install jazzy
   script:
-    - jazzy --output public
+    - jazzy --podspec GeneralToolsFramework.podspec --output public
   tags:
     - xcode
   artifacts:

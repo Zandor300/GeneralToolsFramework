@@ -161,8 +161,7 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func <= (lhs: Version, rhs: Version) -> Bool {
-        let comparison = lhs.compare(with: rhs)
-        return comparison == .LOWER || comparison == .EQUAL
+        return [VersionComparison.LOWER, .EQUAL].contains(lhs.compare(with: rhs))
     }
     
     /// Returns a Boolean value indicating whether the value of the first
@@ -171,8 +170,7 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func >= (lhs: Version, rhs: Version) -> Bool {
-        let comparison = lhs.compare(with: rhs)
-        return comparison == .HIGHER || comparison == .EQUAL
+        return [VersionComparison.HIGHER, .EQUAL].contains(lhs.compare(with: rhs))
     }
     
 }

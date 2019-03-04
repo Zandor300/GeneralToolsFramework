@@ -13,9 +13,8 @@ public class Version {
      Will return a new `Version` instance of the current app version.
      - returns: New `Version` instance of the current app version.
      */
-    public static func getCurrentVersion() -> Version {
-        let version = (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String)! + "-" + (Bundle.main.infoDictionary!["CFBundleVersion"] as? String)!
-        return Version(version)
+    public static var current: Version {
+        return Version((Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) + "-" + (Bundle.main.infoDictionary!["CFBundleVersion"] as! String))
     }
     
     var major: Int = 0

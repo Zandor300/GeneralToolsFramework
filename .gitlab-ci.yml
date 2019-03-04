@@ -1,7 +1,7 @@
 stages:
   - setup
   - build
-  - docs
+  - deploy
 
 setup:
   stage: setup
@@ -21,8 +21,8 @@ build:
   tags:
     - xcode
 
-docs:
-  stage: docs
+pages:
+  stage: deploy
   script:
     - jazzy --podspec GeneralToolsFramework.podspec --output public
   tags:

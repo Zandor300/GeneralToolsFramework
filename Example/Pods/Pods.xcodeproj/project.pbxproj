@@ -37,7 +37,6 @@
 		7B61398B2ABDCB9DF39BB63E3778EB74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D9BA5561F04225835622C9FC1A954EC /* Foundation.framework */; };
 		919D636F0577F7DAEC9C0A64FB00B1D1 /* Int+OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35676D6593078ACD3F04E8182F36810 /* Int+OptionalString.swift */; };
 		937723B74087847F2263513F9C5FE6DF /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458CC19C77AB43808DEEBFCB8A15910 /* BaseAPI.swift */; };
-		A16BF188E7694F217437314CBA476E39 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C651998AB1180C68D00CC8478A4FD9A8 /* KeychainService.swift */; };
 		A59CFCD7BAF8D29B82E93FE6E41D49EB /* Connectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC09232F79A96AA4EBC2CE974F10C72C /* Connectivity.framework */; };
 		AB27D61DD14390BFA5E39D889C1A4FEF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21BD7006C6DE310A1282B1C1B3FF6688 /* UIKit.framework */; };
 		BB5E51A1F980681FDBBCAE5879577934 /* MKMapView+Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF6E2370DADBC1EFD58A91C9E2F6E0 /* MKMapView+Focus.swift */; };
@@ -158,7 +157,6 @@
 		BF45381B5F42C9EF9FAE3D121B5352B3 /* Pods-GeneralToolsFramework_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeneralToolsFramework_Example-resources.sh"; sourceTree = "<group>"; };
 		C179E3260D8CEA85A14347B5CA17370C /* GeneralToolsFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeneralToolsFramework.modulemap; sourceTree = "<group>"; };
 		C2D96E86BAFEB2131F567A530ACD9D87 /* UIRoundedButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIRoundedButton.swift; sourceTree = "<group>"; };
-		C651998AB1180C68D00CC8478A4FD9A8 /* KeychainService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		C6B4A45283F4A06D255494D8AFEF64CA /* ConnectivityResponseValidationMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectivityResponseValidationMode.swift; path = Connectivity/Classes/Model/ConnectivityResponseValidationMode.swift; sourceTree = "<group>"; };
 		C8881921B83159A04F23426633E6C51C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		CC2B137233BD78EBC8CC7C240C661FCF /* Connectivity.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Connectivity.xcconfig; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				0FD46DB22D7ED1748BD3D5031F54E86B /* BuildConfig.swift */,
-				C651998AB1180C68D00CC8478A4FD9A8 /* KeychainService.swift */,
 				9445EA80A5432C4CB46043005B35EA5E /* NetworkActivityHandler.swift */,
 				290F67DBF6A16CF79B6DF2ABE8E1DF15 /* Version.swift */,
 			);
@@ -657,7 +654,6 @@
 				131DBFD0F6CF12B0948CB2EFA818B9DA /* GeneralToolsFramework-dummy.m in Sources */,
 				FC733D9A22138554007E5A37 /* BlueLinkTableViewCell.swift in Sources */,
 				919D636F0577F7DAEC9C0A64FB00B1D1 /* Int+OptionalString.swift in Sources */,
-				A16BF188E7694F217437314CBA476E39 /* KeychainService.swift in Sources */,
 				BB5E51A1F980681FDBBCAE5879577934 /* MKMapView+Focus.swift in Sources */,
 				FC733D9E221385F3007E5A37 /* LinkTableViewCell.swift in Sources */,
 				266BF3914D6EA969E21C29722F686EE3 /* NetworkActivityHandler.swift in Sources */,

@@ -110,7 +110,6 @@ public class Version {
         return String(major) + "." + String(minor)
     }
     
-    
     /**
      Will return a 'nice' `String` of the version number that is appropriate for the current Build Configuration. Could be used for displaying on the settings page.
      
@@ -128,6 +127,70 @@ public class Version {
         } else {
             return self.toNiceString()
         }
+    }
+    
+}
+
+extension Version: Equatable {
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is equal to that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func == (lhs: Version, rhs: Version) -> Bool {
+        return lhs.compare(with: rhs) == .EQUAL
+    }
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is not equal to that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func != (lhs: Version, rhs: Version) -> Bool {
+        return !(lhs == rhs)
+    }
+    
+}
+
+extension Version: Comparable {
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is less than that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func < (lhs: Version, rhs: Version) -> Bool {
+        return lhs.compare(with: rhs) == .LOWER
+    }
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is more than that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func > (lhs: Version, rhs: Version) -> Bool {
+        return lhs.compare(with: rhs) == .HIGHER
+    }
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is less than or equal to that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func <= (lhs: Version, rhs: Version) -> Bool {
+        let comparison = lhs.compare(with: rhs)
+        return comparison == .LOWER || comparison == .EQUAL
+    }
+    
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is more than or equal to that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - lhs: Right `Version`
+    public static func >= (lhs: Version, rhs: Version) -> Bool {
+        let comparison = lhs.compare(with: rhs)
+        return comparison == .HIGHER || comparison == .EQUAL
     }
     
 }

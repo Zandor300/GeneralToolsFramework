@@ -99,7 +99,6 @@ public class Version {
         return String(major) + "." + String(minor) + " (" + String(buildNumber) + ")"
     }
     
-    
     /**
      Will return a 'nice' `String` of the version number. Could be used for App Store release builds on the settings page. (Ex. "1.2.5")
      
@@ -110,6 +109,22 @@ public class Version {
             return String(major) + "." + String(minor) + "." + String(patch)
         }
         return String(major) + "." + String(minor)
+    }
+    
+    
+    /**
+     Will return a 'nice' `String` of the version number that is appropriate for the current Build Configuration. Could be used for displaying on the settings page. Will return a `String` in the following formats:
+     App Store: "1.2.5"
+     TestFlight or Debug: "1.2.5 (7)"
+     
+     - returns: Version number as a `String`.
+     */
+    public func toNiceStringForBuildConfig() -> String {
+        if BuildConfig.appConfiguration == .TestFlight || BuildConfig.isDebug {
+            return self.toNiceStringWithBuild()
+        } else {
+            return self.toNiceString()
+        }
     }
     
 }

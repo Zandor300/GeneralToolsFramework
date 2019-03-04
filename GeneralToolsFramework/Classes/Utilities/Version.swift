@@ -113,9 +113,13 @@ public class Version {
     
     
     /**
-     Will return a 'nice' `String` of the version number that is appropriate for the current Build Configuration. Could be used for displaying on the settings page. Will return a `String` in the following formats:
-     App Store: "1.2.5"
-     TestFlight or Debug: "1.2.5 (7)"
+     Will return a 'nice' `String` of the version number that is appropriate for the current Build Configuration. Could be used for displaying on the settings page.
+     
+     Will return a `String` in the following formats:
+     
+     **App Store:** "1.2.5"
+     
+     **TestFlight or Debug:** "1.2.5 (7)"
      
      - returns: Version number as a `String`.
      */

@@ -54,3 +54,6 @@ pages:
     - mv docs/ public/
   tags:
     - xcode
+  artifacts:
+    paths:
+      - public

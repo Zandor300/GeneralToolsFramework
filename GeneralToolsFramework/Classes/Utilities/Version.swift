@@ -53,23 +53,23 @@ public class Version {
     public func compare(with otherVersion: Version) -> VersionComparison {
         print("Comparing " + toString() + " with " + otherVersion.toString() + "...")
         if otherVersion.major > major {
-            return VersionComparison.HIGHER
+            return VersionComparison.higher
         }
         if otherVersion.minor > minor && otherVersion.major == major {
-            return VersionComparison.HIGHER
+            return VersionComparison.higher
         }
         if otherVersion.patch > patch && otherVersion.minor == minor && otherVersion.major == major {
-            return VersionComparison.HIGHER
+            return VersionComparison.higher
         }
         if otherVersion.buildNumber > buildNumber && otherVersion.patch == patch && otherVersion.minor == minor && otherVersion.major == major {
-            return VersionComparison.HIGHER
+            return VersionComparison.higher
         }
 
         if otherVersion.major == major && otherVersion.minor == minor && otherVersion.patch == patch && otherVersion.buildNumber == buildNumber {
-            return VersionComparison.EQUAL
+            return VersionComparison.equal
         }
 
-        return VersionComparison.LOWER
+        return VersionComparison.lower
     }
 
     /// Will return a `String` of the version number. (Ex. "1.2.5-7")
@@ -126,7 +126,7 @@ extension Version: Equatable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func == (lhs: Version, rhs: Version) -> Bool {
-        return lhs.compare(with: rhs) == .EQUAL
+        return lhs.compare(with: rhs) == .equal
     }
 
     /// Returns a Boolean value indicating whether the value of the first
@@ -148,7 +148,7 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func < (lhs: Version, rhs: Version) -> Bool {
-        return lhs.compare(with: rhs) == .LOWER
+        return lhs.compare(with: rhs) == .lower
     }
 
     /// Returns a Boolean value indicating whether the value of the first
@@ -157,7 +157,7 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func > (lhs: Version, rhs: Version) -> Bool {
-        return lhs.compare(with: rhs) == .HIGHER
+        return lhs.compare(with: rhs) == .higher
     }
 
     /// Returns a Boolean value indicating whether the value of the first
@@ -166,7 +166,7 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func <= (lhs: Version, rhs: Version) -> Bool {
-        return [VersionComparison.LOWER, .EQUAL].contains(lhs.compare(with: rhs))
+        return [VersionComparison.lower, .equal].contains(lhs.compare(with: rhs))
     }
 
     /// Returns a Boolean value indicating whether the value of the first
@@ -175,13 +175,13 @@ extension Version: Comparable {
     ///     - lhs: Left `Version`
     ///     - lhs: Right `Version`
     public static func >= (lhs: Version, rhs: Version) -> Bool {
-        return [VersionComparison.HIGHER, .EQUAL].contains(lhs.compare(with: rhs))
+        return [VersionComparison.higher, .equal].contains(lhs.compare(with: rhs))
     }
 
 }
 
 public enum VersionComparison {
-    case HIGHER
-    case LOWER
-    case EQUAL
+    case higher
+    case lower
+    case equal
 }

@@ -11,6 +11,10 @@ open class WhiteNavigationController: UINavigationController {
 
     public var barBlur: WhiteNavigationBarBlur?
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     override open func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,20 +23,18 @@ open class WhiteNavigationController: UINavigationController {
         self.navigationBar.isTranslucent = true
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.addSubview(self.barBlur!)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
 
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange), name: UIDevice.orientationDidChangeNotification, object: nil)
 
         self.barBlur?.layoutSubviews()
     }
 
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
-        NotificationCenter.default.removeObserver(self)
     }
 
     @objc func deviceOrientationDidChange(_ notification: Notification) {

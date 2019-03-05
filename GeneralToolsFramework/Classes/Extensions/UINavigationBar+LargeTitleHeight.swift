@@ -8,7 +8,7 @@
 import UIKit
 
 extension UINavigationBar {
-    
+
     public var largeTitleHeight: CGFloat {
         let maxSize = self.subviews
             .filter { $0.frame.origin.y > 0 }
@@ -16,5 +16,5 @@ extension UINavigationBar {
             .map { $0.frame.size }
         return maxSize?.height ?? 0
     }
-    
+
 }

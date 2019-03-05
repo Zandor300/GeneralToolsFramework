@@ -8,19 +8,19 @@
 import UIKit
 
 public class BlueLinkTableViewCell: LinkTableViewCell {
-    
+
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setColor()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setColor()
     }
-    
+
     private func setColor() {
-        self.linkColor = UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.00)
+        self.linkColor = UIColor(red: 0.00, green: 0.48, blue: 1.00, alpha: 1.00)
     }
-    
+
 }

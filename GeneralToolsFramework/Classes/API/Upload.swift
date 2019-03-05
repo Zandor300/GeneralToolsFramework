@@ -13,15 +13,15 @@ public enum UploadType: String {
 }
 
 public class Upload {
-    
+
     let name: String
     let data: Data
     let type: UploadType
-    
+
     public init(name: String, data: Data, type: UploadType) {
         self.name = name
         self.data = data
         self.type = type
     }
-    
+
 }

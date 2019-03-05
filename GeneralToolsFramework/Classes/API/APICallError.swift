@@ -8,9 +8,9 @@
 import Foundation
 
 public enum APICallError {
-    case NoInternet
-    case ServerUnavailable
-    case ReceivedException
-    case PostContentInvalid
-    case Unknown
+    case noInternet
+    case serverUnavailable
+    case receivedException
+    case postContentInvalid
+    case unknown
 }

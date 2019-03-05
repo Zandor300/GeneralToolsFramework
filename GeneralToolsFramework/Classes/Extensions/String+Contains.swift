@@ -8,13 +8,13 @@
 import Foundation
 
 extension String {
-    
-    public func contains(find: String) -> Bool{
+
+    public func contains(find: String) -> Bool {
         return self.range(of: find) != nil
     }
-    
-    public func containsIgnoringCase(find: String) -> Bool{
+
+    public func containsIgnoringCase(find: String) -> Bool {
         return self.range(of: find, options: .caseInsensitive) != nil
     }
-    
+
 }

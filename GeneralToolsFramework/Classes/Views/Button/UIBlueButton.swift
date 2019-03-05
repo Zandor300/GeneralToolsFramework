@@ -7,26 +7,26 @@
 
 import UIKit
 
-public class UIBlueButton : UIRoundedButton {
-    
+public class UIBlueButton: UIRoundedButton {
+
     let gradientLayer = CAGradientLayer()
-    
+
     override public var bounds: CGRect {
         didSet {
             updateGradientFrame()
         }
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupLayout()
     }
-    
+
     override func setupLayout() {
         super.setupLayout()
         applyGradient(colors: [
@@ -34,7 +34,7 @@ public class UIBlueButton : UIRoundedButton {
             UIColor(red: 9, green: 121, blue: 254, alpha: 1).cgColor
         ])
     }
-    
+
     func applyGradient(colors: [CGColor]) {
         gradientLayer.colors = colors
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
@@ -43,9 +43,9 @@ public class UIBlueButton : UIRoundedButton {
         gradientLayer.cornerRadius = self.layer.cornerRadius
         self.layer.addSublayer(gradientLayer)
     }
-    
+
     func updateGradientFrame() {
         gradientLayer.frame = self.bounds
     }
-    
+
 }

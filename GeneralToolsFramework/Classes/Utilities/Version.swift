@@ -8,18 +8,23 @@
 import Foundation
 
 public class Version {
-    
+
     /// Will return a new `Version` instance of the current app version.
     /// - returns: New `Version` instance of the current app version.
     public static var current: Version {
-        return Version((Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String) + "-" + (Bundle.main.infoDictionary!["CFBundleVersion"] as! String))
+        if let dictionary = Bundle.main.infoDictionary {
+            if let version = dictionary["CFBundleShortVersionString"] as? String, let build = dictionary["CFBundleVersion"] as? String {
+                return Version(version + "-" + build)
+            }
+        }
+        fatalError("Failed to get current version.")
     }
-    
+
     var major: Int = 0
     var minor: Int = 0
     var patch: Int = 0
     var buildNumber: Int = 0
-    
+
     /// Initiate a new `Version` instance of the provided version.
     ///
     /// Example usage:
@@ -32,7 +37,7 @@ public class Version {
     public init(_ version: String) {
         let split1 = version.split(separator: "-")
         buildNumber = Int(split1[1])!
-        
+
         let split2 = split1[0].split(separator: ".")
         major = Int(split2[0])!
         minor = Int(split2[1])!
@@ -40,7 +45,7 @@ public class Version {
             patch = Int(split2[2])!
         }
     }
-    
+
     /// Will compare the current version with the other version that is provided. If `otherVersion` is higher than the current version, `VersionComparison.HIGHER` is returned. If they are equal, `VersionComparison.EQUAL` is returned and if `otherVersion` is lower, `VersionComparison.LOWER` is returned.
     /// - parameters:
     ///    - otherVersion: The version to compare the current one with.
@@ -59,14 +64,14 @@ public class Version {
         if otherVersion.buildNumber > buildNumber && otherVersion.patch == patch && otherVersion.minor == minor && otherVersion.major == major {
             return VersionComparison.HIGHER
         }
-        
+
         if otherVersion.major == major && otherVersion.minor == minor && otherVersion.patch == patch && otherVersion.buildNumber == buildNumber {
             return VersionComparison.EQUAL
         }
-        
+
         return VersionComparison.LOWER
     }
-    
+
     /// Will return a `String` of the version number. (Ex. "1.2.5-7")
     /// - returns: Version number as a `String`.
     public func toString() -> String {
@@ -75,7 +80,7 @@ public class Version {
         }
         return String(major) + "." + String(minor) + "-" + String(buildNumber)
     }
-    
+
     /// Will return a 'nice' `String` of the version number. Could be used for TestFlight or Debug builds on the settings page. (Ex. "1.2.5 (7)")
     /// - returns: Version number as a `String`.
     public func toNiceStringWithBuild() -> String {
@@ -84,7 +89,7 @@ public class Version {
         }
         return String(major) + "." + String(minor) + " (" + String(buildNumber) + ")"
     }
-    
+
     /// Will return a 'nice' `String` of the version number. Could be used for App Store release builds on the settings page. (Ex. "1.2.5")
     /// - returns: Version number as a `String`.
     public func toNiceString() -> String {
@@ -93,7 +98,7 @@ public class Version {
         }
         return String(major) + "." + String(minor)
     }
-    
+
     /// Will return a 'nice' `String` of the version number that is appropriate for the current Build Configuration. Could be used for displaying on the settings page.
     ///
     /// Will return a `String` in the following formats:
@@ -104,17 +109,17 @@ public class Version {
     ///
     /// - returns: Version number as a `String`.
     public func toNiceStringForBuildConfig() -> String {
-        if BuildConfig.appConfiguration == .TestFlight || BuildConfig.isDebug {
+        if BuildConfig.appConfiguration == .testFlight || BuildConfig.isDebug {
             return self.toNiceStringWithBuild()
         } else {
             return self.toNiceString()
         }
     }
-    
+
 }
 
 extension Version: Equatable {
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is equal to that of the second argument.
     /// - parameters:
@@ -123,7 +128,7 @@ extension Version: Equatable {
     public static func == (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .EQUAL
     }
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is not equal to that of the second argument.
     /// - parameters:
@@ -132,11 +137,11 @@ extension Version: Equatable {
     public static func != (lhs: Version, rhs: Version) -> Bool {
         return !(lhs == rhs)
     }
-    
+
 }
 
 extension Version: Comparable {
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than that of the second argument.
     /// - parameters:
@@ -145,7 +150,7 @@ extension Version: Comparable {
     public static func < (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .LOWER
     }
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is more than that of the second argument.
     /// - parameters:
@@ -154,7 +159,7 @@ extension Version: Comparable {
     public static func > (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .HIGHER
     }
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is less than or equal to that of the second argument.
     /// - parameters:
@@ -163,7 +168,7 @@ extension Version: Comparable {
     public static func <= (lhs: Version, rhs: Version) -> Bool {
         return [VersionComparison.LOWER, .EQUAL].contains(lhs.compare(with: rhs))
     }
-    
+
     /// Returns a Boolean value indicating whether the value of the first
     /// argument is more than or equal to that of the second argument.
     /// - parameters:
@@ -172,7 +177,7 @@ extension Version: Comparable {
     public static func >= (lhs: Version, rhs: Version) -> Bool {
         return [VersionComparison.HIGHER, .EQUAL].contains(lhs.compare(with: rhs))
     }
-    
+
 }
 
 public enum VersionComparison {
@@ -180,4 +185,3 @@ public enum VersionComparison {
     case LOWER
     case EQUAL
 }
-

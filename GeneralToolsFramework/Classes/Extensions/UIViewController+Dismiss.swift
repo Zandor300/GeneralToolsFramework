@@ -8,19 +8,19 @@
 import UIKit
 
 extension UIViewController {
-    
+
     // Dimiss all presented view controllers that were presented from this one and childs from this until the current one is shown. onCompletion is called when done.
-    public func dismissViewControllers(animated: Bool, onCompletion: (() -> ())?) {
-        guard let vc = self.presentingViewController else {
+    public func dismissViewControllers(animated: Bool, onCompletion: (() -> Void)?) {
+        guard let viewController = self.presentingViewController else {
             if let handler = onCompletion {
                 handler()
             }
             return
         }
-        
-        while (vc.presentingViewController != nil) {
-            vc.dismiss(animated: animated) {
-                if vc.presentingViewController == nil {
+
+        while viewController.presentingViewController != nil {
+            viewController.dismiss(animated: animated) {
+                if viewController.presentingViewController == nil {
                     if let handler = onCompletion {
                         handler()
                     }
@@ -28,5 +28,5 @@ extension UIViewController {
             }
         }
     }
-    
+
 }

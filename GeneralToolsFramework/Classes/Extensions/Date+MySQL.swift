@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Date {
-    
+
     /// Convert MySQL/MariaDB Date object as a String to a Swift Date object. Returns Date() if string is invalid.
     public init(mysqlDate: String) {
         let dateFormatter = DateFormatter()
@@ -19,7 +19,7 @@ public extension Date {
             self = Date()
         }
     }
-    
+
     /// Convert MySQL/MariaDB DateTime object as a String to a Swift Date object. Returns Date() if string is invalid.
     public init(mysqlDateTime: String) {
         let dateFormatter = DateFormatter()
@@ -30,36 +30,36 @@ public extension Date {
             self = Date()
         }
     }
-    
+
     public var mysqlDateString: String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: self)
-        
+
         let year = String(components.year!)
         var month = String(components.month!)
         var day = String(components.day!)
-        
+
         if month.count < 2 {
             month = "0" + month
         }
         if day.count < 2 {
             day = "0" + day
         }
-        
+
         return year + "-" + month + "-" + day
     }
-    
+
     public var mysqlDateTimeString: String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
-        
+
         let year = String(components.year!)
         var month = String(components.month!)
         var day = String(components.day!)
         var hour = String(components.hour!)
         var minute = String(components.minute!)
         var second = String(components.second!)
-        
+
         if month.count < 2 {
             month = "0" + month
         }
@@ -75,8 +75,8 @@ public extension Date {
         if second.count < 2 {
             second = "0" + second
         }
-        
+
         return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
     }
-    
+
 }

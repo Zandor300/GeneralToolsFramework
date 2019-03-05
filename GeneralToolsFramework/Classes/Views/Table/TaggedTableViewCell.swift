@@ -8,7 +8,7 @@
 import UIKit
 
 open class TaggedTableViewCell: UITableViewCell {
-    
+
     public var tagView: ZSTagView? {
         get {
             return self.accessoryView as? ZSTagView
@@ -17,5 +17,5 @@ open class TaggedTableViewCell: UITableViewCell {
             self.accessoryView = newValue
         }
     }
-    
+
 }

@@ -8,19 +8,19 @@
 import UIKit
 
 public class NetworkActivityHandler {
-    
+
     static var count: Int = 0
-    
+
     public static func pushNetworkActivity() {
         count += 1
         updateActivityIndicator()
     }
-    
+
     public static func popNetworkActivity() {
         count -= 1
         updateActivityIndicator()
     }
-    
+
     private static func updateActivityIndicator() {
         DispatchQueue.main.async {
             if count > 0 {
@@ -33,5 +33,5 @@ public class NetworkActivityHandler {
             }
         }
     }
-    
+
 }

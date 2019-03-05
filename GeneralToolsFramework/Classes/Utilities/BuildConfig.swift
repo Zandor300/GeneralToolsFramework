@@ -8,16 +8,16 @@
 import Foundation
 
 public enum AppConfiguration {
-    case Debug
-    case TestFlight
-    case AppStore
+    case debug
+    case testFlight
+    case appStore
 }
 
 public struct BuildConfig {
-    
+
     // This is private because the use of 'appConfiguration' is preferred.
     private static let isTestFlight = Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
-    
+
     // This can be used to add debug statements.
     public static var isDebug: Bool {
         #if DEBUG
@@ -26,15 +26,15 @@ public struct BuildConfig {
         return false
         #endif
     }
-    
+
     public static var appConfiguration: AppConfiguration {
         if isDebug {
-            return .Debug
+            return .debug
         } else if isTestFlight {
-            return .TestFlight
+            return .testFlight
         } else {
-            return .AppStore
+            return .appStore
         }
     }
-    
+
 }

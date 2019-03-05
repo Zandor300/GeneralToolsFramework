@@ -8,14 +8,14 @@
 import UIKit
 
 public class UISelectCheckmarkTableViewCell: UITableViewCell {
-    
+
     var callbackOn: () -> (Bool) = {
         return true
     }
     var callbackOff: () -> (Bool) = {
         return true
     }
-    
+
     public var checked: Bool = false {
         didSet {
             if checked {
@@ -57,15 +57,15 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     private var temporaryCallbackDisabled = false
     public var allowDeselect: Bool = false
     public var sectionIsGroup: Bool = false
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     private func updateCheckmark() {
         DispatchQueue.main.async {
             if self.checked {
@@ -77,7 +77,7 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
@@ -88,13 +88,13 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
     public func setStateOnCallback(callback: @escaping () -> (Bool)) {
         self.callbackOn = callback
     }
-    
+
     public func setStateOffCallback(callback: @escaping () -> (Bool)) {
         self.callbackOff = callback
     }
-    
+
 }

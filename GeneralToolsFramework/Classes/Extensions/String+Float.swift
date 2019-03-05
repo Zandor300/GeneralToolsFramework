@@ -8,9 +8,9 @@
 import Foundation
 
 extension String {
-    
+
     public var floatValue: Float {
         return (self as NSString).floatValue
     }
-    
+
 }

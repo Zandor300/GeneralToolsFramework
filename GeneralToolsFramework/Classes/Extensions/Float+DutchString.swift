@@ -8,9 +8,9 @@
 import Foundation
 
 extension Float {
-    
+
     public var dutchStringValue: String {
         return String(self).replacingOccurrences(of: ".", with: ",")
     }
-    
+
 }

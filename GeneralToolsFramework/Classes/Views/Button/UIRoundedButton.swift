@@ -7,22 +7,22 @@
 
 import UIKit
 
-public class UIRoundedButton : UIButton {
-    
+public class UIRoundedButton: UIButton {
+
     public static var defaultCornerRadius: CGFloat = 5
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupLayout()
     }
-    
+
     func setupLayout() {
         self.layer.cornerRadius = UIRoundedButton.defaultCornerRadius
     }
-    
+
 }

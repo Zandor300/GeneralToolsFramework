@@ -1,9 +1,10 @@
 disabled_rules:
   - line_length
   - function_body_length
+  - large_tuple
 
 excluded:
-  - Connectivity
+  - Example
 
 identifier_name:
   excluded:

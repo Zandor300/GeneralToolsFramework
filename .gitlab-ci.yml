@@ -2,6 +2,7 @@ stages:
   - setup
   - build
   - lint
+  - docs
   - deploy
 
 setup:
@@ -35,12 +36,21 @@ swiftlint:
   tags:
     - xcode
 
-pages:
-  stage: deploy
+jazzy-docs:
+  stage: docs
   script:
-    - jazzy --podspec GeneralToolsFramework.podspec --output public
+    - jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
     - xcode
   artifacts:
     paths:
-      - public
+      - docs
+
+pages:
+  dependencies:
+    - jazzy-docs
+  stage: deploy
+  script:
+    - mv docs/ public/
+  tags:
+    - xcode

@@ -1,9 +1,12 @@
 # GeneralToolsFramework
 
-[![CI Status](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/badges/master/build.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework)
+[![GitLab Source](http://img.shields.io/badge/source-GitLab-%23292961.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework)
+[![CI Status](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/badges/master/build.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/pipelines)
 [![Version](https://img.shields.io/cocoapods/v/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
+
+I, [Zandor Smith](https://zandorsmith.com), use a general set of classes in all of my iOS apps. Because I use these classes all the time, I descided to write my own Cocoapod with all these classes.
 
 ## Requirements
 

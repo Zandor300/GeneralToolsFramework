@@ -20,10 +20,24 @@ GeneralToolsFramework is available through [CocoaPods](https://cocoapods.org). T
 it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => '1.0.0'
+pod 'GeneralToolsFramework'
 ```
 
 and run `pod install` in the directory where your `Podfile` is located.
+
+Not all versions of this framework will be released to [cocoapods.org](https://cocoapods.org) so you can also get a specific version from this repository like so:
+
+```ruby
+pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => '1.0.1'
+```
+
+Or if you want to get the latest version that is in this repository, use the following line for your `Podfile` instead.
+
+```ruby
+pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :head
+```
+
+Note: The build on here might be broken.
 
 ## Author
 

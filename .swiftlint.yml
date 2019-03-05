@@ -3,7 +3,7 @@ disabled_rules:
   - function_body_length
 
 excluded:
-  - Pods
+  - Example/Pods
 
 identifier_name:
   excluded:

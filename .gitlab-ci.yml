@@ -1,6 +1,7 @@
 stages:
   - setup
   - build
+  - lint
   - deploy
 
 setup:
@@ -17,7 +18,20 @@ build:
     - pod install
     - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO | xcpretty
+  tags:
+    - xcode
+
+cocoapods-lint:
+  stage: lint
+  script:
     - pod lib lint
+  tags:
+    - xcode
+
+swiftlint:
+  stage: lint
+  script:
+    - swiftlint
   tags:
     - xcode
 
@@ -30,4 +44,3 @@ pages:
   artifacts:
     paths:
       - public
-  allow_failure: true

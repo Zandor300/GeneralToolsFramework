@@ -1,0 +1,10 @@
+disabled_rules:
+  - line_length
+  - function_body_length
+
+excluded:
+  - Pods
+
+variable_name:
+  excluded:
+    - id

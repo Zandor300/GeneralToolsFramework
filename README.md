@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 
-I, [Zandor Smith](https://zandorsmith.com), use a general set of classes in all of my iOS apps. Because I use these classes all the time, I descided to write my own Cocoapod with all these classes.
+I, [Zandor Smith](https://zandorsmith.com), use a general set of classes in all of my iOS apps. Because I use these classes all the time, I decided to write my own Cocoapod with all these classes.
 
 ## Requirements
 

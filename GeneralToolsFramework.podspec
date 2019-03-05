@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'GeneralToolsFramework'
   s.version          = '1.0.0'
-  s.summary          = 'Contains general tools used in iOS apps.'
+  s.summary          = 'Contains general tools used in my iOS apps.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I use these classes all the time, I descided to write my own Cocoapod with all these classes.
+I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I use these classes all the time, I decided to write my own Cocoapod with all these classes.
                        DESC
 
   s.homepage         = 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework'

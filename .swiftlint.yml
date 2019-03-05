@@ -5,6 +5,6 @@ disabled_rules:
 excluded:
   - Pods
 
-variable_name:
+identifier_name:
   excluded:
     - id

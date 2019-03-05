@@ -3,7 +3,7 @@ disabled_rules:
   - function_body_length
 
 excluded:
-  - Example/Pods
+  - "*Connectivity"
 
 identifier_name:
   excluded:

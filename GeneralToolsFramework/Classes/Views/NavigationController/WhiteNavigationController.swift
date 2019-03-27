@@ -45,7 +45,7 @@ open class WhiteNavigationController: UINavigationController {
 
 public class WhiteNavigationBarBlur: UIVisualEffectView {
 
-    let whiteView = UIView()
+    public let whiteView = UIView()
 
     var centerLabelSuperview: UIView?
 

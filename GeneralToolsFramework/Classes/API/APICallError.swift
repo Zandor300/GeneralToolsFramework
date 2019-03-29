@@ -12,5 +12,8 @@ public enum APICallError {
     case serverUnavailable
     case receivedException
     case postContentInvalid
+    case sessionExpired
+    case loginExpired
+    case invalidCredentials
     case unknown
 }

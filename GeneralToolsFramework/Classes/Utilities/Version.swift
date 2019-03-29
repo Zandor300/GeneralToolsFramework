@@ -31,7 +31,6 @@ public class Version {
     /// ```swift
     /// let version = Version("1.2.5-7")
     /// ```
-    ///
     /// - parameters:
     ///    - version: The version number. (Ex. "1.2-4" or "1.2.5-7" where the number behind the '-' is the build number.)
     public init(_ version: String) {
@@ -124,7 +123,7 @@ extension Version: Equatable {
     /// argument is equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func == (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .equal
     }
@@ -133,7 +132,7 @@ extension Version: Equatable {
     /// argument is not equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func != (lhs: Version, rhs: Version) -> Bool {
         return !(lhs == rhs)
     }
@@ -146,7 +145,7 @@ extension Version: Comparable {
     /// argument is less than that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func < (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .lower
     }
@@ -155,7 +154,7 @@ extension Version: Comparable {
     /// argument is more than that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func > (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .higher
     }
@@ -164,7 +163,7 @@ extension Version: Comparable {
     /// argument is less than or equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func <= (lhs: Version, rhs: Version) -> Bool {
         return [VersionComparison.lower, .equal].contains(lhs.compare(with: rhs))
     }
@@ -173,7 +172,7 @@ extension Version: Comparable {
     /// argument is more than or equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
-    ///     - lhs: Right `Version`
+    ///     - rhs: Right `Version`
     public static func >= (lhs: Version, rhs: Version) -> Bool {
         return [VersionComparison.higher, .equal].contains(lhs.compare(with: rhs))
     }

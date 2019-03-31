@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
+[![Swift Version](https://img.shields.io/badge/swift-4.2-orange.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework)
 
 I, [Zandor Smith](https://zandorsmith.com), use a general set of classes in all of my iOS apps. Because I use these classes all the time, I decided to write my own Cocoapod with all these classes.
 

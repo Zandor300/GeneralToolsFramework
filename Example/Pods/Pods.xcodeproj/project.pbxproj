@@ -62,7 +62,6 @@
 		FC733DA22213875E007E5A37 /* UIAlertController+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */; };
 		FC733DA42213879A007E5A37 /* UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA32213879A007E5A37 /* UIImage+Size.swift */; };
 		FC733DA622138CCE007E5A37 /* UINavigationBar+LargeTitleHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA522138CCE007E5A37 /* UINavigationBar+LargeTitleHeight.swift */; };
-		FC733DA922138D02007E5A37 /* WhiteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733DA822138D02007E5A37 /* WhiteNavigationController.swift */; };
 		FC7F4D53220C416900E98016 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D52220C416900E98016 /* Float+Round.swift */; };
 		FC7F4D55220C41B200E98016 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7F4D54220C41B200E98016 /* Double+Round.swift */; };
 		FCF219C6220071ED00708104 /* APICallError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF219C422006E0600708104 /* APICallError.swift */; };
@@ -184,7 +183,6 @@
 		FC733DA12213875E007E5A37 /* UIAlertController+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+UIImageView.swift"; sourceTree = "<group>"; };
 		FC733DA32213879A007E5A37 /* UIImage+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Size.swift"; sourceTree = "<group>"; };
 		FC733DA522138CCE007E5A37 /* UINavigationBar+LargeTitleHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+LargeTitleHeight.swift"; sourceTree = "<group>"; };
-		FC733DA822138D02007E5A37 /* WhiteNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteNavigationController.swift; sourceTree = "<group>"; };
 		FC7F4D52220C416900E98016 /* Float+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Round.swift"; sourceTree = "<group>"; };
 		FC7F4D54220C41B200E98016 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		FCF219C422006E0600708104 /* APICallError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallError.swift; sourceTree = "<group>"; };
@@ -408,7 +406,6 @@
 				FC733D942213840B007E5A37 /* ZSTagView.swift */,
 				04DFFDF39CCC2CCEC5A1B1274616C040 /* Button */,
 				0D6372A575635DC3E3C094379EFABF04 /* Table */,
-				FC733DA722138CF2007E5A37 /* NavigationController */,
 			);
 			name = Views;
 			path = GeneralToolsFramework/Classes/Views;
@@ -491,14 +488,6 @@
 			);
 			name = Color;
 			path = GeneralToolsFramework/Classes/Color;
-			sourceTree = "<group>";
-		};
-		FC733DA722138CF2007E5A37 /* NavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				FC733DA822138D02007E5A37 /* WhiteNavigationController.swift */,
-			);
-			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,6 +615,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -674,7 +664,6 @@
 				FC733D962213842A007E5A37 /* ZSTagView.swift in Sources */,
 				724A8A49BB751D2610F66BA0B36E525B /* UISelectCheckmarkTableViewCell.swift in Sources */,
 				73ED328CB68F890FB3C7A326B355DA21 /* UISwitchTableViewCell.swift in Sources */,
-				FC733DA922138D02007E5A37 /* WhiteNavigationController.swift in Sources */,
 				754E78A1778981C814B6C3DBD1A99E16 /* UITableViewCell+GetTableView.swift in Sources */,
 				FB7E47BF7B49E369BAC1F60919FBDE33 /* UITextFieldTableViewCell.swift in Sources */,
 				4AC360EAE554BAC8939B0B47FAC2D3C2 /* Upload.swift in Sources */,

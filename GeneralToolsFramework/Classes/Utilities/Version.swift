@@ -35,7 +35,9 @@ public class Version {
     ///    - version: The version number. (Ex. "1.2-4" or "1.2.5-7" where the number behind the '-' is the build number.)
     public init(_ version: String) {
         let split1 = version.split(separator: "-")
-        buildNumber = Int(split1[1])!
+        if split1.count == 2 {
+            buildNumber = Int(split1[1])!
+        }
 
         let split2 = split1[0].split(separator: ".")
         major = Int(split2[0])!
@@ -50,25 +52,20 @@ public class Version {
     ///    - otherVersion: The version to compare the current one with.
     /// - returns: The comparison result.
     public func compare(with otherVersion: Version) -> VersionComparison {
-        print("Comparing " + toString() + " with " + otherVersion.toString() + "...")
-        if otherVersion.major > major {
-            return VersionComparison.higher
-        }
-        if otherVersion.minor > minor && otherVersion.major == major {
-            return VersionComparison.higher
-        }
-        if otherVersion.patch > patch && otherVersion.minor == minor && otherVersion.major == major {
-            return VersionComparison.higher
-        }
-        if otherVersion.buildNumber > buildNumber && otherVersion.patch == patch && otherVersion.minor == minor && otherVersion.major == major {
-            return VersionComparison.higher
-        }
-
-        if otherVersion.major == major && otherVersion.minor == minor && otherVersion.patch == patch && otherVersion.buildNumber == buildNumber {
+        print("Comparing " + self.toString() + " with " + otherVersion.toString() + "...")
+        if self.major == otherVersion.major
+            && self.minor == otherVersion.minor
+            && self.patch == otherVersion.patch
+            && self.buildNumber == otherVersion.buildNumber {
             return VersionComparison.equal
         }
-
-        return VersionComparison.lower
+        if self.major >= otherVersion.major
+            && self.minor >= otherVersion.minor
+            && self.patch >= otherVersion.patch
+            && self.buildNumber >= otherVersion.buildNumber {
+            return VersionComparison.lower
+        }
+        return VersionComparison.higher
     }
 
     /// Will return a `String` of the version number. (Ex. "1.2.5-7")
@@ -142,39 +139,41 @@ extension Version: Equatable {
 extension Version: Comparable {
 
     /// Returns a Boolean value indicating whether the value of the first
-    /// argument is less than that of the second argument.
+    /// argument is lower than that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
     ///     - rhs: Right `Version`
     public static func < (lhs: Version, rhs: Version) -> Bool {
-        return lhs.compare(with: rhs) == .lower
-    }
-
-    /// Returns a Boolean value indicating whether the value of the first
-    /// argument is more than that of the second argument.
-    /// - parameters:
-    ///     - lhs: Left `Version`
-    ///     - rhs: Right `Version`
-    public static func > (lhs: Version, rhs: Version) -> Bool {
         return lhs.compare(with: rhs) == .higher
     }
 
     /// Returns a Boolean value indicating whether the value of the first
-    /// argument is less than or equal to that of the second argument.
+    /// argument is higher than that of the second argument.
+    /// - parameters:
+    ///     - lhs: Left `Version`
+    ///     - rhs: Right `Version`
+    public static func > (lhs: Version, rhs: Version) -> Bool {
+        return lhs.compare(with: rhs) == .lower
+    }
+
+    /// Returns a Boolean value indicating whether the value of the first
+    /// argument is lower than or equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
     ///     - rhs: Right `Version`
     public static func <= (lhs: Version, rhs: Version) -> Bool {
-        return [VersionComparison.lower, .equal].contains(lhs.compare(with: rhs))
+        let result = lhs.compare(with: rhs)
+        return result == .higher || result == .equal
     }
 
     /// Returns a Boolean value indicating whether the value of the first
-    /// argument is more than or equal to that of the second argument.
+    /// argument is higher than or equal to that of the second argument.
     /// - parameters:
     ///     - lhs: Left `Version`
     ///     - rhs: Right `Version`
     public static func >= (lhs: Version, rhs: Version) -> Bool {
-        return [VersionComparison.higher, .equal].contains(lhs.compare(with: rhs))
+        let result = lhs.compare(with: rhs)
+        return result == .lower || result == .equal
     }
 
 }

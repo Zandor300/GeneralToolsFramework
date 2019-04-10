@@ -29,7 +29,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'GeneralToolsFramework/Classes/**/*'
   

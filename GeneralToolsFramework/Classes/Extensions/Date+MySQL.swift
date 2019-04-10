@@ -10,7 +10,7 @@ import Foundation
 public extension Date {
 
     /// Convert MySQL/MariaDB Date object as a String to a Swift Date object. Returns Date() if string is invalid.
-    public init(mysqlDate: String) {
+    init(mysqlDate: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let date = dateFormatter.date(from: mysqlDate) {
@@ -21,7 +21,7 @@ public extension Date {
     }
 
     /// Convert MySQL/MariaDB DateTime object as a String to a Swift Date object. Returns Date() if string is invalid.
-    public init(mysqlDateTime: String) {
+    init(mysqlDateTime: String) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if let date = dateFormatter.date(from: mysqlDateTime) {
@@ -31,7 +31,7 @@ public extension Date {
         }
     }
 
-    public var mysqlDateString: String {
+    var mysqlDateString: String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: self)
 
@@ -49,7 +49,7 @@ public extension Date {
         return year + "-" + month + "-" + day
     }
 
-    public var mysqlDateTimeString: String {
+    var mysqlDateTimeString: String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
 

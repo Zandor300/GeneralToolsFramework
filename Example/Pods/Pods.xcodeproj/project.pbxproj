@@ -53,6 +53,8 @@
 		FC074391221DC32C004A5867 /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC074390221DC32C004A5867 /* UIColor+Lerp.swift */; };
 		FC3B6955220F18430015336C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6953220F17400015336C /* Theme.swift */; };
 		FC5A4E85220494C500F1E171 /* UIAccessibility+ButtonShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */; };
+		FC6621792270A9C200D67DFB /* Date+Dutch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6621782270A9C200D67DFB /* Date+Dutch.swift */; };
+		FC66217B2270AAA000D67DFB /* Date+Ago.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC66217A2270AAA000D67DFB /* Date+Ago.swift */; };
 		FC733D962213842A007E5A37 /* ZSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D942213840B007E5A37 /* ZSTagView.swift */; };
 		FC733D982213851C007E5A37 /* TaggedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D972213851C007E5A37 /* TaggedTableViewCell.swift */; };
 		FC733D9A22138554007E5A37 /* BlueLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC733D9922138554007E5A37 /* BlueLinkTableViewCell.swift */; };
@@ -174,6 +176,8 @@
 		FC074390221DC32C004A5867 /* UIColor+Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lerp.swift"; sourceTree = "<group>"; };
 		FC3B6953220F17400015336C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		FC5A4E83220494B900F1E171 /* UIAccessibility+ButtonShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAccessibility+ButtonShapes.swift"; sourceTree = "<group>"; };
+		FC6621782270A9C200D67DFB /* Date+Dutch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Dutch.swift"; sourceTree = "<group>"; };
+		FC66217A2270AAA000D67DFB /* Date+Ago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ago.swift"; sourceTree = "<group>"; };
 		FC733D942213840B007E5A37 /* ZSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZSTagView.swift; sourceTree = "<group>"; };
 		FC733D972213851C007E5A37 /* TaggedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaggedTableViewCell.swift; sourceTree = "<group>"; };
 		FC733D9922138554007E5A37 /* BlueLinkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLinkTableViewCell.swift; sourceTree = "<group>"; };
@@ -428,6 +432,8 @@
 		D0AA29F964BD54F183000FBF05B3BDCB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FC66217A2270AAA000D67DFB /* Date+Ago.swift */,
+				FC6621782270A9C200D67DFB /* Date+Dutch.swift */,
 				03337B0395600944F610CBA9C4361E98 /* Date+MySQL.swift */,
 				9E15899DB0851C5E5930CED7B5E4123B /* Float+DutchString.swift */,
 				D35676D6593078ACD3F04E8182F36810 /* Int+OptionalString.swift */,
@@ -642,8 +648,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				937723B74087847F2263513F9C5FE6DF /* BaseAPI.swift in Sources */,
+				FC66217B2270AAA000D67DFB /* Date+Ago.swift in Sources */,
 				FA629B42D0B8C7AD481F0B72D7A750B2 /* BuildConfig.swift in Sources */,
 				1709BD23FBB7877191C614E7F14DA0E9 /* Date+MySQL.swift in Sources */,
+				FC6621792270A9C200D67DFB /* Date+Dutch.swift in Sources */,
 				3E0FFBDB2C633C02E47FE5B75B961431 /* Float+DutchString.swift in Sources */,
 				FC733DA622138CCE007E5A37 /* UINavigationBar+LargeTitleHeight.swift in Sources */,
 				131DBFD0F6CF12B0948CB2EFA818B9DA /* GeneralToolsFramework-dummy.m in Sources */,

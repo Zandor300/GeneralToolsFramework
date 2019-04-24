@@ -2,9 +2,8 @@ use_frameworks!
 
 target 'GeneralToolsFramework_Example' do
 
-  pod 'Connectivity', '~> 2.1'
   pod 'GeneralToolsFramework', :path => '../'
-  
+
   target 'GeneralToolsFramework_Tests' do
     inherit! :search_paths
 

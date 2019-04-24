@@ -270,7 +270,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework",
 			);
@@ -281,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6ACE92FA257E0368DCFB4C7D /* [CP] Check Pods Manifest.lock */ = {

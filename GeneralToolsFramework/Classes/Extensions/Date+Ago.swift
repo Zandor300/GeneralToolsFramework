@@ -7,9 +7,9 @@
 
 import Foundation
 
-class DateIntervalTranslation {
+public class DateIntervalTranslation {
 
-    static let english: DateIntervalTranslation = {
+    public static let english: DateIntervalTranslation = {
         let translation = DateIntervalTranslation()
         translation.yearSingle = "year"
         translation.yearMultiple = "years"
@@ -25,7 +25,7 @@ class DateIntervalTranslation {
         translation.ago = "ago"
         return translation
     }()
-    static let dutch: DateIntervalTranslation = {
+    public static let dutch: DateIntervalTranslation = {
         let translation = DateIntervalTranslation()
         translation.yearSingle = "jaar"
         translation.yearMultiple = "jaar"
@@ -57,7 +57,7 @@ class DateIntervalTranslation {
 
 }
 
-extension Date {
+public extension Date {
 
     func getElapsedInterval(translation: DateIntervalTranslation = .english, ago: Bool = true) -> String {
         let now = Date()

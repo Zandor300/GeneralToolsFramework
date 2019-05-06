@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Image {
+open class Image {
 
     public let url: String
 

@@ -21,7 +21,7 @@ open class UIRoundedButton: UIButton {
         setupLayout()
     }
 
-    func setupLayout() {
+    open func setupLayout() {
         self.layer.cornerRadius = UIRoundedButton.defaultCornerRadius
     }
 

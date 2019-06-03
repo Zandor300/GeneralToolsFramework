@@ -27,7 +27,7 @@ open class Image {
         self.image = nil
     }
 
-    public func getImage(available: @escaping (UIImage) -> Void, onError: @escaping (APICallError) -> Void) {
+    open func getImage(available: @escaping (UIImage) -> Void, onError: @escaping (APICallError) -> Void) {
         if self.downloading {
             self.getCallbacks.append(available)
             return

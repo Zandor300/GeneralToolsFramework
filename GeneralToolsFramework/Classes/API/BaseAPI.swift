@@ -29,11 +29,11 @@ open class BaseAPI {
         printWithPrefix("Started connectivity notifier")
     }
 
-    public func setBaseUrl(_ baseUrl: String) {
+    open func setBaseUrl(_ baseUrl: String) {
         self.baseUrl = baseUrl
     }
 
-    public func addConnectivityCheckURL(_ url: URL) {
+    open func addConnectivityCheckURL(_ url: URL) {
         connectivity.connectivityURLs.append(url)
         printWithPrefix(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
     }

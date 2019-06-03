@@ -38,7 +38,7 @@ open class BaseAPI {
         printWithPrefix(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
     }
 
-    public func forceConnectivityCheck(_ onCompletion: @escaping () -> Void) {
+    open func forceConnectivityCheck(_ onCompletion: @escaping () -> Void) {
         connectivity.checkConnectivity { _ in
             onCompletion()
         }

@@ -31,6 +31,17 @@ public extension Date {
         }
     }
 
+    /// Convert MS SQL Server DateTime object as a String to a Swift Date object. Returns Date() if string is invalid.
+    init(mssqlDateTime: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
+        if let date = dateFormatter.date(from: mssqlDateTime) {
+            self = date
+        } else {
+            self = Date()
+        }
+    }
+
     var mysqlDateString: String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: self)

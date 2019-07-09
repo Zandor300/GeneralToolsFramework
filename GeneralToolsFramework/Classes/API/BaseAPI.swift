@@ -110,6 +110,10 @@ open class BaseAPI {
     }
 
     public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+        self.doPostUploadApiCall(url, upload: upload, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
+    }
+
+    public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         if !connectivity.isConnected {
             onError(.noInternet)
             return
@@ -141,6 +145,9 @@ open class BaseAPI {
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = body
+        for (key, value) in httpHeaderFields {
+            request.setValue(value, forHTTPHeaderField: key)
+        }
 
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             self.handleDataTask(data: data, response: response, error: error, onCompletion: { (data) in

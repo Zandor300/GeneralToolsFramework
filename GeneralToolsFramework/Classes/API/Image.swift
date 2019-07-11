@@ -9,6 +9,8 @@ import Foundation
 
 open class Image {
 
+    public static var customizeRequest: ((Image, inout URLRequest) -> Void)?
+
     public let url: String
 
     private var downloading: Bool = false
@@ -59,6 +61,9 @@ open class Image {
         let url = URL(string: self.url)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
+        if let customizeRequest = Image.customizeRequest {
+            customizeRequest(self, &request)
+        }
 
         NetworkActivityHandler.pushNetworkActivity()
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in

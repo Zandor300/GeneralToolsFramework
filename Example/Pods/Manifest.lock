@@ -1,6 +1,6 @@
 PODS:
-  - Connectivity (3.0.0)
-  - GeneralToolsFramework (1.1.1):
+  - Connectivity (3.0.2)
+  - GeneralToolsFramework (1.2.9):
     - Connectivity (~> 3.0)
 
 DEPENDENCIES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Connectivity: 0c36c25d92ae7499305125dbb61888f3fd6adab4
-  GeneralToolsFramework: 6e1a6c025ea55fe074e754082b1a4c16f8ab5ced
+  Connectivity: 689b231de1c5ba0eaec2fa2cf3a2076742783535
+  GeneralToolsFramework: c6083613fb660dd7aa94e9fdeeea2cb531dfbf0f
 
 PODFILE CHECKSUM: 8be6009e7d309a8d0cef2f1323298cf6b59c87c4
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.3

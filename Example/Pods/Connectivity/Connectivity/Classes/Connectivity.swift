@@ -6,10 +6,14 @@
 //  Copyright © 2017 - 2019 Ross Butler. All rights reserved.
 //
 
+import Foundation
 import Network
+#if IMPORT_REACHABILITY
+import Reachability
+#endif
 
 @objcMembers
-public class Connectivity {
+public class Connectivity: NSObject {
     
     public typealias Framework = ConnectivityFramework
     public typealias NetworkConnected = (Connectivity) -> Void
@@ -165,7 +169,7 @@ public class Connectivity {
 public extension Connectivity {
     
     /// Textual representation of connectivity state
-    var description: String {
+    override var description: String {
         return "\(status)"
     }
     

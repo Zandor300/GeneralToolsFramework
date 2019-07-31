@@ -68,6 +68,7 @@
 		FAD3D73B6C3ECA253E58BC2F0DC9DE4C /* UIColor+Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8617D4E8070559885D088FDADEC3531 /* UIColor+Lerp.swift */; };
 		FC90B8F2DEB7547D5028FBD5F0F02BA2 /* Float+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F198D9597A909727D9EB689F3A1091A /* Float+Round.swift */; };
 		FCD1836C2280635800EC1B0C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD1836B2280635800EC1B0C /* Image.swift */; };
+		FCF0CD0122F243F3005A34C7 /* UITableView+Deselect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF0CD0022F243F3005A34C7 /* UITableView+Deselect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +287,7 @@
 		FA9994E44587B6BF49D695ECAA1B3A88 /* UIAlertController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UIAlertController.html; path = docs/docsets/GeneralToolsFramework.docset/Contents/Resources/Documents/Extensions/UIAlertController.html; sourceTree = "<group>"; };
 		FCD1836B2280635800EC1B0C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		FCDF3B274983A006470585C598C73073 /* UISelectCheckmarkTableViewCell.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UISelectCheckmarkTableViewCell.html; path = docs/docsets/GeneralToolsFramework.docset/Contents/Resources/Documents/Classes/UISelectCheckmarkTableViewCell.html; sourceTree = "<group>"; };
+		FCF0CD0022F243F3005A34C7 /* UITableView+Deselect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Deselect.swift"; sourceTree = "<group>"; };
 		FDAADDD3A3DAA6B453C4ED01EDEBCC50 /* Connectivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Connectivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB9F44BBEEAE038337435B742F52B72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FDE121B846EB8E3F53DC18A40ED88D2E /* UIAlertController.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = UIAlertController.html; path = docs/Extensions/UIAlertController.html; sourceTree = "<group>"; };
@@ -618,6 +620,7 @@
 				66F8F2E90FC25E71947C82465DF729C6 /* UINavigationBar+LargeTitleHeight.swift */,
 				A8368697221CC0A9E5DCAC91D0C66E8D /* UITableViewCell+GetTableView.swift */,
 				4856EA3D9262EBDCB3A232C729B2D197 /* UIViewController+Dismiss.swift */,
+				FCF0CD0022F243F3005A34C7 /* UITableView+Deselect.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -893,6 +896,7 @@
 				01B5CCDE6E0370579D6B6CE30310AED3 /* Date+MySQL.swift in Sources */,
 				52A87D5938CC5FAE2AB7D616D0B1C673 /* Double+Round.swift in Sources */,
 				EAA5B87157DCC15EE87FCE7409FB16EB /* Float+DutchString.swift in Sources */,
+				FCF0CD0122F243F3005A34C7 /* UITableView+Deselect.swift in Sources */,
 				FC90B8F2DEB7547D5028FBD5F0F02BA2 /* Float+Round.swift in Sources */,
 				E958F572D8C65DB9D290B2DE22A0A6E8 /* GeneralToolsFramework-dummy.m in Sources */,
 				60A1C980A4ECC4408F1AC3F748EA6414 /* Int+OptionalString.swift in Sources */,

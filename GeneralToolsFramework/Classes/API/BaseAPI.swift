@@ -12,7 +12,9 @@ open class BaseAPI {
 
     private var baseUrl: String
     private var apiName: String
+    
     public var printResponses: Bool = false
+    public var requireConnectivity: Bool = true
 
     private let connectivity = Connectivity()
 
@@ -49,7 +51,7 @@ open class BaseAPI {
     }
 
     public func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        if !connectivity.isConnected {
+        if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }
@@ -78,7 +80,7 @@ open class BaseAPI {
     }
 
     public func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        if !connectivity.isConnected {
+        if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }
@@ -114,7 +116,7 @@ open class BaseAPI {
     }
 
     public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        if !connectivity.isConnected {
+        if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }

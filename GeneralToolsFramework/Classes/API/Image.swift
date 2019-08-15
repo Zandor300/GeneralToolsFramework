@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PINCache
 
 open class Image {
 
@@ -38,16 +39,21 @@ open class Image {
             DispatchQueue.main.async {
                 available(image)
             }
+        } else if let image = PINCache.shared().object(forKey: self.url) as? UIImage {
+            DispatchQueue.main.async {
+                available(image)
+            }
         } else {
             self.downloadImage(onCompletion: {
                 if let image = self.image {
+                    PINCache.shared().setObject(image, forKey: self.url)
                     DispatchQueue.main.async {
                         available(image)
                         for callback in self.getCallbacks {
                             callback(image)
                         }
                     }
-                    self.getCallbacks = []
+                    self.getCallbacks.removeAll()
                 }
             }, onError: onError)
         }

@@ -14,7 +14,15 @@ open class BaseAPI {
     private var apiName: String
     
     public var printResponses: Bool = false
-    public var requireConnectivity: Bool = true
+    public var requireConnectivity: Bool = true {
+        didSet {
+            if self.requireConnectivity {
+                self.connectivity.startNotifier()
+            } else {
+                self.connectivity.stopNotifier()
+            }
+        }
+    }
 
     private let connectivity = Connectivity()
 

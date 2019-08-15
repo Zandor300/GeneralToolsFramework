@@ -16,10 +16,9 @@ open class Image {
 
     private var downloading: Bool = false
     private var getCallbacks: [(UIImage) -> Void] = []
-    private var image: UIImage?
 
     public var downloaded: Bool {
-        return image != nil
+        return PINCache.shared().containsObject(forKey: self.url)
     }
 
     public init(url: String) {
@@ -27,7 +26,14 @@ open class Image {
     }
 
     public func removeCachedImage() {
-        self.image = nil
+        PINCache.shared().removeObject(forKey: self.url)
+    }
+
+    private func getImageFromCache() -> UIImage? {
+        if let data = PINCache.shared().object(forKey: self.url) as? NSData {
+            return UIImage(data: data as Data)
+        }
+        return nil
     }
 
     open func getImage(available: @escaping (UIImage) -> Void, onError: @escaping (APICallError) -> Void) {
@@ -35,18 +41,13 @@ open class Image {
             self.getCallbacks.append(available)
             return
         }
-        if self.downloaded, let image = self.image {
-            DispatchQueue.main.async {
-                available(image)
-            }
-        } else if let image = PINCache.shared().object(forKey: self.url) as? UIImage {
+        if let image = self.getImageFromCache() {
             DispatchQueue.main.async {
                 available(image)
             }
         } else {
             self.downloadImage(onCompletion: {
-                if let image = self.image {
-                    PINCache.shared().setObject(image, forKey: self.url)
+                if let image = self.getImageFromCache() {
                     DispatchQueue.main.async {
                         available(image)
                         for callback in self.getCallbacks {
@@ -94,7 +95,7 @@ open class Image {
 
             if let data = data {
                 NetworkActivityHandler.popNetworkActivity()
-                self.image = UIImage(data: data)
+                PINCache.shared().setObject(data as NSData, forKey: self.url)
                 self.downloading = false
                 onCompletion()
             } else {

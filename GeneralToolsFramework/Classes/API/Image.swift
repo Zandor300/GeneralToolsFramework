@@ -37,30 +37,31 @@ open class Image {
     }
 
     open func getImage(available: @escaping (UIImage) -> Void, onError: @escaping (APICallError) -> Void) {
-        if self.downloading {
-            self.getCallbacks.append(available)
-            return
-        }
         if let image = self.getImageFromCache() {
             DispatchQueue.main.async {
                 available(image)
             }
-        } else {
-            self.downloadImage(onCompletion: {
-                if let image = self.getImageFromCache() {
-                    DispatchQueue.main.async {
-                        available(image)
-                        for callback in self.getCallbacks {
-                            callback(image)
-                        }
+            return
+        }
+
+        self.getCallbacks.append(available)
+        if self.downloading {
+            return
+        }
+
+        self.downloadImage(onCompletion: { data in
+            if let image = UIImage(data: data as Data) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    for callback in self.getCallbacks {
+                        callback(image)
                     }
                     self.getCallbacks.removeAll()
                 }
-            }, onError: onError)
-        }
+            }
+        }, onError: onError)
     }
 
-    private func downloadImage(onCompletion: @escaping () -> Void, onError: @escaping (APICallError) -> Void) {
+    private func downloadImage(onCompletion: @escaping (NSData) -> Void, onError: @escaping (APICallError) -> Void) {
         print("[Image] Downloading image from \(self.url)")
 
         self.downloading = true
@@ -93,11 +94,11 @@ open class Image {
                 return
             }
 
-            if let data = data {
+            if let data = data as NSData? {
                 NetworkActivityHandler.popNetworkActivity()
-                PINCache.shared().setObject(data as NSData, forKey: self.url)
+                PINCache.shared().setObject(data, forKey: self.url)
                 self.downloading = false
-                onCompletion()
+                onCompletion(data)
             } else {
                 NetworkActivityHandler.popNetworkActivity()
                 self.downloading = false

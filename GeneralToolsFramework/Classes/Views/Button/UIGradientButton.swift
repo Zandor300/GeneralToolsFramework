@@ -20,7 +20,7 @@ open class UIGradientButton: UIRoundedButton {
         }
     }
 
-    init(frame: CGRect, tintColorTop: UIColor, tintColorBottom: UIColor) {
+    public init(frame: CGRect, tintColorTop: UIColor, tintColorBottom: UIColor) {
         self.tintColorTop = tintColorTop
         self.tintColorBottom = tintColorBottom
         super.init(frame: frame)

@@ -1,20 +1,15 @@
 variables:
   LANG: en_US.UTF-8
 
+before_script:
+  - pod repo update
+
 stages:
-  - setup
   - build
   - test
   - lint
   - docs
   - deploy
-
-setup:
-  stage: setup
-  script:
-    - pod repo update
-  tags:
-    - xcode
 
 build-pod:
   stage: build
@@ -22,9 +17,9 @@ build-pod:
     - cd Example/
     - pod install
     - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator12.2 ONLY_ACTIVE_ARCH=NO | xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator13.0 ONLY_ACTIVE_ARCH=NO | xcpretty
   tags:
-    - xcode
+    - xcode11
 
 test:
   stage: test
@@ -32,9 +27,9 @@ test:
     - cd Example/
     - pod install
     - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator12.2 -destination "platform=iOS Simulator,name=iPhone XS,OS=12.2" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator13.0 -destination "platform=iOS Simulator,name=iPhone XS,OS=13.0" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
   tags:
-    - xcode
+    - xcode11
   artifacts:
     reports:
       junit: build/reports/junit.xml
@@ -44,21 +39,21 @@ cocoapods-lint:
   script:
     - pod lib lint --allow-warnings
   tags:
-    - xcode
+    - xcode11
 
 swiftlint:
   stage: lint
   script:
     - swiftlint
   tags:
-    - xcode
+    - xcode11
 
 jazzy-docs:
   stage: docs
   script:
     - jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
-    - xcode
+    - xcode11
   artifacts:
     paths:
       - docs
@@ -70,7 +65,7 @@ pages:
   script:
     - mv docs/ public/
   tags:
-    - xcode
+    - xcode11
   artifacts:
     paths:
       - public

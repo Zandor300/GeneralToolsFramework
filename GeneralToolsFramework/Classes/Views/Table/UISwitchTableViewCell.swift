@@ -11,15 +11,6 @@ public class UISwitchTableViewCell: UITableViewCell {
 
     public static let identifier: String = "UISwitchTableViewCell"
 
-    public static func generateReusableCell(for tableView: UITableView) -> UISwitchTableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: UISwitchTableViewCell.identifier) as? UISwitchTableViewCell
-        if cell == nil {
-            tableView.register(UINib(nibName: UISwitchTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: UISwitchTableViewCell.identifier)
-            cell = tableView.dequeueReusableCell(withIdentifier: UISwitchTableViewCell.identifier) as? UISwitchTableViewCell
-        }
-        return cell!
-    }
-
     var callback: (Bool) -> Void = { state in }
 
     let theSwitch = UISwitch()

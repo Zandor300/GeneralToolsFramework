@@ -22,6 +22,7 @@ public class NetworkActivityHandler {
     }
 
     private static func updateActivityIndicator() {
+        #if !targetEnvironment(macCatalyst)
         DispatchQueue.main.async {
             if count > 0 {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -32,6 +33,7 @@ public class NetworkActivityHandler {
                 }
             }
         }
+        #endif
     }
 
 }

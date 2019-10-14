@@ -9,7 +9,9 @@ import UIKit
 
 public class LinkTableViewCell: UITableViewCell {
 
-    public var linkColor: UIColor = UIColor.black {
+    public static var defaultLinkColor: UIColor = .systemBlue
+
+    public var linkColor: UIColor = LinkTableViewCell.defaultLinkColor {
         didSet {
             self.layoutSubviews()
         }

@@ -81,6 +81,7 @@
 		F797C237B3D62B9ABFFB2B654984FA48 /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EE2ED65F83E42412F7A1ECC7440B24 /* PINCache.framework */; };
 		F79D7961AB2DA28A6B9F9A90C71E6F07 /* Float+DutchString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2F2994C6DEC3F46EA5B6E5715F662 /* Float+DutchString.swift */; };
 		F909969F4E3192AE569CED47CC017DA1 /* GeneralToolsFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B4FD7AAF13BB567C1A730E0D550E3A /* GeneralToolsFramework-dummy.m */; };
+		FCA382C123550BB600190994 /* UIFont+DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */; };
 		FCB6F9901B4B6EF0133C1651310B89D8 /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5803C2ED326D9E98B7B88E990661836D /* UIRoundedButton.swift */; };
 		FCE1CF75232EB61900CC7444 /* UIGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE1CF73232EB55A00CC7444 /* UIGradientButton.swift */; };
 /* End PBXBuildFile section */
@@ -339,6 +340,7 @@
 		F9ABC7BB173AECA065B308EAB1FF5FF4 /* RedLinkTableViewCell.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = RedLinkTableViewCell.html; path = docs/Classes/RedLinkTableViewCell.html; sourceTree = "<group>"; };
 		FB4883E8C623BAFFAF2A9A8947FFD7C2 /* Pods-GeneralToolsFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeneralToolsFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FBDE79DA7B3CA0BACFE69AD27EA16D73 /* AppConfiguration.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = AppConfiguration.html; path = docs/Enums/AppConfiguration.html; sourceTree = "<group>"; };
+		FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DynamicType.swift"; sourceTree = "<group>"; };
 		FCCF655753371DF0FC624F07E1BBB186 /* ConnectivityPercentage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectivityPercentage.swift; path = Connectivity/Classes/Model/ConnectivityPercentage.swift; sourceTree = "<group>"; };
 		FCE1CF73232EB55A00CC7444 /* UIGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGradientButton.swift; sourceTree = "<group>"; };
 		FDDC8C67095E105471BCD7F2A125235F /* APICallError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = APICallError.html; path = docs/Enums/APICallError.html; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				15FF2CDF5DA5331396D45D6BE19B372E /* UITableView+Deselect.swift */,
 				029631A7522890CCB99FE35D830F49EB /* UITableViewCell+GetTableView.swift */,
 				B6B1CDF2C728FC4047B456258E2BEA1E /* UIViewController+Dismiss.swift */,
+				FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -1054,6 +1057,7 @@
 				06FB8D38B9C57251269D85D286BD105D /* MKMapView+Focus.swift in Sources */,
 				B31AD8EC1E8F8822448FFE9A53D31BF3 /* NetworkActivityHandler.swift in Sources */,
 				3D40083404ACC67E84A10329EE16D931 /* RedLinkTableViewCell.swift in Sources */,
+				FCA382C123550BB600190994 /* UIFont+DynamicType.swift in Sources */,
 				F133C3C18CBD419540310F32B7947C83 /* String+Contains.swift in Sources */,
 				33BEBE233DE06E525DD1EEC03CA1BE69 /* String+Float.swift in Sources */,
 				2F9156EB779EBAF49991E3D743DB675F /* String+Hashing.swift in Sources */,

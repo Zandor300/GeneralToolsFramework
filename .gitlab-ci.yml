@@ -27,7 +27,7 @@ test:
     - cd Example/
     - pod install
     - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone XS,OS=13.0" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone X,OS=latest" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
   tags:
     - xcode11
   artifacts:

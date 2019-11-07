@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 
     /// Automatically rotate the UIImage to the orientation in the orientation exif so that that won't have to be done in the backend or on the clients that don't natively support the orientation exif.
     func fixOrientation() -> UIImage {

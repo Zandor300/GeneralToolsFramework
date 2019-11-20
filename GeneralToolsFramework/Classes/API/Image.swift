@@ -57,6 +57,8 @@ open class Image {
                     }
                     self.getCallbacks.removeAll()
                 }
+            } else {
+                onError(.unexpectedResponse)
             }
         }, onError: onError)
     }

@@ -24,5 +24,6 @@ public enum APICallError {
     case loginExpired
     case invalidCredentials
     case accountInactive
+    case unexpectedResponse
     case unknown
 }

@@ -8,8 +8,16 @@
 import Foundation
 
 public enum APICallError {
+    // Network related errors
     case noInternet
     case serverUnavailable
+    case networkError
+    case sslCertificateExpired
+    case sslCertificateError
+    case serverTimeout
+    case roamingDisabled
+
+    // API related errors
     case receivedException
     case postContentInvalid
     case sessionExpired

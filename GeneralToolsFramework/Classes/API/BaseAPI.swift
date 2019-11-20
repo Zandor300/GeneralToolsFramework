@@ -169,11 +169,28 @@ open class BaseAPI {
     }
 
     private func handleDataTask(data: Data?, response: URLResponse?, error: Error?, onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        if data != nil && error != nil {
+        if let error = error as NSError? {
             printWithPrefix("Network error.")
             printWithPrefix("error=\(String(describing: error))")
             NetworkActivityHandler.popNetworkActivity()
-            onError(.serverUnavailable)
+            if error.domain == NSURLErrorDomain {
+                switch error.code {
+                case NSURLErrorNotConnectedToInternet:
+                    onError(.noInternet)
+                case NSURLErrorServerCertificateHasBadDate:
+                    onError(.sslCertificateExpired)
+                case NSURLErrorServerCertificateUntrusted, NSURLErrorServerCertificateNotYetValid, NSURLErrorServerCertificateHasUnknownRoot, NSURLErrorClientCertificateRejected, NSURLErrorClientCertificateRequired:
+                    onError(.sslCertificateError)
+                case NSURLErrorTimedOut:
+                    onError(.serverTimeout)
+                case NSURLErrorInternationalRoamingOff:
+                    onError(.roamingDisabled)
+                default:
+                    onError(.networkError)
+                }
+            } else {
+                onError(.networkError)
+            }
             return
         }
 
@@ -186,25 +203,23 @@ open class BaseAPI {
             return
         }
 
-        if data == nil {
+        guard let data = data else {
             NetworkActivityHandler.popNetworkActivity()
             onError(.serverUnavailable)
             return
         }
 
-        let contents = String(data: data!, encoding: .utf8)
-
-        if contents == nil {
+        guard let contents = String(data: data, encoding: .utf8) else {
             NetworkActivityHandler.popNetworkActivity()
             onError(.serverUnavailable)
             return
         }
 
         if printResponses {
-            printWithPrefix(contents!)
+            printWithPrefix(contents)
         }
         NetworkActivityHandler.popNetworkActivity()
-        onCompletion(data!)
+        onCompletion(data)
     }
 
     private func generatePostContentString(postContent: [String: String]) -> String? {

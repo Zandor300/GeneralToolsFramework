@@ -21,8 +21,16 @@ open class Image {
         return PINCache.shared().containsObject(forKey: self.url)
     }
 
+    /// Create Image object from url.
     public init(url: String) {
         self.url = url
+    }
+
+    /// Create Image object with url and data.
+    /// Example: After uploading the image, automatically cache the uploaded data to prevent having to download the iamge again.
+    public init(url: String, imageData: NSData) {
+        self.url = url
+        PINCache.shared().setObject(imageData, forKey: url)
     }
 
     public func removeCachedImage() {

@@ -8,6 +8,7 @@
 import Foundation
 
 public enum APICallError {
+
     // Network related errors
     case noInternet
     case serverUnavailable
@@ -19,11 +20,16 @@ public enum APICallError {
 
     // API related errors
     case receivedException
+    case invalidParameters
+    case missingParameters
     case postContentInvalid
     case sessionExpired
     case loginExpired
     case invalidCredentials
     case accountInactive
+    case emailInUse // Registration
+    case passwordsNotMatching // Registration
     case unexpectedResponse
     case unknown
+
 }

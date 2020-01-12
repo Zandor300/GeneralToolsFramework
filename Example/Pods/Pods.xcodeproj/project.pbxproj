@@ -667,9 +667,9 @@
 				15FF2CDF5DA5331396D45D6BE19B372E /* UITableView+Deselect.swift */,
 				029631A7522890CCB99FE35D830F49EB /* UITableViewCell+GetTableView.swift */,
 				B6B1CDF2C728FC4047B456258E2BEA1E /* UIViewController+Dismiss.swift */,
+				FC0F662323CBCDC5003191CA /* UIViewController+Top.swift */,
 				FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */,
 				FCB70CB623745EDD0042590B /* UIImage+Orientation.swift */,
-				FC0F662323CBCDC5003191CA /* UIViewController+Top.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;

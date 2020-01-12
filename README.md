@@ -1,7 +1,7 @@
 # GeneralToolsFramework
 
 [![GitLab Source](http://img.shields.io/badge/source-GitLab-%23292961.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework)
-[![CI Status](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/badges/master/build.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/pipelines)
+[![CI Status](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/badges/master/pipeline.svg)](https://git.zsinfo.nl/Zandor300/GeneralToolsFramework/pipelines)
 [![Version](https://img.shields.io/cocoapods/v/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![License](https://img.shields.io/cocoapods/l/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)
 [![Platform](https://img.shields.io/cocoapods/p/GeneralToolsFramework.svg?style=flat)](https://cocoapods.org/pods/GeneralToolsFramework)

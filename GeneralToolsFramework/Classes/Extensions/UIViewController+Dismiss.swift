@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
 
-    // Dimiss all presented view controllers that were presented from this one and childs from this until the current one is shown. onCompletion is called when done.
+    // Dismiss all presented view controllers that were presented from this one and childs from this until the current one is shown. onCompletion is called when done.
     public func dismissViewControllers(animated: Bool, onCompletion: (() -> Void)?) {
         guard let viewController = self.presentingViewController else {
             if let handler = onCompletion {

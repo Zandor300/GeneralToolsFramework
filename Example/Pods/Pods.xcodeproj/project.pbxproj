@@ -81,6 +81,7 @@
 		F797C237B3D62B9ABFFB2B654984FA48 /* PINCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EE2ED65F83E42412F7A1ECC7440B24 /* PINCache.framework */; };
 		F79D7961AB2DA28A6B9F9A90C71E6F07 /* Float+DutchString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2F2994C6DEC3F46EA5B6E5715F662 /* Float+DutchString.swift */; };
 		F909969F4E3192AE569CED47CC017DA1 /* GeneralToolsFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B4FD7AAF13BB567C1A730E0D550E3A /* GeneralToolsFramework-dummy.m */; };
+		FC0F662423CBCDC5003191CA /* UIViewController+Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F662323CBCDC5003191CA /* UIViewController+Top.swift */; };
 		FCA382C123550BB600190994 /* UIFont+DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */; };
 		FCB6F9901B4B6EF0133C1651310B89D8 /* UIRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5803C2ED326D9E98B7B88E990661836D /* UIRoundedButton.swift */; };
 		FCB70CB723745EDD0042590B /* UIImage+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB70CB623745EDD0042590B /* UIImage+Orientation.swift */; };
@@ -341,6 +342,7 @@
 		F9ABC7BB173AECA065B308EAB1FF5FF4 /* RedLinkTableViewCell.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = RedLinkTableViewCell.html; path = docs/Classes/RedLinkTableViewCell.html; sourceTree = "<group>"; };
 		FB4883E8C623BAFFAF2A9A8947FFD7C2 /* Pods-GeneralToolsFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeneralToolsFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FBDE79DA7B3CA0BACFE69AD27EA16D73 /* AppConfiguration.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = AppConfiguration.html; path = docs/Enums/AppConfiguration.html; sourceTree = "<group>"; };
+		FC0F662323CBCDC5003191CA /* UIViewController+Top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Top.swift"; sourceTree = "<group>"; };
 		FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DynamicType.swift"; sourceTree = "<group>"; };
 		FCB70CB623745EDD0042590B /* UIImage+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Orientation.swift"; sourceTree = "<group>"; };
 		FCCF655753371DF0FC624F07E1BBB186 /* ConnectivityPercentage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectivityPercentage.swift; path = Connectivity/Classes/Model/ConnectivityPercentage.swift; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				B6B1CDF2C728FC4047B456258E2BEA1E /* UIViewController+Dismiss.swift */,
 				FCA382BF23550AC600190994 /* UIFont+DynamicType.swift */,
 				FCB70CB623745EDD0042590B /* UIImage+Orientation.swift */,
+				FC0F662323CBCDC5003191CA /* UIViewController+Top.swift */,
 			);
 			name = Extensions;
 			path = GeneralToolsFramework/Classes/Extensions;
@@ -1093,6 +1096,7 @@
 			files = (
 				BEE1E2CA7D7CB2B01B552AB0AB0BA863 /* Connectivity-dummy.m in Sources */,
 				347E5AAB8E02BBD9C032697AF83545E1 /* Connectivity.swift in Sources */,
+				FC0F662423CBCDC5003191CA /* UIViewController+Top.swift in Sources */,
 				EB81D881C48E60A3349FF15F2455A24F /* ConnectivityFramework.swift in Sources */,
 				DF7C8FD4F21022AA3FFB9C4F278189A0 /* ConnectivityInterface.swift in Sources */,
 				56427AECFEFF1571D098AC5098AFF72D /* ConnectivityPercentage.swift in Sources */,

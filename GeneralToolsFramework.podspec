@@ -41,4 +41,5 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.frameworks = 'UIKit', 'Security'
   s.dependency 'Connectivity', '~> 3.0'
   s.dependency 'PINCache'
+  s.dependency 'AAPickerView'
 end

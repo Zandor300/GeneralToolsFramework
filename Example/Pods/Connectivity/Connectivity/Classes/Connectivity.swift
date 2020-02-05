@@ -54,10 +54,18 @@ public class Connectivity: NSObject {
     public private(set) var currentInterface: Interface = .other
     
     /// Regex expected to match connectivity URL response
-    public var expectedResponseRegEx = ".*?<BODY>.*?Success.*?</BODY>.*"
+    public var expectedResponseRegEx = ".*?<BODY>.*?Success.*?</BODY>.*" {
+        didSet {
+            updateValidator(for: validationMode)
+        }
+    }
     
     /// Response expected from connectivity URLs
-    public var expectedResponseString = "Success"
+    public var expectedResponseString = "Success" {
+        didSet {
+            updateValidator(for: validationMode)
+        }
+    }
     
     /// Whether or not to use System Configuration or Network (on iOS 12+) framework.
     public var framework: Connectivity.Framework = .systemConfiguration
@@ -109,6 +117,20 @@ public class Connectivity: NSObject {
     /// Reachability instance for checking network adapter status
     private let reachability: Reachability
     
+    /// Can be used to set a custom validator conforming to `ConnectivityResponseValidator`
+    public var responseValidator: ConnectivityResponseValidator =
+        ConnectivityResponseContainsStringValidator()
+    
+    /// Returns the appropriate validator for the current validation mode.
+    private var responseValidatorFactory: ResponseValidatorFactory {
+        return ResponseValidatorFactory(
+            validationMode: validationMode,
+            expectedResponse: expectedResponseString,
+            regEx: expectedResponseRegEx,
+            customValidator: responseValidator
+        )
+    }
+    
     /// Status of the current connection
     public var status: ConnectivityStatus = .determining
     
@@ -125,7 +147,11 @@ public class Connectivity: NSObject {
     }()
     
     /// Method used to determine whether response content is valid
-    public var validationMode: ValidationMode = .containsExpectedResponseString
+    public var validationMode: ValidationMode = .containsExpectedResponseString {
+        didSet {
+            updateValidator(for: validationMode)
+        }
+    }
     
     /// Callback to invoke when connected
     public var whenConnected: NetworkConnected?
@@ -177,21 +203,27 @@ public extension Connectivity {
         let totalChecks: Int = connectivityURLs.count
         
         // Connectivity check callback
-        let completionHandler: (Data?, URLResponse?, Error?) -> Void = {  [weak self] (data, response, error) in
-            let connectivityCheckSuccess = self?.connectivityCheckSucceeded(data: data) ?? false
-            connectivityCheckSuccess ? (successfulChecks += 1) : (failedChecks += 1)
-            dispatchGroup.leave()
-            // Abort early if enough tasks have completed successfully
-            self?.cancelConnectivityCheck(pendingTasks: tasks, successfulChecks: successfulChecks,
-                                          totalChecks: totalChecks)
+        let completionHandlerForUrl: (URL) -> ((Data?, URLResponse?, Error?) -> Void) = { url in
+            return {  [weak self] (data, response, error) in
+                let connectivityCheckSuccess = self?.connectivityCheckSucceeded(
+                    for: url,
+                    response: response,
+                    data: data
+                    ) ?? false
+                connectivityCheckSuccess ? (successfulChecks += 1) : (failedChecks += 1)
+                dispatchGroup.leave()
+                // Abort early if enough tasks have completed successfully
+                self?.cancelConnectivityCheck(pendingTasks: tasks, successfulChecks: successfulChecks,
+                                              totalChecks: totalChecks)
+            }
         }
         
         // Check each of the specified URLs in turn
         tasks = connectivityURLs.map({
             if let urlRequest = authorizedURLRequest(with: $0) {
-                return session.dataTask(with: urlRequest, completionHandler: completionHandler)
+                return session.dataTask(with: urlRequest, completionHandler: completionHandlerForUrl($0))
             }
-            return session.dataTask(with: $0, completionHandler: completionHandler)
+            return session.dataTask(with: $0, completionHandler: completionHandlerForUrl($0))
         })
         
         tasks.forEach({ task in
@@ -300,34 +332,27 @@ private extension Connectivity {
     }
     
     /// Determines whether or not the connectivity check was successful.
-    private func connectivityCheckSucceeded(data: Data?) -> Bool {
-        guard let data = data, let responseString = String(data: data, encoding: .utf8) else {
-            return false
-        }
-        let validator = ConnectivityResponseValidator(validationMode: validationMode)
-        let result = (validationMode == .matchesRegularExpression)
-            ? validator.isValid(expected: expectedResponseRegEx, responseString: responseString)
-            : validator.isValid(expected: expectedResponseString, responseString: responseString)
-        return result
+    private func connectivityCheckSucceeded(for url: URL, response: URLResponse?, data: Data?) -> Bool {
+        let validator = responseValidatorFactory.manufacture()
+        return validator.isResponseValid(url: url, response: response, data: data)
     }
     
     /// Set of connectivity URLs used by default if none are otherwise specified.
     static func defaultConnectivityURLs(shouldUseHTTPS: Bool) -> [URL] {
         var result: [URL] = []
-        let connectivityDomains: [String] = (shouldUseHTTPS)
-            ? [ "www.apple.com" ] // Replace with custom URLs
-            : [ "www.apple.com",
-                "apple.com",
-                "www.appleiphonecell.com",
-                "www.itools.info",
-                "www.ibook.info",
-                "www.airport.us",
-                "www.thinkdifferent.us"
-        ]
-        let connectivityPath = "/library/test/success.html"
-        let httpProtocol = (isHTTPSOnly) ? "https" : "http"
-        for domain in connectivityDomains {
-            if let connectivityURL = URL(string: "\(httpProtocol)://\(domain)\(connectivityPath)") {
+        let connectivityURLs: [String] = (shouldUseHTTPS)
+            ? [ "https://www.apple.com/library/test/success.html",
+                "https://captive.apple.com/hotspot-detect.html" ] // Replace with custom URLs
+            : [ "http://www.apple.com/library/test/success.html",
+                "http://apple.com/library/test/success.html",
+                "http://www.appleiphonecell.com/library/test/success.html",
+                "http://www.itools.info/library/test/success.html",
+                "http://www.ibook.info/library/test/success.html",
+                "http://www.airport.us/library/test/success.html",
+                "http://www.thinkdifferent.us/library/test/success.html",
+                "http://captive.apple.com/hotspot-detect.html" ]
+        for connectivityURLStr in connectivityURLs {
+            if let connectivityURL = URL(string: connectivityURLStr) {
                 result.append(connectivityURL)
             }
         }
@@ -535,6 +560,12 @@ private extension Connectivity {
             let networkStatus = reachability.currentReachabilityStatus()
             updateStatus(from: networkStatus, isConnected: isConnected)
         }
+    }
+    
+    /// Updates the validator when the validation mode changes.
+    func updateValidator(for validationMode: ValidationMode) {
+        let validator = responseValidatorFactory.manufacture()
+        self.responseValidator = validator
     }
     
     /// Returns URLSession configured with the urlSessionConfiguration property.

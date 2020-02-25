@@ -28,6 +28,8 @@ test:
   tags:
     - xcode11
   artifacts:
+    paths:
+      - build/reports/junit.xml
     reports:
       junit: build/reports/junit.xml
 

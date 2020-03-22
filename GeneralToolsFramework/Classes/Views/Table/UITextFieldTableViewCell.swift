@@ -36,6 +36,8 @@ public class UITextFieldTableViewCell: UITableViewCell {
 
         self.selectionStyle = .none
         self.accessoryView = textField
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
     }
 
 }

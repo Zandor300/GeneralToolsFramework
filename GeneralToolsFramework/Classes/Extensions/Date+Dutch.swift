@@ -21,4 +21,10 @@ public extension Date {
         return formatter.string(from: self)
     }
 
+    var dutchTimeString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH::mm::ss"
+        return formatter.string(from: self)
+    }
+
 }

@@ -17,6 +17,7 @@ build-pod:
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
   tags:
     - xcode11
+  needs: []
 
 test:
   stage: test
@@ -32,6 +33,7 @@ test:
       - build/reports/junit.xml
     reports:
       junit: build/reports/junit.xml
+  needs: []
 
 cocoapods-lint:
   stage: lint
@@ -39,6 +41,7 @@ cocoapods-lint:
     - pod lib lint --allow-warnings
   tags:
     - xcode11
+  needs: []
 
 swiftlint:
   stage: lint
@@ -46,6 +49,7 @@ swiftlint:
     - swiftlint
   tags:
     - xcode11
+  needs: []
 
 jazzy-docs:
   stage: docs
@@ -56,6 +60,7 @@ jazzy-docs:
   artifacts:
     paths:
       - docs
+  needs: []
 
 pages:
   dependencies:

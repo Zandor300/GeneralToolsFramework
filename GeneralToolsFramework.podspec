@@ -28,7 +28,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.source           = { :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
 
   s.source_files = 'GeneralToolsFramework/Classes/**/*'

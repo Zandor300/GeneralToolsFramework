@@ -1,3 +1,5 @@
+![](https://github.com/EngrAhsanAli/AAPickerView/blob/master/AAPickerView.png)
+
 # Table of Contents
 
 - [AAPickerView](#section-id-4)
@@ -22,7 +24,7 @@
 
 #AAPickerView
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/AAPickerView.svg)](http://cocoadocs.org/docsets/AAPickerView) [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/EngrAhsanAli/AAPickerView.svg?branch=master)](https://travis-ci.org/EngrAhsanAli/AAPickerView) 
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/AAPickerView.svg)](http://cocoadocs.org/docsets/AAPickerView) [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/EngrAhsanAli/AAPickerView.svg?branch=master)](https://travis-ci.org/EngrAhsanAli/AAPickerView) 
 ![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg) [![CocoaPods](https://img.shields.io/cocoapods/p/AAPickerView.svg)]()
 
 
@@ -80,7 +82,7 @@ target '<Your Target Name>' do
 // Swift 3.2+ Compatibility
 pod 'AAPickerView'
 // Swift 4 Compatibility
-pod 'AAPickerView', '~> 0.1.2'
+pod 'AAPickerView', '~> 1.0'
 end
 
 ```
@@ -149,8 +151,8 @@ Define type of picker you want to use in your text field. There are two types of
 Assign one of them as follow:
 
 ```swift
-picker1.pickerType = .StringPicker
-picker2.pickerType = .DatePicker
+picker1.pickerType = .string(data: #String collection#)
+picker2.pickerType = .date
 ```
 
 <div id='section-id-112'/>
@@ -195,15 +197,15 @@ You can listen the changes of data simply by using the following callback method
 
 - StringPicker:
 ```swift
-picker.stringDidChange = { index in
-print("selectedString ", self.stringData[index])
+picker.valueDidSelected = { (index) in
+    print("selectedString ", stringData[index as! Int])
 }
 ```
 
 - DatePicker
 ```swift
-picker.dateDidChange = { date in
-print("selectedDate ", date )
+picker.valueDidSelected = { date in
+    print("selectedDate ", date as! Date )
 }
 ```
 

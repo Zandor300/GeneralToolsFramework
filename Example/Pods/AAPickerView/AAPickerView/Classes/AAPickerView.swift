@@ -75,6 +75,7 @@ open class AAPickerView: UITextField {
 
     open var toolbar: UIToolbar {
         
+        
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
@@ -124,4 +125,20 @@ open class AAPickerView: UITextField {
         resignFirstResponder()
     }
     
+}
+
+// MARK:- Restrict textfield picker view not to copy paste or edit the values
+extension AAPickerView {
+    
+    open override func caretRect(for position: UITextPosition) -> CGRect {
+        return .zero
+    }
+    
+    open override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        return []
+    }
+    
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
 }

@@ -18,7 +18,7 @@ open class Image {
     private var getCallbacks: [(UIImage) -> Void] = []
 
     public var downloaded: Bool {
-        return PINCache.shared().containsObject(forKey: self.url)
+        return PINCache.shared.containsObject(forKey: self.url)
     }
 
     /// Create Image object from url.
@@ -30,15 +30,15 @@ open class Image {
     /// Example: After uploading the image, automatically cache the uploaded data to prevent having to download the iamge again.
     public init(url: String, imageData: NSData) {
         self.url = url
-        PINCache.shared().setObject(imageData, forKey: url)
+        PINCache.shared.setObject(imageData, forKey: url)
     }
 
     public func removeCachedImage() {
-        PINCache.shared().removeObject(forKey: self.url)
+        PINCache.shared.removeObject(forKey: self.url)
     }
 
     private func getImageFromCache() -> UIImage? {
-        if let data = PINCache.shared().object(forKey: self.url) as? NSData {
+        if let data = PINCache.shared.object(forKey: self.url) as? NSData {
             return UIImage(data: data as Data)
         }
         return nil
@@ -106,7 +106,7 @@ open class Image {
 
             if let data = data as NSData? {
                 NetworkActivityHandler.popNetworkActivity()
-                PINCache.shared().setObject(data, forKey: self.url)
+                PINCache.shared.setObject(data, forKey: self.url)
                 self.downloading = false
                 onCompletion(data)
             } else {

@@ -33,6 +33,7 @@ To learn more about how to use Connectivity, take a look at the [keynote present
 	- [SSL](#ssl)
 	- [Threshold](#threshold)
 	- [Response Validation](#response-validation)
+- [Known Issues](#known-issues)
 - [Author](#author)
 - [License](#license)
 - [Additional Software](#additional-software)
@@ -275,7 +276,7 @@ Listening for `Notification.Name.ConnectivityDidChange`, the `object` property o
 
 ### Polling
 
-In certain cases you may need to be kept constantly apprised of changes in connectivity state and therefore may wish to enable polling. Where enabled, Connectivity will not wait on changes in Reachability state but will poll the connectivity URLs every 10 seconds (this value is configurable). `ConnectivityDidChange` notifications and the closures assigned to the `whenConnected` and `whenDisconnected` properties will be invoked only where changes in connectivity state occur.
+In certain cases you may need to be kept constantly apprised of changes in connectivity state and therefore may wish to enable polling. Where enabled, Connectivity will not wait on changes in Reachability state but will poll the connectivity URLs every 10 seconds (this value is configurable by setting the value of the `pollingInterval` property). `ConnectivityDidChange` notifications and the closures assigned to the `whenConnected` and `whenDisconnected` properties will be invoked only where changes in connectivity state occur.
 
 To enable polling:
 
@@ -319,6 +320,16 @@ Supplied validators include:
 - `ConnectivityResponseContainsStringValidator`: Determines whether the response string contains an expected string.
 - `ConnectivityResponseRegExValidator`: Determines whether the response string matches a given regular expression.
 
+## Known Issues
+
+### Caller responsible for retaining the `Connectivity` object
+
+Please ensure that any implementation making use of this framework holds a strong reference to the `Connectivity` object for the duration of its use (as an instance variable or otherwise). If the object is deallocated before the callback is invoked, the result will be non-deterministic.
+
+### Simulator issues
+
+Before reporting a bug please ensure that you have tested on a physical device as on simulator changes in network adapter state are not reported correctly by iOS frameworks particularly when transitioning from a disconnected -> connected state. This behaviour functions correctly on a physical device. Setting `isPollingEnabled = true` and specifying an appropriate `pollingInterval` when running on simulator will resolve this issue.
+
 ## Author
 
 [Ross Butler](https://github.com/rwbutler)
@@ -354,6 +365,7 @@ Connectivity is available under the MIT license. See the [LICENSE file](./LICENS
 
 ### Tools
 
+* [Clear DerivedData](https://github.com/rwbutler/ClearDerivedData) - Utility to quickly clear your DerivedData directory simply by typing `cdd` from the Terminal.
 * [Config Validator](https://github.com/rwbutler/ConfigValidator) - Config Validator validates & uploads your configuration files and cache clears your CDN as part of your CI process.
 * [IPA Uploader](https://github.com/rwbutler/IPAUploader) - Uploads your apps to TestFlight & App Store.
 * [Palette](https://github.com/rwbutler/TypographyKitPalette) - Makes your [TypographyKit](https://github.com/rwbutler/TypographyKit) color palette available in Xcode Interface Builder.

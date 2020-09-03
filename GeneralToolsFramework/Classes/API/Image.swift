@@ -21,6 +21,8 @@ open class Image {
         return PINCache.shared.containsObject(forKey: self.url)
     }
 
+    private var failedDownloadAttempts: Int = 0
+
     /// Create Image object from url.
     public init(url: String) {
         self.url = url
@@ -74,6 +76,12 @@ open class Image {
     private func downloadImage(onCompletion: @escaping (NSData) -> Void, onError: @escaping (APICallError) -> Void) {
         print("[Image] Downloading image from \(self.url)")
 
+        if failedDownloadAttempts > 3 {
+            print("[Image] Failed download attempts exceeding 3 times")
+            onError(.serverUnavailable)
+            return
+        }
+
         self.downloading = true
 
         let url = URL(string: self.url)
@@ -101,6 +109,8 @@ open class Image {
                 NetworkActivityHandler.popNetworkActivity()
                 self.downloading = false
                 onError(.serverUnavailable)
+                self.failedDownloadAttempts += 1
+                print("[Image] Failed download attempts: \(self.failedDownloadAttempts)")
                 return
             }
 

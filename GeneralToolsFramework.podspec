@@ -29,9 +29,11 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
+  s.tvos.deployment_target = '9.0'
   s.swift_version = '5.0'
 
-  s.source_files = 'GeneralToolsFramework/Classes/**/*'
+  s.ios.source_files = 'GeneralToolsFramework/Classes/**/*'
+  s.tvos.source_files = 'GeneralToolsFramework/Classes/**/*'
   
   # s.resource_bundles = {
   #   'GeneralToolsFramework' => ['GeneralToolsFramework/Assets/*.png']
@@ -39,7 +41,8 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Security'
+
   s.dependency 'Connectivity', '~> 3.0'
   s.dependency 'PINCache'
-  s.dependency 'AAPickerView'
+  s.ios.dependency 'AAPickerView'
 end

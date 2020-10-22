@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90B3BAD43E32929453E562110A5B8E8A"
+               BlueprintIdentifier = "2C48A6E5FC2311EF3C228871FC6ACAF2"
                BuildableName = "GeneralToolsFramework.framework"
                BlueprintName = "GeneralToolsFramework"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -29,8 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -45,14 +43,12 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "90B3BAD43E32929453E562110A5B8E8A"
+            BlueprintIdentifier = "2C48A6E5FC2311EF3C228871FC6ACAF2"
             BuildableName = "GeneralToolsFramework.framework"
             BlueprintName = "GeneralToolsFramework"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -39,7 +39,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Security'
-  s.dependency 'Connectivity', '~> 3.0'
-  s.dependency 'PINCache'
-  s.dependency 'AAPickerView'
+  s.dependency 'Connectivity', '~> 5.0'
+  s.dependency 'PINCache', '~> 3.0'
+  s.dependency 'AAPickerView', '~> 1.3'
 end

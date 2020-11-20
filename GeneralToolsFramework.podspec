@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GeneralToolsFramework'
-  s.version          = '1.9.0'
+  s.version          = '1.10.0'
   s.summary          = 'Contains general tools used in my iOS apps.'
 
 # This description is used to generate tags and improve search results.
@@ -42,7 +42,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Security'
 
-  s.dependency 'Connectivity', '~> 3.0'
-  s.dependency 'PINCache'
-  s.ios.dependency 'AAPickerView'
+  s.dependency 'Connectivity', '~> 5.0'
+  s.dependency 'PINCache', '~> 3.0'
+  s.ios.dependency 'AAPickerView', '~> 1.3'
 end

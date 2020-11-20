@@ -11,8 +11,9 @@ stages:
 build-pod:
   stage: build
   script:
+    - bundle install
     - cd Example/
-    - pod install --repo-update
+    - bundle exec pod install --repo-update
     - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
   tags:
@@ -22,8 +23,9 @@ build-pod:
 test:
   stage: test
   script:
+    - bundle install
     - cd Example/
-    - pod install --repo-update
+    - bundle exec pod install --repo-update
     - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
   tags:
@@ -38,7 +40,8 @@ test:
 cocoapods-lint:
   stage: lint
   script:
-    - pod lib lint --allow-warnings
+    - bundle install
+    - bundle exec pod lib lint --allow-warnings
   tags:
     - xcode11
   needs: []

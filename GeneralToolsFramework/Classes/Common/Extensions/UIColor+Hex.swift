@@ -44,7 +44,7 @@ extension UIColor {
 
         return NSString(format: "#%06x", rgb) as String
     }
-
+ 
     public convenience init(hexString: String, alpha: CGFloat = 1.0) {
         var cString: String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 

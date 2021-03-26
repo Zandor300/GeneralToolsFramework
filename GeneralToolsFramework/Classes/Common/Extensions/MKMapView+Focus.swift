@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 
 // See https://stackoverflow.com/a/53025716/5544222
+@available(tvOS 9.2, *)
 extension MKMapView {
 
     public func fitAll(animated: Bool, padding: UIEdgeInsets) {

@@ -64,7 +64,9 @@ open class BaseAPI {
             return
         }
 
+        #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
+        #endif
 
         printWithPrefix("Performing GET api call to url: " + baseUrl + url)
 
@@ -93,7 +95,9 @@ open class BaseAPI {
             return
         }
 
+        #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
+        #endif
 
         printWithPrefix("Performing POST api call to url: " + baseUrl + url)
 
@@ -129,7 +133,9 @@ open class BaseAPI {
             return
         }
 
+        #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
+        #endif
 
         printWithPrefix("Performing POST UPLOAD api call to url: " + baseUrl + url)
 
@@ -172,7 +178,9 @@ open class BaseAPI {
         if let error = error as NSError? {
             printWithPrefix("Network error.")
             printWithPrefix("error=\(String(describing: error))")
+            #if os(iOS)
             NetworkActivityHandler.popNetworkActivity()
+            #endif
             if error.domain == NSURLErrorDomain {
                 switch error.code {
                 case NSURLErrorNotConnectedToInternet:
@@ -198,19 +206,25 @@ open class BaseAPI {
             printWithPrefix("Invalid http status code.")
             printWithPrefix("statusCode should be 200, but is \(httpStatus.statusCode)")
             printWithPrefix("response = \(String(describing: response))")
+            #if os(iOS)
             NetworkActivityHandler.popNetworkActivity()
+            #endif
             onError(.serverUnavailable)
             return
         }
 
         guard let data = data else {
+            #if os(iOS)
             NetworkActivityHandler.popNetworkActivity()
+            #endif
             onError(.serverUnavailable)
             return
         }
 
         guard let contents = String(data: data, encoding: .utf8) else {
+            #if os(iOS)
             NetworkActivityHandler.popNetworkActivity()
+            #endif
             onError(.serverUnavailable)
             return
         }
@@ -218,7 +232,9 @@ open class BaseAPI {
         if printResponses {
             printWithPrefix(contents)
         }
+        #if os(iOS)
         NetworkActivityHandler.popNetworkActivity()
+        #endif
         onCompletion(data)
     }
 

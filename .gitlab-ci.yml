@@ -17,7 +17,7 @@ build-pod:
     - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
   tags:
-    - xcode11
+    - xcode12
   needs: []
 
 test:
@@ -29,7 +29,7 @@ test:
     - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
   tags:
-    - xcode11
+    - xcode12
   artifacts:
     paths:
       - build/reports/junit.xml
@@ -43,7 +43,7 @@ cocoapods-lint:
     - bundle install
     - bundle exec pod lib lint --allow-warnings
   tags:
-    - xcode11
+    - xcode12
   needs: []
 
 swiftlint:
@@ -51,7 +51,7 @@ swiftlint:
   script:
     - swiftlint
   tags:
-    - xcode11
+    - xcode12
   needs: []
 
 jazzy-docs:
@@ -59,7 +59,7 @@ jazzy-docs:
   script:
     - jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
-    - xcode11
+    - xcode12
   artifacts:
     paths:
       - docs
@@ -72,7 +72,7 @@ pages:
   script:
     - mv docs/ public/
   tags:
-    - xcode11
+    - xcode12
   artifacts:
     paths:
       - public

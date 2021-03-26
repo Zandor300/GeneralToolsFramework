@@ -8,7 +8,7 @@ stages:
   - docs
   - deploy
 
-build-pod:
+build-ios:
   stage: build
   script:
     - bundle install
@@ -16,6 +16,18 @@ build-pod:
     # - bundle exec pod install --repo-update
     # - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+  tags:
+    - xcode12
+  needs: []
+
+build-tvos:
+  stage: build
+  script:
+    - bundle install
+    # - cd Example/
+    # - bundle exec pod install --repo-update
+    # - cd ../
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode12
   needs: []

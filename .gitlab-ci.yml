@@ -15,7 +15,7 @@ build-pod:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode12
   needs: []
@@ -27,7 +27,7 @@ test:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | xcpretty -r junit
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
     - xcode12
   artifacts:
@@ -57,7 +57,7 @@ swiftlint:
 jazzy-docs:
   stage: docs
   script:
-    - jazzy --podspec GeneralToolsFramework.podspec --output docs
+    - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
     - xcode12
   artifacts:
@@ -66,8 +66,6 @@ jazzy-docs:
   needs: []
 
 pages:
-  dependencies:
-    - jazzy-docs
   stage: deploy
   script:
     - mv docs/ public/
@@ -76,3 +74,6 @@ pages:
   artifacts:
     paths:
       - public
+  needs:
+    - job: jazzy-docs
+      artifacts: true

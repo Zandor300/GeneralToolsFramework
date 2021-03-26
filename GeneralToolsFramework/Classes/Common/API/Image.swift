@@ -91,12 +91,16 @@ open class Image {
             customizeRequest(self, &request)
         }
 
+        #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
+        #endif
         URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             if data != nil && error != nil {
                 print("[Image] Network error.")
                 print("[Image] error=\(String(describing: error))")
+                #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
+                #endif
                 self.downloading = false
                 onError(.serverUnavailable)
                 return
@@ -106,7 +110,9 @@ open class Image {
                 print("[Image] Invalid http status code.")
                 print("[Image] statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("[Image] response = \(String(describing: response))")
+                #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
+                #endif
                 self.downloading = false
                 onError(.serverUnavailable)
                 self.failedDownloadAttempts += 1
@@ -115,12 +121,16 @@ open class Image {
             }
 
             if let data = data as NSData? {
+                #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
+                #endif
                 PINCache.shared.setObject(data, forKey: self.url)
                 self.downloading = false
                 onCompletion(data)
             } else {
+                #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
+                #endif
                 self.downloading = false
                 onError(.serverUnavailable)
             }

@@ -32,15 +32,16 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.tvos.deployment_target = '9.0'
   s.swift_version = '5.0'
 
-  s.ios.source_files = 'GeneralToolsFramework/Classes/**/*'
-  s.tvos.source_files = 'GeneralToolsFramework/Classes/**/*'
+  s.ios.source_files = 'GeneralToolsFramework/Classes/Common/**/*', 'GeneralToolsFramework/Classes/iOS/**/*'
+  s.tvos.source_files = 'GeneralToolsFramework/Classes/Common/**/*'
   
   # s.resource_bundles = {
   #   'GeneralToolsFramework' => ['GeneralToolsFramework/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit', 'Security'
+  s.ios.frameworks = 'UIKit', 'Security'
+  s.tvos.frameworks = 'Security'
 
   s.dependency 'Connectivity', '~> 5.0'
   s.dependency 'PINCache', '~> 3.0'

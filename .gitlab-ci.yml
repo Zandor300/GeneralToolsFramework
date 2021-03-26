@@ -57,6 +57,7 @@ swiftlint:
 jazzy-docs:
   stage: docs
   script:
+    - bundle install
     - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
     - xcode12

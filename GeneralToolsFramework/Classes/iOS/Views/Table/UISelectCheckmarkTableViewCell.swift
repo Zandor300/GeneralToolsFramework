@@ -58,11 +58,11 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     public var allowDeselect: Bool = false
     public var sectionIsGroup: Bool = false
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -78,7 +78,7 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
         }
     }
 
-    override public func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
             if allowDeselect {

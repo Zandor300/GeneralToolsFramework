@@ -47,7 +47,7 @@ public class UISwitchTableViewCell: UITableViewCell {
         setupSwitch()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupSwitch()
     }

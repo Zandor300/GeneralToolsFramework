@@ -43,7 +43,7 @@ public class UISwitchTableViewCell: UITableViewCell {
     }
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSwitch()
     }
 

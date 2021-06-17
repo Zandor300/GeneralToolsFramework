@@ -12,7 +12,7 @@ public class UITextFieldTableViewCell: UITableViewCell {
     public var textField = UITextField()
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupTextField()
     }
 

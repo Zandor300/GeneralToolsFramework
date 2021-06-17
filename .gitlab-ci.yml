@@ -32,14 +32,14 @@ build-tvos:
     - xcode12
   needs: []
 
-test:
+.test:
   stage: test
   script:
     - bundle install
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme $SCHEME -sdk iphonesimulator -destination "$PLATFORM" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
     - xcode12
   artifacts:
@@ -48,6 +48,18 @@ test:
     reports:
       junit: build/reports/junit.xml
   needs: []
+
+test-ios:
+  extends: .test
+  variables:
+    SCHEME: "Example-iOS"
+    PLATFORM: "platform=iOS Simulator,name=iPhone 12,OS=latest"
+
+test-ios:
+  extends: .test
+  variables:
+    SCHEME: "Example-tvOS"
+    PLATFORM: "platform=tvOS Simulator,name=Apple TV,OS=latest"
 
 cocoapods-lint:
   stage: lint

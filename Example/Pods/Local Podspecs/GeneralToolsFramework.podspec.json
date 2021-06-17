@@ -25,10 +25,6 @@
       "GeneralToolsFramework/Classes/Common/**/*",
       "GeneralToolsFramework/Classes/iOS/**/*"
     ],
-    "frameworks": [
-      "UIKit",
-      "Security"
-    ],
     "dependencies": {
       "AAPickerView": [
         "~> 1.3"
@@ -36,9 +32,12 @@
     }
   },
   "tvos": {
-    "source_files": "GeneralToolsFramework/Classes/Common/**/*",
-    "frameworks": "Security"
+    "source_files": "GeneralToolsFramework/Classes/Common/**/*"
   },
+  "frameworks": [
+    "UIKit",
+    "Security"
+  ],
   "dependencies": {
     "Connectivity": [
       "~> 5.0"

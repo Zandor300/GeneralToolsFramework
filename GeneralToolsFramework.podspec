@@ -40,8 +40,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.ios.frameworks = 'UIKit', 'Security'
-  s.tvos.frameworks = 'Security'
+  s.frameworks = 'UIKit', 'Security'
 
   s.ios.dependency 'AAPickerView', '~> 1.3'
   s.dependency 'Connectivity', '~> 5.0'

@@ -13,34 +13,44 @@ open class Image {
     public static var customizeRequest: ((Image, inout URLRequest) -> Void)?
 
     public let url: String
+    public let cachingKey: String
 
     private var downloading: Bool = false
     private var getCallbacks: [(UIImage) -> Void] = []
 
     public var downloaded: Bool {
-        return PINCache.shared.containsObject(forKey: self.url)
+        return PINCache.shared.containsObject(forKey: self.cachingKey)
     }
 
     private var failedDownloadAttempts: Int = 0
 
     /// Create Image object from url.
-    public init(url: String) {
+    /// - Parameters:
+    ///   - url: The url to download the image from.
+    ///   - cachingKey: Optional key that is used for caching. If nil, url is used for caching instead.
+    public init(url: String, cachingKey: String? = nil) {
         self.url = url
+        self.cachingKey = cachingKey ?? url
     }
 
     /// Create Image object with url and data.
-    /// Example: After uploading the image, automatically cache the uploaded data to prevent having to download the iamge again.
-    public init(url: String, imageData: NSData) {
+    /// Example: After uploading the image, automatically cache the uploaded data to prevent having to download the image again.
+    /// - Parameters:
+    ///   - url: The url to download the image from.
+    ///   - cachingKey: Optional key that is used for caching. If nil, url is used for caching instead.
+    ///   - imageData: The image data that will be used instead of downloading.
+    public init(url: String, cachingKey: String? = nil, imageData: NSData) {
         self.url = url
-        PINCache.shared.setObject(imageData, forKey: url)
+        self.cachingKey = cachingKey ?? url
+        PINCache.shared.setObject(imageData, forKey: self.cachingKey)
     }
 
     public func removeCachedImage() {
-        PINCache.shared.removeObject(forKey: self.url)
+        PINCache.shared.removeObject(forKey: self.cachingKey)
     }
 
     private func getImageFromCache() -> UIImage? {
-        if let data = PINCache.shared.object(forKey: self.url) as? NSData {
+        if let data = PINCache.shared.object(forKey: self.cachingKey) as? NSData {
             return UIImage(data: data as Data)
         }
         return nil
@@ -124,7 +134,7 @@ open class Image {
                 #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
                 #endif
-                PINCache.shared.setObject(data, forKey: self.url)
+                PINCache.shared.setObject(data, forKey: self.cachingKey)
                 self.downloading = false
                 onCompletion(data)
             } else {

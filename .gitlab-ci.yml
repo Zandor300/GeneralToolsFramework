@@ -15,7 +15,7 @@ build-ios:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode12
   needs: []
@@ -27,7 +27,7 @@ build-tvos:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode12
   needs: []
@@ -39,7 +39,7 @@ test:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme Example-iOS -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
     - xcode12
   artifacts:

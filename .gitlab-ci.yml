@@ -17,7 +17,7 @@ build-ios:
     # - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
-    - xcode12
+    - xcode13
   needs: []
 
 build-tvos:
@@ -29,7 +29,7 @@ build-tvos:
     # - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
-    - xcode12
+    - xcode13
   needs: []
 
 test:
@@ -41,7 +41,7 @@ test:
     # - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
-    - xcode12
+    - xcode13
   artifacts:
     paths:
       - build/reports/junit.xml
@@ -55,7 +55,7 @@ cocoapods-lint:
     - bundle install
     - bundle exec pod lib lint --allow-warnings
   tags:
-    - xcode12
+    - xcode13
   allow_failure: true
   needs: []
 
@@ -64,7 +64,7 @@ swiftlint:
   script:
     - swiftlint
   tags:
-    - xcode12
+    - xcode13
   allow_failure: true
   needs: []
 
@@ -74,7 +74,7 @@ jazzy-docs:
     - bundle install
     - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
-    - xcode12
+    - xcode13
   artifacts:
     paths:
       - docs
@@ -85,7 +85,7 @@ pages:
   script:
     - mv docs/ public/
   tags:
-    - xcode12
+    - xcode13
   artifacts:
     paths:
       - public

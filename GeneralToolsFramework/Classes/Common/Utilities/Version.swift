@@ -53,17 +53,23 @@ public class Version {
     /// - returns: The comparison result.
     public func compare(with otherVersion: Version) -> VersionComparison {
         print("Comparing " + self.toString() + " with " + otherVersion.toString() + "...")
-        if self.major == otherVersion.major
-            && self.minor == otherVersion.minor
-            && self.patch == otherVersion.patch
-            && self.buildNumber == otherVersion.buildNumber {
+        if major == otherVersion.major
+            && minor == otherVersion.minor
+            && patch == otherVersion.patch
+            && buildNumber == otherVersion.buildNumber {
             return VersionComparison.equal
         }
-        if self.major >= otherVersion.major
-            && self.minor >= otherVersion.minor
-            && self.patch >= otherVersion.patch
-            && self.buildNumber >= otherVersion.buildNumber {
-            return VersionComparison.lower
+        if major > otherVersion.major {
+            return .lower
+        }
+        if major == otherVersion.major, minor > otherVersion.minor {
+            return .lower
+        }
+        if major == otherVersion.major, minor == otherVersion.minor, patch > otherVersion.patch {
+            return .lower
+        }
+        if major == otherVersion.major, minor == otherVersion.minor, patch == otherVersion.patch, buildNumber > otherVersion.buildNumber {
+            return .lower
         }
         return VersionComparison.higher
     }

@@ -23,6 +23,7 @@ public enum APICallError {
     case invalidParameters
     case missingParameters
     case postContentInvalid
+    case duplicateValue
     case sessionExpired
     case loginExpired
     case invalidCredentials

@@ -60,12 +60,14 @@ cocoapods-lint:
   needs: []
 
 swiftlint:
+  image: norionomura/swiftlint:0.45.1_swift-5.5.2
   stage: lint
+  before_script: []
   script:
-    - swiftlint
-  tags:
-    - xcode13
+    - swiftlint lint
   allow_failure: true
+  tags:
+    - docker
   needs: []
 
 jazzy-docs:

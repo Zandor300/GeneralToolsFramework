@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,fastlane,macos,ruby,cocoapods
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,fastlane,macos,ruby,cocoapods
+# Created by https://www.toptal.com/developers/gitignore/api/ruby,xcode,swift,macos,fastlane,cocoapods,swiftpm,swiftpackagemanager
+# Edit at https://www.toptal.com/developers/gitignore?templates=ruby,xcode,swift,macos,fastlane,cocoapods,swiftpm,swiftpackagemanager
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -62,6 +62,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
 ### Ruby ###
 *.gem
 *.rbc
@@ -115,10 +119,6 @@ build-iPhoneSimulator/
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-# Used by RuboCop. Remote config files pulled in from inherit_from directive.
-# .rubocop-https?--*
-
-### Ruby Patch ###
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
 
@@ -200,22 +200,25 @@ Dependencies/
 
 iOSInjectionProject/
 
+### SwiftPackageManager ###
+Packages
+xcuserdata
+*.xcodeproj
+
+
+### SwiftPM ###
+
+
 ### Xcode ###
-# Xcode
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-
-
-
-## Gcc Patch
-/*.gcno
+## Xcode 8 and earlier
 
 ### Xcode Patch ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+/*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,fastlane,macos,ruby,cocoapods
-
+# End of https://www.toptal.com/developers/gitignore/api/ruby,xcode,swift,macos,fastlane,cocoapods,swiftpm,swiftpackagemanager

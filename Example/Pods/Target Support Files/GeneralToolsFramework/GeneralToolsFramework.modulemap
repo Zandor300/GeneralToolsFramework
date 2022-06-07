@@ -1,6 +1,0 @@
-framework module GeneralToolsFramework {
-  umbrella header "GeneralToolsFramework-umbrella.h"
-
-  export *
-  module * { export * }
-}

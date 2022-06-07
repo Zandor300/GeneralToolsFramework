@@ -10,36 +10,30 @@ stages:
 
 build-ios:
   stage: build
-  script:
+  before_script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+  script:
+    - set -o pipefail && xcodebuild build -project GeneralToolsFramework.xcodeproj -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
   needs: []
 
 build-tvos:
   stage: build
-  script:
+  before_script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+  script:
+    - set -o pipefail && xcodebuild build -project GeneralToolsFramework.xcodeproj -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
   needs: []
 
 test:
   stage: test
-  script:
+  before_script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
+  script:
+    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -project GeneralToolsFramework.xcodeproj -scheme GeneralToolsFrameworkTests -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 13 Pro,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
     - xcode13
   artifacts:
@@ -51,8 +45,9 @@ test:
 
 cocoapods-lint:
   stage: lint
-  script:
+  before_script:
     - bundle install
+  script:
     - bundle exec pod lib lint --allow-warnings
   tags:
     - xcode13
@@ -72,8 +67,9 @@ swiftlint:
 
 jazzy-docs:
   stage: docs
-  script:
+  before_script:
     - bundle install
+  script:
     - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
     - xcode13

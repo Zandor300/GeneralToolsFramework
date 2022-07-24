@@ -30,10 +30,12 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
 
   s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '6.3'
   s.swift_version = '5.0'
 
   s.ios.source_files = 'GeneralToolsFramework/Classes/Common/**/*', 'GeneralToolsFramework/Classes/iOS/**/*'
   s.tvos.source_files = 'GeneralToolsFramework/Classes/Common/**/*'
+  s.watchos.source_files = 'GeneralToolsFramework/Classes/Common/**/*'
   
   # s.resource_bundles = {
   #   'GeneralToolsFramework' => ['GeneralToolsFramework/Assets/*.png']
@@ -43,7 +45,8 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.ios.frameworks = 'UIKit', 'Security'
   s.tvos.frameworks = 'Security'
 
-  s.dependency 'Connectivity', '~> 5.0'
   s.dependency 'PINCache', '~> 3.0'
+  s.ios.dependency 'Connectivity', '~> 5.0'
+  s.tvos.dependency 'Connectivity', '~> 5.0'
   s.ios.dependency 'AAPickerView', '~> 1.3'
 end

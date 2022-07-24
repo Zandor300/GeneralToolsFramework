@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 05/02/2020.
 //
 
+#if os(iOS)
 import UIKit
 import AAPickerView
 
@@ -40,3 +41,4 @@ public class ZSPickerViewTableViewCell: UITableViewCell {
     }
 
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 12/02/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 open class TaggedTableViewCell: UITableViewCell {
@@ -19,3 +20,4 @@ open class TaggedTableViewCell: UITableViewCell {
     }
 
 }
+#endif

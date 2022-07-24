@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 19/12/2018.
 //
 
+#if os(iOS)
 import UIKit
 
 public class UIBlueButton: UIGradientButton {
@@ -18,3 +19,4 @@ public class UIBlueButton: UIGradientButton {
     }
 
 }
+#endif

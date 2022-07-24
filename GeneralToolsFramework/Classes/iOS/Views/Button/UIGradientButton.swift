@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 15/09/2019.
 //
 
+#if os(iOS) || os(tvOS)
 import UIKit
 
 open class UIGradientButton: UIRoundedButton {
@@ -60,3 +61,4 @@ open class UIGradientButton: UIRoundedButton {
     }
 
 }
+#endif

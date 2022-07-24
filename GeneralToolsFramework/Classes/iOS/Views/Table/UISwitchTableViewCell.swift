@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 19/12/2018.
 //
 
+#if os(iOS)
 import UIKit
 
 public class UISwitchTableViewCell: UITableViewCell {
@@ -75,3 +76,4 @@ public class UISwitchTableViewCell: UITableViewCell {
     }
 
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 04/01/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 public class UISelectCheckmarkTableViewCell: UITableViewCell {
@@ -18,40 +19,40 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
 
     public var checked: Bool = false {
         didSet {
-            if checked {
-                if !callbackOn() {
-                    checked = false
-                    self.updateCheckmark()
-                    return
-                }
-                self.updateCheckmark()
-                if sectionIsGroup {
-                    let tableView = self.tableView
-                    if tableView == nil {
-                        return
-                    }
-                    let indexPath = tableView!.indexPath(for: self)
-                    if indexPath == nil {
-                        return
-                    }
-                    var targetIndexPath = IndexPath(row: 0, section: indexPath!.section)
-                    while let targetCell = tableView!.cellForRow(at: targetIndexPath) {
-                        if targetCell != self {
-                            let cell = targetCell as? UISelectCheckmarkTableViewCell
-                            cell?.checked = false
-                            cell?.updateCheckmark()
-                        }
-                        targetIndexPath = IndexPath(row: targetIndexPath.row + 1, section: indexPath!.section)
-                    }
-                }
-            } else {
-                if !callbackOff() {
-                    checked = true
-                    self.updateCheckmark()
-                    return
-                }
-                self.updateCheckmark()
-            }
+//            if checked {
+//                if !callbackOn() {
+//                    checked = false
+//                    self.updateCheckmark()
+//                    return
+//                }
+//                self.updateCheckmark()
+//                if sectionIsGroup {
+//                    let tableView = self.tableView
+//                    if tableView == nil {
+//                        return
+//                    }
+//                    let indexPath = tableView!.indexPath(for: self)
+//                    if indexPath == nil {
+//                        return
+//                    }
+//                    var targetIndexPath = IndexPath(row: 0, section: indexPath!.section)
+//                    while let targetCell = tableView!.cellForRow(at: targetIndexPath) {
+//                        if targetCell != self {
+//                            let cell = targetCell as? UISelectCheckmarkTableViewCell
+//                            cell?.checked = false
+//                            cell?.updateCheckmark()
+//                        }
+//                        targetIndexPath = IndexPath(row: targetIndexPath.row + 1, section: indexPath!.section)
+//                    }
+//                }
+//            } else {
+//                if !callbackOff() {
+//                    checked = true
+//                    self.updateCheckmark()
+//                    return
+//                }
+//                self.updateCheckmark()
+//            }
         }
     }
     private var temporaryCallbackDisabled = false
@@ -98,3 +99,4 @@ public class UISelectCheckmarkTableViewCell: UITableViewCell {
     }
 
 }
+#endif

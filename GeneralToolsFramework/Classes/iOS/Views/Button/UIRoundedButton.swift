@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 19/12/2018.
 //
 
+#if os(iOS) || os(tvOS)
 import UIKit
 
 open class UIRoundedButton: UIButton {
@@ -37,3 +38,4 @@ open class UIRoundedButton: UIButton {
     }
 
 }
+#endif

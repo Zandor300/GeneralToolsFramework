@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 10/12/2018.
 //
 
+#if os(iOS)
 import UIKit
 
 public class NetworkActivityHandler {
@@ -37,3 +38,4 @@ public class NetworkActivityHandler {
     }
 
 }
+#endif

@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 20/02/2019.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 
 extension UIColor {
@@ -32,3 +33,4 @@ extension UIColor {
     }
 
 }
+#endif

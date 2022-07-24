@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 01/02/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIAccessibility {
@@ -16,3 +17,4 @@ public extension UIAccessibility {
     }
 
 }
+#endif

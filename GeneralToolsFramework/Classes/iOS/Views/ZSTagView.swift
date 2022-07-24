@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 12/02/2019.
 //
 
+#if os(iOS) || os(tvOS)
 import UIKit
 
 public class ZSTagView: UIView {
@@ -67,3 +68,4 @@ public class ZSTagView: UIView {
     }
 
 }
+#endif

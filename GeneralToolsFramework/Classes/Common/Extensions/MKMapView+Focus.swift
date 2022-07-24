@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 19/12/2018.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 import MapKit
 
@@ -62,3 +63,4 @@ extension MKMapView {
     }
 
 }
+#endif

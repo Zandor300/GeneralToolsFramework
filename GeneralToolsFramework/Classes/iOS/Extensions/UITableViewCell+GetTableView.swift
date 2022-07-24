@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 04/01/2019.
 //
 
+#if(iOS)
 import UIKit
 
 extension UITableViewCell {
@@ -21,3 +22,4 @@ extension UITableViewCell {
     }
 
 }
+#endif

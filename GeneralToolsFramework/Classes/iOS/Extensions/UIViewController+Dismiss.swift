@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 12/02/2019.
 //
 
+#if os(iOS) || os(tvOS)
 import UIKit
 
 extension UIViewController {
@@ -30,3 +31,4 @@ extension UIViewController {
     }
 
 }
+#endif

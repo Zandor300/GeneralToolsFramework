@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 12/02/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 public class BlueLinkTableViewCell: LinkTableViewCell {
@@ -24,3 +25,4 @@ public class BlueLinkTableViewCell: LinkTableViewCell {
     }
 
 }
+#endif

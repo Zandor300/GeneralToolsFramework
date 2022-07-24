@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 12/02/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 extension UIAlertController {
@@ -27,3 +28,4 @@ extension UIAlertController {
     }
 
 }
+#endif

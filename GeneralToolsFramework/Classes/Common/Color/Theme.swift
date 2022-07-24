@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 09/02/2019.
 //
 
+#if os(iOS) || os(tvOS)
 import Foundation
 
 public class Theme {
@@ -15,3 +16,4 @@ public class Theme {
     public var secondaryColor: UIColor = UIColor.darkGray
 
 }
+#endif

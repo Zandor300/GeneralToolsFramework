@@ -6,7 +6,9 @@
 //
 
 import Foundation
+#if canImport(Connectivity)
 import Connectivity
+#endif
 
 open class BaseAPI {
 
@@ -16,20 +18,25 @@ open class BaseAPI {
     public var printResponses: Bool = false
     public var requireConnectivity: Bool = true {
         didSet {
+            #if canImport(Connectivity)
             if self.requireConnectivity {
                 self.connectivity.startNotifier()
             } else {
                 self.connectivity.stopNotifier()
             }
+            #endif
         }
     }
 
+    #if canImport(Connectivity)
     private let connectivity = Connectivity()
+    #endif
 
     public init(baseUrl: String, name: String) {
         self.baseUrl = baseUrl
         self.apiName = name
 
+        #if canImport(Connectivity)
         connectivity.framework = .network
 
         self.addConnectivityCheckURL(URL(string: "https://web3.zsnode.com/success.html")!)
@@ -37,21 +44,28 @@ open class BaseAPI {
 
         connectivity.startNotifier()
         printWithPrefix("Started connectivity notifier")
+        #endif
     }
 
     open func setBaseUrl(_ baseUrl: String) {
         self.baseUrl = baseUrl
     }
 
+    #if canImport(Connectivity)
     open func addConnectivityCheckURL(_ url: URL) {
         connectivity.connectivityURLs.append(url)
         printWithPrefix(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
     }
+    #endif
 
     open func forceConnectivityCheck(_ onCompletion: @escaping () -> Void) {
+        #if canImport(Connectivity)
         connectivity.checkConnectivity { _ in
             onCompletion()
         }
+        #else
+        onCompletion()
+        #endif
     }
 
     public func doGetApiCall(_ url: String, onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
@@ -59,10 +73,12 @@ open class BaseAPI {
     }
 
     public func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+        #if canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }
+        #endif
 
         #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
@@ -90,10 +106,12 @@ open class BaseAPI {
     }
 
     public func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+        #if canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }
+        #endif
 
         #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()
@@ -128,10 +146,12 @@ open class BaseAPI {
     }
 
     public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+        #if canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
         }
+        #endif
 
         #if os(iOS)
         NetworkActivityHandler.pushNetworkActivity()

@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 31/12/2018.
 //
 
+#if os(iOS)
 import UIKit
 
 public class UITextFieldTableViewCell: UITableViewCell {
@@ -41,3 +42,4 @@ public class UITextFieldTableViewCell: UITableViewCell {
     }
 
 }
+#endif

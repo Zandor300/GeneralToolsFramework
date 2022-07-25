@@ -14,8 +14,8 @@ extension UITableViewCell {
     public var tableView: UITableView? {
         var view = self.superview
 
-        while view != nil && !(view!.isMember(of: UITableView.self)) {
-            view = view?.superview
+        while let viewCheck = view, !viewCheck.isMember(of: UITableView.self) {
+            view = viewCheck.superview
         }
 
         return view as? UITableView

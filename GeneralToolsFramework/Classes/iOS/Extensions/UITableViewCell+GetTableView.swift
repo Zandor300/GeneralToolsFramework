@@ -5,7 +5,7 @@
 //  Created by Zandor Smith on 04/01/2019.
 //
 
-#if(iOS)
+#if os(iOS)
 import UIKit
 
 extension UITableViewCell {

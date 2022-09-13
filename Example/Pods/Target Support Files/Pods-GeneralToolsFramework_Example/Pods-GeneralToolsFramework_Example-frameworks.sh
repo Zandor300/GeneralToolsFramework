@@ -177,17 +177,17 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

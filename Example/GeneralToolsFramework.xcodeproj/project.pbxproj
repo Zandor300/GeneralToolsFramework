@@ -14,9 +14,21 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		B5E768EE191EF00AE7428E60 /* Pods_GeneralToolsFramework_Example_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A0060EC5F28530B14E4AB0 /* Pods_GeneralToolsFramework_Example_tvOS.framework */; };
+		D6A931F90C92F0B585B2C144 /* Pods_GeneralToolsFramework_Example_Watch_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0AD884064237AB2FB09232 /* Pods_GeneralToolsFramework_Example_Watch_App.framework */; };
 		FC2CEDA723FD946F00E8DBDA /* Float+RoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CEDA523FD93DA00E8DBDA /* Float+RoundTests.swift */; };
 		FC2CEDA923FD9A8900E8DBDA /* String+ContainsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2CEDA823FD9A8900E8DBDA /* String+ContainsTests.swift */; };
 		FC744636225E78EC00C40D2F /* VersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC744635225E78EC00C40D2F /* VersionTests.swift */; };
+		FC96841E28D0BE070032AA8E /* GeneralToolsFramework Example.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC96841D28D0BE070032AA8E /* GeneralToolsFramework Example.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC96842328D0BE080032AA8E /* GeneralToolsFramework_watch_ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96842228D0BE080032AA8E /* GeneralToolsFramework_watch_ExampleApp.swift */; };
+		FC96842528D0BE080032AA8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96842428D0BE080032AA8E /* ContentView.swift */; };
+		FC96842728D0BE090032AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96842628D0BE090032AA8E /* Assets.xcassets */; };
+		FC96842A28D0BE090032AA8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96842928D0BE090032AA8E /* Preview Assets.xcassets */; };
+		FC96843928D0BF470032AA8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96843828D0BF470032AA8E /* AppDelegate.swift */; };
+		FC96843B28D0BF470032AA8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC96843A28D0BF470032AA8E /* ViewController.swift */; };
+		FC96843E28D0BF470032AA8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC96843C28D0BF470032AA8E /* Main.storyboard */; };
+		FC96844028D0BF510032AA8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC96843F28D0BF510032AA8E /* Assets.xcassets */; };
+		FC96844328D0BF510032AA8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC96844128D0BF510032AA8E /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,11 +39,35 @@
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = GeneralToolsFramework;
 		};
+		FC96841F28D0BE070032AA8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC96841C28D0BE070032AA8E;
+			remoteInfo = "GeneralToolsFramework watch Example Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FC96842D28D0BE090032AA8E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FC96841E28D0BE070032AA8E /* GeneralToolsFramework Example.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		020CDBC3EF254215CD619444 /* GeneralToolsFramework.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GeneralToolsFramework.podspec; path = ../GeneralToolsFramework.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		08BFBE4FD9F340920B025E52 /* Pods-GeneralToolsFramework Example tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework Example tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		1A3D26C6527376201CC56993 /* Pods-GeneralToolsFramework Example Watch App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework Example Watch App.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework Example Watch App/Pods-GeneralToolsFramework Example Watch App.release.xcconfig"; sourceTree = "<group>"; };
 		3291152938CE0885C99E8580 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		34A0060EC5F28530B14E4AB0 /* Pods_GeneralToolsFramework_Example_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Example_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35933EBFBFA1EBEE192D2F5B /* Pods_GeneralToolsFramework_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7017C8F0C95AC4AFBD9CD2 /* Pods-GeneralToolsFramework_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example.release.xcconfig"; sourceTree = "<group>"; };
 		59A744B904D4F099EF462366 /* Pods_GeneralToolsFramework_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,12 +81,27 @@
 		607FACE51AFB9204008FA782 /* GeneralToolsFramework_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneralToolsFramework_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61E774510E948040CB4DC122 /* Pods-GeneralToolsFramework_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Tests/Pods-GeneralToolsFramework_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FD7740CA16223A95A6CA644 /* Pods-GeneralToolsFramework Example tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework Example tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0AD884064237AB2FB09232 /* Pods_GeneralToolsFramework_Example_Watch_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeneralToolsFramework_Example_Watch_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ACA4147B4588AC14EE721D /* Pods-GeneralToolsFramework_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D3C7C544D7BAB9D812299155 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D4EF51F4DE1173C12C37DE3C /* Pods-GeneralToolsFramework Example Watch App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework Example Watch App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework Example Watch App/Pods-GeneralToolsFramework Example Watch App.debug.xcconfig"; sourceTree = "<group>"; };
 		E2F197FA8330CC834A85C69F /* Pods-GeneralToolsFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralToolsFramework_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeneralToolsFramework_Tests/Pods-GeneralToolsFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FC2CEDA523FD93DA00E8DBDA /* Float+RoundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+RoundTests.swift"; sourceTree = "<group>"; };
 		FC2CEDA823FD9A8900E8DBDA /* String+ContainsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ContainsTests.swift"; sourceTree = "<group>"; };
 		FC744635225E78EC00C40D2F /* VersionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTests.swift; sourceTree = "<group>"; };
+		FC96841828D0BE070032AA8E /* GeneralToolsFramework Example Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GeneralToolsFramework Example Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC96841D28D0BE070032AA8E /* GeneralToolsFramework Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GeneralToolsFramework Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC96842228D0BE080032AA8E /* GeneralToolsFramework_watch_ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralToolsFramework_watch_ExampleApp.swift; sourceTree = "<group>"; };
+		FC96842428D0BE080032AA8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC96842628D0BE090032AA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC96842928D0BE090032AA8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC96843628D0BF470032AA8E /* GeneralToolsFramework Example tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GeneralToolsFramework Example tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC96843828D0BF470032AA8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FC96843A28D0BF470032AA8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC96843D28D0BF470032AA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC96843F28D0BF510032AA8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC96844228D0BF510032AA8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +121,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC96841A28D0BE070032AA8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6A931F90C92F0B585B2C144 /* Pods_GeneralToolsFramework_Example_Watch_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC96843328D0BF470032AA8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E768EE191EF00AE7428E60 /* Pods_GeneralToolsFramework_Example_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +145,8 @@
 			children = (
 				35933EBFBFA1EBEE192D2F5B /* Pods_GeneralToolsFramework_Example.framework */,
 				59A744B904D4F099EF462366 /* Pods_GeneralToolsFramework_Tests.framework */,
+				AF0AD884064237AB2FB09232 /* Pods_GeneralToolsFramework_Example_Watch_App.framework */,
+				34A0060EC5F28530B14E4AB0 /* Pods_GeneralToolsFramework_Example_tvOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,6 +157,8 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for GeneralToolsFramework */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				FC96842128D0BE080032AA8E /* GeneralToolsFramework watch Example Watch App */,
+				FC96843728D0BF470032AA8E /* GeneralToolsFramework Example tvOS */,
 				607FACD11AFB9204008FA782 /* Products */,
 				B2FD19B6BF5D5C8F619B1617 /* Pods */,
 				2322E8D88C1A001DC7572D4A /* Frameworks */,
@@ -99,6 +170,9 @@
 			children = (
 				607FACD01AFB9204008FA782 /* GeneralToolsFramework_Example.app */,
 				607FACE51AFB9204008FA782 /* GeneralToolsFramework_Tests.xctest */,
+				FC96841828D0BE070032AA8E /* GeneralToolsFramework Example Watch.app */,
+				FC96841D28D0BE070032AA8E /* GeneralToolsFramework Example.app */,
+				FC96843628D0BF470032AA8E /* GeneralToolsFramework Example tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,8 +235,43 @@
 				4E7017C8F0C95AC4AFBD9CD2 /* Pods-GeneralToolsFramework_Example.release.xcconfig */,
 				61E774510E948040CB4DC122 /* Pods-GeneralToolsFramework_Tests.debug.xcconfig */,
 				E2F197FA8330CC834A85C69F /* Pods-GeneralToolsFramework_Tests.release.xcconfig */,
+				D4EF51F4DE1173C12C37DE3C /* Pods-GeneralToolsFramework Example Watch App.debug.xcconfig */,
+				1A3D26C6527376201CC56993 /* Pods-GeneralToolsFramework Example Watch App.release.xcconfig */,
+				7FD7740CA16223A95A6CA644 /* Pods-GeneralToolsFramework Example tvOS.debug.xcconfig */,
+				08BFBE4FD9F340920B025E52 /* Pods-GeneralToolsFramework Example tvOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC96842128D0BE080032AA8E /* GeneralToolsFramework watch Example Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				FC96842228D0BE080032AA8E /* GeneralToolsFramework_watch_ExampleApp.swift */,
+				FC96842428D0BE080032AA8E /* ContentView.swift */,
+				FC96842628D0BE090032AA8E /* Assets.xcassets */,
+				FC96842828D0BE090032AA8E /* Preview Content */,
+			);
+			path = "GeneralToolsFramework watch Example Watch App";
+			sourceTree = "<group>";
+		};
+		FC96842828D0BE090032AA8E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FC96842928D0BE090032AA8E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC96843728D0BF470032AA8E /* GeneralToolsFramework Example tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				FC96843828D0BF470032AA8E /* AppDelegate.swift */,
+				FC96843A28D0BF470032AA8E /* ViewController.swift */,
+				FC96843C28D0BF470032AA8E /* Main.storyboard */,
+				FC96843F28D0BF510032AA8E /* Assets.xcassets */,
+				FC96844128D0BF510032AA8E /* LaunchScreen.storyboard */,
+			);
+			path = "GeneralToolsFramework Example tvOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,13 +315,68 @@
 			productReference = 607FACE51AFB9204008FA782 /* GeneralToolsFramework_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FC96841728D0BE070032AA8E /* GeneralToolsFramework Example Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC96843128D0BE090032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example Watch" */;
+			buildPhases = (
+				FC96841628D0BE070032AA8E /* Resources */,
+				FC96842D28D0BE090032AA8E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FC96842028D0BE070032AA8E /* PBXTargetDependency */,
+			);
+			name = "GeneralToolsFramework Example Watch";
+			productName = "GeneralToolsFramework watch Example";
+			productReference = FC96841828D0BE070032AA8E /* GeneralToolsFramework Example Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		FC96841C28D0BE070032AA8E /* GeneralToolsFramework Example Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC96843028D0BE090032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example Watch App" */;
+			buildPhases = (
+				2439FA2104BCA64B3358BE4C /* [CP] Check Pods Manifest.lock */,
+				FC96841928D0BE070032AA8E /* Sources */,
+				FC96841A28D0BE070032AA8E /* Frameworks */,
+				FC96841B28D0BE070032AA8E /* Resources */,
+				5571A198D2FBA1CD91465B3C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GeneralToolsFramework Example Watch App";
+			productName = "GeneralToolsFramework watch Example Watch App";
+			productReference = FC96841D28D0BE070032AA8E /* GeneralToolsFramework Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FC96843528D0BF470032AA8E /* GeneralToolsFramework Example tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC96844628D0BF510032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example tvOS" */;
+			buildPhases = (
+				31D1250DB723BDB3B0FF45A7 /* [CP] Check Pods Manifest.lock */,
+				FC96843228D0BF470032AA8E /* Sources */,
+				FC96843328D0BF470032AA8E /* Frameworks */,
+				FC96843428D0BF470032AA8E /* Resources */,
+				DAE0A92029D320A9233F1B45 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GeneralToolsFramework Example tvOS";
+			productName = "GeneralToolsFramework Example tvOS";
+			productReference = FC96843628D0BF470032AA8E /* GeneralToolsFramework Example tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -226,6 +390,21 @@
 						DevelopmentTeam = 3M5P376P9C;
 						LastSwiftMigration = 1030;
 						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					FC96841728D0BE070032AA8E = {
+						CreatedOnToolsVersion = 14.0;
+						DevelopmentTeam = 3M5P376P9C;
+						ProvisioningStyle = Automatic;
+					};
+					FC96841C28D0BE070032AA8E = {
+						CreatedOnToolsVersion = 14.0;
+						DevelopmentTeam = 3M5P376P9C;
+						ProvisioningStyle = Automatic;
+					};
+					FC96843528D0BF470032AA8E = {
+						CreatedOnToolsVersion = 14.0;
+						DevelopmentTeam = 3M5P376P9C;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -244,6 +423,9 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* GeneralToolsFramework_Example */,
 				607FACE41AFB9204008FA782 /* GeneralToolsFramework_Tests */,
+				FC96841728D0BE070032AA8E /* GeneralToolsFramework Example Watch */,
+				FC96841C28D0BE070032AA8E /* GeneralToolsFramework Example Watch App */,
+				FC96843528D0BF470032AA8E /* GeneralToolsFramework Example tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -266,9 +448,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC96841628D0BE070032AA8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC96841B28D0BE070032AA8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC96842A28D0BE090032AA8E /* Preview Assets.xcassets in Resources */,
+				FC96842728D0BE090032AA8E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC96843428D0BF470032AA8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC96844328D0BF510032AA8E /* LaunchScreen.storyboard in Resources */,
+				FC96844028D0BF510032AA8E /* Assets.xcassets in Resources */,
+				FC96843E28D0BF470032AA8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2439FA2104BCA64B3358BE4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeneralToolsFramework Example Watch App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31D1250DB723BDB3B0FF45A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeneralToolsFramework Example tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41C2E43A253C63BE5B9C98F3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,10 +529,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework",
-				"${BUILT_PRODUCTS_DIR}/Connectivity/Connectivity.framework",
-				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework/GeneralToolsFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework",
+				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -293,6 +545,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5571A198D2FBA1CD91465B3C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example Watch App/Pods-GeneralToolsFramework Example Watch App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-watchOS/GeneralToolsFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-watchOS/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-watchOS/PINOperation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example Watch App/Pods-GeneralToolsFramework Example Watch App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6ACE92FA257E0368DCFB4C7D /* [CP] Check Pods Manifest.lock */ = {
@@ -331,6 +605,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DAE0A92029D320A9233F1B45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Connectivity-tvOS/Connectivity.framework",
+				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-tvOS/GeneralToolsFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache-tvOS/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation-tvOS/PINOperation.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Connectivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -353,6 +651,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC96841928D0BE070032AA8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC96842528D0BE080032AA8E /* ContentView.swift in Sources */,
+				FC96842328D0BE080032AA8E /* GeneralToolsFramework_watch_ExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC96843228D0BF470032AA8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC96843B28D0BF470032AA8E /* ViewController.swift in Sources */,
+				FC96843928D0BF470032AA8E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -360,6 +676,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* GeneralToolsFramework_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		FC96842028D0BE070032AA8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC96841C28D0BE070032AA8E /* GeneralToolsFramework Example Watch App */;
+			targetProxy = FC96841F28D0BE070032AA8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -378,6 +699,22 @@
 				607FACDF1AFB9204008FA782 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FC96843C28D0BF470032AA8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC96843D28D0BF470032AA8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FC96844128D0BF510032AA8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC96844228D0BF510032AA8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -567,6 +904,197 @@
 			};
 			name = Release;
 		};
+		FC96842B28D0BE090032AA8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_KEY_CFBundleDisplayName = "GeneralToolsFramework watch Example";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FC96842C28D0BE090032AA8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_KEY_CFBundleDisplayName = "GeneralToolsFramework watch Example";
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FC96842E28D0BE090032AA8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4EF51F4DE1173C12C37DE3C /* Pods-GeneralToolsFramework Example Watch App.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_ASSET_PATHS = "\"GeneralToolsFramework watch Example Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example.watchkitapp";
+				PRODUCT_NAME = "GeneralToolsFramework Example";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		FC96842F28D0BE090032AA8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A3D26C6527376201CC56993 /* Pods-GeneralToolsFramework Example Watch App.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GeneralToolsFramework watch Example Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example.watchkitapp";
+				PRODUCT_NAME = "GeneralToolsFramework Example";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		FC96844428D0BF510032AA8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD7740CA16223A95A6CA644 /* Pods-GeneralToolsFramework Example tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Debug;
+		};
+		FC96844528D0BF510032AA8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08BFBE4FD9F340920B025E52 /* Pods-GeneralToolsFramework Example tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3M5P376P9C;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,6 +1121,33 @@
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
 				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC96843028D0BE090032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC96842E28D0BE090032AA8E /* Debug */,
+				FC96842F28D0BE090032AA8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC96843128D0BE090032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC96842B28D0BE090032AA8E /* Debug */,
+				FC96842C28D0BE090032AA8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC96844628D0BF510032AA8E /* Build configuration list for PBXNativeTarget "GeneralToolsFramework Example tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC96844428D0BF510032AA8E /* Debug */,
+				FC96844528D0BF510032AA8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

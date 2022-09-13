@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'GeneralToolsFramework_Example' do
+  platform :ios, '9.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 
@@ -12,4 +13,19 @@ target 'GeneralToolsFramework_Example' do
     #pod 'FBSnapshotTestCase' , '~> 2.1.4'
     #pod 'Nimble-Snapshots' , '~> 6.3.0'
   end
+end
+
+target 'GeneralToolsFramework Example Watch App' do
+  platform :watchos, '6.3'
+
+  pod 'GeneralToolsFramework', :path => '../'
+
+end
+
+
+target 'GeneralToolsFramework Example tvOS' do
+  platform :tvos, '9.0'
+
+  pod 'GeneralToolsFramework', :path => '../'
+
 end

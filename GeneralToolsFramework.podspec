@@ -44,6 +44,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.ios.frameworks = 'UIKit', 'Security'
   s.tvos.frameworks = 'Security'
+  s.watchos.frameworks = 'Security'
 
   s.dependency 'PINCache', '~> 3.0'
   s.ios.dependency 'Connectivity', '~> 5.0'

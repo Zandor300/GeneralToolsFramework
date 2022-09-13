@@ -10,11 +10,11 @@ import UIKit
 
 extension UIAlertController {
 
-    public func addImageView(withImage image: UIImage) {
-        self.addImageView(withImage: image, size: 125)
+    public func addImageView(withImage image: UIImage) -> UIImageView {
+        return self.addImageView(withImage: image, size: 125)
     }
 
-    public func addImageView(withImage image: UIImage, size: CGFloat) {
+    public func addImageView(withImage image: UIImage, size: CGFloat) -> UIImageView {
         let imageView: UIImageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +25,7 @@ extension UIAlertController {
         imageView.addConstraint(NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: size))
         view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 10.0))
         view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        return imageView
     }
 
 }

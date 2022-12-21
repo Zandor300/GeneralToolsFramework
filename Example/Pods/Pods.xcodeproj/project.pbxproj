@@ -233,6 +233,7 @@
 		F6B13E294A32838614AA8CB812DA1ACC /* NotificationNameAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EC68479E555C344315289CC9B90573 /* NotificationNameAdditions.swift */; };
 		F700160745738060AE43D948802E1A7F /* Int+OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC13B6F30E835D04859F7560461E3E7E /* Int+OptionalString.swift */; };
 		FA0FE0436E7C99E0B89A28D4E954C0CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E668A669508C1983BCD81929C4983D3 /* Security.framework */; };
+		FCDFC3FB29534C760092A192 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC3FA29534C760092A192 /* MulticastDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -485,7 +486,7 @@
 		6E62A7B71825DE21BC5E60C17483E833 /* PINCache-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PINCache-tvOS-umbrella.h"; path = "../PINCache-tvOS/PINCache-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		6F53F211C3E9EDDAC7A876A83375E3F0 /* Connectivity-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Connectivity-tvOS-Info.plist"; path = "../Connectivity-tvOS/Connectivity-tvOS-Info.plist"; sourceTree = "<group>"; };
 		6FE903111021C2196FB601241A7C5FA8 /* Pods-GeneralToolsFramework_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeneralToolsFramework_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6FF9955E832D4AFD76FA806170E2437E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6FF9955E832D4AFD76FA806170E2437E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		70C81451D88C7016668B6774BC49646A /* PINOperation-watchOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PINOperation-watchOS-Info.plist"; path = "../PINOperation-watchOS/PINOperation-watchOS-Info.plist"; sourceTree = "<group>"; };
 		7306FFF756FC92B6B76E572B661710B4 /* UITextFieldTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		736B7C7EF3C4210BA0E34705D1FED044 /* GeneralToolsFramework-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "GeneralToolsFramework-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -526,7 +527,7 @@
 		9C04DAF569BDDAA0B871F8C09054935F /* PINCache-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PINCache-watchOS.debug.xcconfig"; path = "../PINCache-watchOS/PINCache-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		9C73EC2A2EB25A45D502A79783C56C3C /* Pods-GeneralToolsFramework_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeneralToolsFramework_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9CC89D74DD298C87B1249480E51B584D /* Pods-GeneralToolsFramework Example Watch App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeneralToolsFramework Example Watch App-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F1DA4573610F651B7458AF6ED35E646 /* PINOperationQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PINOperationQueue.m; path = Source/PINOperationQueue.m; sourceTree = "<group>"; };
 		A16246DD207FAE8AD0C354F86DA32971 /* UIColor+Lerp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Lerp.swift"; sourceTree = "<group>"; };
 		A2886657D462F4CF85E33CEA9287ECD0 /* ConnectivityResponseRegExValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectivityResponseRegExValidator.swift; path = "Connectivity/Classes/Response Validation/Validators/ConnectivityResponseRegExValidator.swift"; sourceTree = "<group>"; };
@@ -570,14 +571,14 @@
 		C0D55F505F22DBDF5B9047FE7FCC2D3D /* PINCache-watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PINCache-watchOS.release.xcconfig"; path = "../PINCache-watchOS/PINCache-watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		C28BD10DD8F0DB682DC16DB81B5E2461 /* BaseAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		C4D9E316D04405265142EEE92D5593D0 /* Connectivity-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Connectivity-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		C7374FB1C5DFBC197C222EA480E908D8 /* GeneralToolsFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GeneralToolsFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C7374FB1C5DFBC197C222EA480E908D8 /* GeneralToolsFramework.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GeneralToolsFramework.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C7DB8E6239C47065EC0AD99BAB507A47 /* GeneralToolsFramework-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "GeneralToolsFramework-iOS"; path = GeneralToolsFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADD0D8029E2373D70CD60337EB459D9 /* NetworkActivityHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetworkActivityHandler.swift; sourceTree = "<group>"; };
 		CB3068E8432C7D61EEC013C2367FB9E0 /* PINOperation-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PINOperation-iOS-prefix.pch"; sourceTree = "<group>"; };
 		CC6685468D5CE2FEE893E3B966F62D11 /* APICallError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = APICallError.swift; sourceTree = "<group>"; };
 		CD97537A33E4467DB9898A1588CAFFB7 /* Pods-GeneralToolsFramework Example Watch App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GeneralToolsFramework Example Watch App.modulemap"; sourceTree = "<group>"; };
 		CE88C96F22A96FE48C34ACE88BC6FCA9 /* PINCache-watchOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PINCache-watchOS"; path = PINCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF2B0A7894E617EA8471B89C58AE4C6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CF2B0A7894E617EA8471B89C58AE4C6B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CFF3D82C34A13E488251CC03753EC49A /* UIAlertController+UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIAlertController+UIImageView.swift"; sourceTree = "<group>"; };
 		D33FAD9C8531EF6A4FD4CE68DC552D8B /* PINCache-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "PINCache-iOS"; path = PINCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C859213EDF429B0BD62A09F458C1DB /* Pods-GeneralToolsFramework_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeneralToolsFramework_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -619,6 +620,7 @@
 		F970ABAAAE12998169639021E48B5CF8 /* Pods-GeneralToolsFramework_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GeneralToolsFramework_Example.modulemap"; sourceTree = "<group>"; };
 		F9841A6C34ECB648BCDBDF3B81429952 /* PINCache-watchOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PINCache-watchOS-umbrella.h"; path = "../PINCache-watchOS/PINCache-watchOS-umbrella.h"; sourceTree = "<group>"; };
 		FC13B6F30E835D04859F7560461E3E7E /* Int+OptionalString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Int+OptionalString.swift"; sourceTree = "<group>"; };
+		FCDFC3FA29534C760092A192 /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		FDC2584A781CB04A5A407BCD65F0262B /* GeneralToolsFramework-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GeneralToolsFramework-iOS-Info.plist"; sourceTree = "<group>"; };
 		FE2C9BE969EB7FCAA4F22E48027DFA45 /* GeneralToolsFramework-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeneralToolsFramework-tvOS-umbrella.h"; path = "../GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		FE5A81DBD66B4CA91B20FA7D198054DB /* PINOperation-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PINOperation-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -866,7 +868,6 @@
 				883AAE935B2AD17C0704A07FB866BA3D /* BuildConfig.swift */,
 				3C2DBB95ED679EA1A486FC3F05C5FC40 /* Version.swift */,
 			);
-			name = Utilities;
 			path = Utilities;
 			sourceTree = "<group>";
 		};
@@ -900,7 +901,6 @@
 				F867D581372ECA200A3B87F01DA2739C /* AAPickerView+UIKit.swift */,
 				EBAF26B2CDBE787F61B380BAB89CD80D /* Support Files */,
 			);
-			name = AAPickerView;
 			path = AAPickerView;
 			sourceTree = "<group>";
 		};
@@ -921,7 +921,6 @@
 				4E772E12231DC4ED1E73F77839473375 /* UIColor+Hex.swift */,
 				A16246DD207FAE8AD0C354F86DA32971 /* UIColor+Lerp.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -965,7 +964,6 @@
 				7306FFF756FC92B6B76E572B661710B4 /* UITextFieldTableViewCell.swift */,
 				EFDA235DD1D5D81C9042988B7844A733 /* ZSPickerViewTableViewCell.swift */,
 			);
-			name = Table;
 			path = Table;
 			sourceTree = "<group>";
 		};
@@ -981,7 +979,6 @@
 				9B72376A75D130DDE3EE986F33D76881 /* PINOperationTypes.h */,
 				BEEFBEC1F38D93BFA0EC946C3FE913EF /* Support Files */,
 			);
-			name = PINOperation;
 			path = PINOperation;
 			sourceTree = "<group>";
 		};
@@ -1040,7 +1037,6 @@
 				7BD4575DA7795E93D2274E68CAB2E29A /* Core */,
 				023DAB9476B91BF0C20799846AC2F6CE /* Support Files */,
 			);
-			name = PINCache;
 			path = PINCache;
 			sourceTree = "<group>";
 		};
@@ -1051,7 +1047,6 @@
 				ACA83E8860E3A2512EA5936C2FDDB18B /* UIGradientButton.swift */,
 				095BC9DDC3F6C11A2751D7E11B5C9308 /* UIRoundedButton.swift */,
 			);
-			name = Button;
 			path = Button;
 			sourceTree = "<group>";
 		};
@@ -1114,8 +1109,8 @@
 			isa = PBXGroup;
 			children = (
 				CADD0D8029E2373D70CD60337EB459D9 /* NetworkActivityHandler.swift */,
+				FCDFC3FA29534C760092A192 /* MulticastDelegate.swift */,
 			);
-			name = Utilities;
 			path = Utilities;
 			sourceTree = "<group>";
 		};
@@ -1166,7 +1161,6 @@
 				6D909E3BCA4AB60DF64C42823DACA0D5 /* Button */,
 				475BCDCF9AFAEEFB2B8507ECDAC70948 /* Table */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -1221,7 +1215,6 @@
 			children = (
 				A43452F6B3A2048E3AD3D7AD0D3924A8 /* Theme.swift */,
 			);
-			name = Color;
 			path = Color;
 			sourceTree = "<group>";
 		};
@@ -1245,7 +1238,6 @@
 				0D864F54C66D81DD1F54F8D1F5C48748 /* Image.swift */,
 				E6698A89814A6A20BD13F8A29B43A1C7 /* Upload.swift */,
 			);
-			name = API;
 			path = API;
 			sourceTree = "<group>";
 		};
@@ -1263,7 +1255,6 @@
 				8FDBFFC61F30D47764406EB42BBF6759 /* UIViewController+Dismiss.swift */,
 				398D147FC9DE7583BA7A72B72EDB0673 /* UIViewController+Top.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -1306,7 +1297,6 @@
 				46FB8303A1842214FEEB2105DC100B3F /* ResponseValidatorFactory.swift */,
 				12EEF9AE20AAFA1266C7A683D251028D /* Support Files */,
 			);
-			name = Connectivity;
 			path = Connectivity;
 			sourceTree = "<group>";
 		};
@@ -2083,6 +2073,7 @@
 				C685877E96FFBBB824066FBC290BAB98 /* MKMapView+Focus.swift in Sources */,
 				F0332AB67BACECB2BC3E71328ACC82D0 /* NetworkActivityHandler.swift in Sources */,
 				61A1A48A88468CD6BB06239F0975C5FD /* RedLinkTableViewCell.swift in Sources */,
+				FCDFC3FB29534C760092A192 /* MulticastDelegate.swift in Sources */,
 				C80C996352DA244FB1F0296BBA011945 /* String+Contains.swift in Sources */,
 				3ECC38C98DEC6118F56BC18A690F76A9 /* String+Float.swift in Sources */,
 				9239A42EBD9CE831790C5F62901D3160 /* String+Hashing.swift in Sources */,
@@ -3413,8 +3404,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 				TVOS_DEPLOYMENT_TARGET = 9.0;

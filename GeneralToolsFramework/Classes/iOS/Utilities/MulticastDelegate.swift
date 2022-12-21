@@ -13,6 +13,8 @@ public class MulticastDelegate<T> {
 
     private let delegates: NSHashTable<AnyObject> = NSHashTable.weakObjects()
 
+    public init() {}
+
     public func add(_ delegate: T) {
         delegates.add(delegate as AnyObject)
     }

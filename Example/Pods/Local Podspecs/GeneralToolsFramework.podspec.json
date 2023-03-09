@@ -13,11 +13,11 @@
   },
   "source": {
     "git": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git",
-    "tag": "1.16.0"
+    "tag": "1.18.0"
   },
   "platforms": {
-    "ios": "9.0",
-    "tvos": "9.0",
+    "ios": "11.0",
+    "tvos": "11.0",
     "watchos": "6.3"
   },
   "swift_versions": "5.0",

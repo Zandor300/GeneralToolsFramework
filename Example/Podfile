@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'GeneralToolsFramework_Example' do
-  platform :ios, '9.0'
+  platform :ios, '11.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 
@@ -16,7 +16,7 @@ target 'GeneralToolsFramework_Example' do
 end
 
 target 'GeneralToolsFramework Example Watch App' do
-  platform :watchos, '6.3'
+  platform :watchos, '7.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 
@@ -24,7 +24,7 @@ end
 
 
 target 'GeneralToolsFramework Example tvOS' do
-  platform :tvos, '9.0'
+  platform :tvos, '11.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GeneralToolsFramework'
-  s.version          = '1.18.0'
+  s.version          = '1.19.0'
   s.summary          = 'Contains general tools used in my iOS apps.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
 
   s.ios.deployment_target = '11.0'
   s.tvos.deployment_target = '11.0'
-  s.watchos.deployment_target = '6.3'
+  s.watchos.deployment_target = '7.0'
   s.swift_version = '5.0'
 
   s.ios.source_files = 'GeneralToolsFramework/Classes/Common/**/*', 'GeneralToolsFramework/Classes/iOS/**/*'
@@ -47,7 +47,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.watchos.frameworks = 'Security'
 
   s.dependency 'PINCache', '~> 3.0'
-  s.ios.dependency 'Connectivity', '~> 5.0'
-  s.tvos.dependency 'Connectivity', '~> 5.0'
+  s.ios.dependency 'Connectivity', '~> 6.0'
+  s.tvos.dependency 'Connectivity', '~> 6.0'
   s.ios.dependency 'AAPickerView', '~> 1.3'
 end

@@ -29,3 +29,15 @@ target 'GeneralToolsFramework Example tvOS' do
   pod 'GeneralToolsFramework', :path => '../'
 
 end
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+        if Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']) < Gem::Version.new('11.0')
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+        end
+      end
+    end
+  end
+end

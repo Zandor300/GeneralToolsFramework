@@ -1,7 +1,7 @@
 PODS:
   - AAPickerView (1.3)
   - Connectivity (6.0.0)
-  - GeneralToolsFramework (1.19.0):
+  - GeneralToolsFramework (1.20.0):
     - AAPickerView (~> 1.3)
     - Connectivity (~> 6.0)
     - PINCache (~> 3.0)
@@ -31,7 +31,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AAPickerView: 98fefdd9610a982e1a344e09192906154f868e1f
   Connectivity: 1919d4dc94c63514a2ec0574336f2e83857a20a8
-  GeneralToolsFramework: 82c8ec670bba59b3b5d724e59a1a710e62c97111
+  GeneralToolsFramework: f9421684b4108139f8fe97e85a4ad6849dc8b226
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
 

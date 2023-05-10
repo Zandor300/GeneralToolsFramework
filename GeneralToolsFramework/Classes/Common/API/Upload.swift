@@ -10,6 +10,7 @@ import Foundation
 public enum UploadType: String {
     case PNG = "image/png"
     case JPG = "image/jpg"
+    case MP3 = "audio/mpeg"
 }
 
 public class Upload {

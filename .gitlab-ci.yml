@@ -12,9 +12,9 @@ build-ios:
   stage: build
   script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
+    - cd Example/
+    - bundle exec pod install --repo-update
+    - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
@@ -24,9 +24,9 @@ build-tvos:
   stage: build
   script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
+    - cd Example/
+    - bundle exec pod install --repo-update
+    - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
@@ -36,9 +36,9 @@ build-watchos:
   stage: build
   script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
+    - cd Example/
+    - bundle exec pod install --repo-update
+    - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-watchOS -sdk watchsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
@@ -48,9 +48,9 @@ test:
   stage: test
   script:
     - bundle install
-    # - cd Example/
-    # - bundle exec pod install --repo-update
-    # - cd ../
+    - cd Example/
+    - bundle exec pod install --repo-update
+    - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
     - xcode13

@@ -53,6 +53,7 @@ cocoapods-lint:
   stage: lint
   script:
     - bundle install
+    - bundle exec pod repo update
     - bundle exec pod lib lint --allow-warnings
   tags:
     - xcode13

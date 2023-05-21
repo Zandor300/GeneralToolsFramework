@@ -41,7 +41,7 @@ install_framework()
 
   if [ -L "${source}" ]; then
     echo "Symlinked..."
-    source="$(readlink "${source}")"
+    source="$(readlink -f "${source}")"
   fi
 
   if [ -d "${source}/${BCSYMBOLMAP_DIR}" ]; then
@@ -176,18 +176,18 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

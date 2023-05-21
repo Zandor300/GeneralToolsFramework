@@ -528,19 +528,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AAPickerView/AAPickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-iOS/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-iOS/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AAPickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Connectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPickerView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -555,14 +555,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example Watch App/Pods-GeneralToolsFramework Example Watch App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-watchOS/GeneralToolsFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-watchOS/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-watchOS/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINCache-watchOS/ZSPINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINOperation-watchOS/ZSPINOperation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINOperation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -614,15 +614,15 @@
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Connectivity-tvOS/Connectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-tvOS/GeneralToolsFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/PINCache-tvOS/PINCache.framework",
-				"${BUILT_PRODUCTS_DIR}/PINOperation-tvOS/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINCache-tvOS/ZSPINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSPINOperation-tvOS/ZSPINOperation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Connectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINOperation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

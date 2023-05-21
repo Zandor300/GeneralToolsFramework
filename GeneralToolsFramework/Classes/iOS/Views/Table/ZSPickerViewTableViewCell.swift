@@ -7,7 +7,7 @@
 
 #if os(iOS)
 import UIKit
-import AAPickerView
+import ZSPickerView
 
 public class ZSPickerViewTableViewCell: UITableViewCell {
 

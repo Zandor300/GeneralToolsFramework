@@ -15,7 +15,7 @@ build-ios:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
   needs: []
@@ -27,7 +27,19 @@ build-tvos:
     # - cd Example/
     # - bundle exec pod install --repo-update
     # - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+  tags:
+    - xcode13
+  needs: []
+
+build-watchos:
+  stage: build
+  script:
+    - bundle install
+    # - cd Example/
+    # - bundle exec pod install --repo-update
+    # - cd ../
+    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-watchOS -sdk watchsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
     - xcode13
   needs: []

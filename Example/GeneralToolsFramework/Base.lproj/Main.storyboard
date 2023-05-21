@@ -35,16 +35,33 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapButton:" destination="I6F-dF-6nc" eventType="touchUpInside" id="N6s-dQ-oDM"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pzp-9b-MTn">
+                                <rect key="frame" x="67.5" y="376" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="1B9-30-zjJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="e1Y-kY-T9g"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Yqs-MG-MZW" firstAttribute="centerX" secondItem="phD-Ko-mcA" secondAttribute="centerX" id="4aj-kb-Tsy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Yqs-MG-MZW" secondAttribute="trailing" constant="28" id="96C-01-1G6"/>
+                            <constraint firstItem="pzp-9b-MTn" firstAttribute="centerX" secondItem="phD-Ko-mcA" secondAttribute="centerX" id="Mnx-4A-p86"/>
                             <constraint firstItem="Yqs-MG-MZW" firstAttribute="centerY" secondItem="phD-Ko-mcA" secondAttribute="centerY" id="kSl-pa-8U4"/>
+                            <constraint firstItem="pzp-9b-MTn" firstAttribute="top" secondItem="Yqs-MG-MZW" secondAttribute="bottom" constant="22.5" id="laj-kA-8aR"/>
                             <constraint firstItem="Yqs-MG-MZW" firstAttribute="leading" secondItem="phD-Ko-mcA" secondAttribute="leadingMargin" constant="28" id="qeR-vq-d3s"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Yqs-MG-MZW" id="bmt-36-Xdv"/>
+                        <outlet property="imageView" destination="pzp-9b-MTn" id="Bj5-cY-bpC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCD-7T-SLt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,6 +71,9 @@
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

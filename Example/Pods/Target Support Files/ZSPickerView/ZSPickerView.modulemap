@@ -1,0 +1,6 @@
+framework module ZSPickerView {
+  umbrella header "ZSPickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

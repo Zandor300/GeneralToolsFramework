@@ -1,0 +1,6 @@
+framework module ZSPINOperation {
+  umbrella header "ZSPINOperation-watchOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

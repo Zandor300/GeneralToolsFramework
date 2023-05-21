@@ -1,0 +1,6 @@
+framework module GeneralToolsFramework {
+  umbrella header "GeneralToolsFramework-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module ZSPINOperation {
+  umbrella header "ZSPINOperation-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

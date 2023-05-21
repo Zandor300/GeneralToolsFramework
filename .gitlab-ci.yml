@@ -90,6 +90,7 @@ jazzy-docs:
     - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
     - xcode13
+  allow_failure: true
   artifacts:
     paths:
       - docs

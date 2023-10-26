@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum APICallError {
+public enum APICallError: Error {
 
     // Network related errors
     case noInternet

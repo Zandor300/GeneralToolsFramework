@@ -17,7 +17,7 @@ build-ios:
     - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
-    - xcode13
+    - xcode15
   needs: []
 
 build-tvos:
@@ -29,7 +29,7 @@ build-tvos:
     - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
-    - xcode13
+    - xcode15
   needs: []
 
 build-watchos:
@@ -41,7 +41,7 @@ build-watchos:
     - cd ../
     - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-watchOS -sdk watchsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
   tags:
-    - xcode13
+    - xcode15
   needs: []
 
 test:
@@ -53,7 +53,7 @@ test:
     - cd ../
     - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
   tags:
-    - xcode13
+    - xcode15
   artifacts:
     paths:
       - build/reports/junit.xml
@@ -68,7 +68,7 @@ cocoapods-lint:
     - bundle exec pod repo update
     - bundle exec pod lib lint --allow-warnings
   tags:
-    - xcode13
+    - xcode15
   allow_failure: true
   needs: []
 
@@ -89,7 +89,7 @@ jazzy-docs:
     - bundle install
     - bundle exec jazzy --podspec GeneralToolsFramework.podspec --output docs
   tags:
-    - xcode13
+    - xcode15
   allow_failure: true
   artifacts:
     paths:
@@ -101,7 +101,7 @@ pages:
   script:
     - mv docs/ public/
   tags:
-    - xcode13
+    - xcode15
   artifacts:
     paths:
       - public

@@ -1802,8 +1802,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2391,39 +2391,6 @@
 			};
 			name = Debug;
 		};
-		0F317100E67F3C05B36F5240338D1426 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7866AB8A18404C9D43E89ECD97B34848 /* GeneralToolsFramework-iOS.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS.modulemap";
-				PRODUCT_MODULE_NAME = GeneralToolsFramework;
-				PRODUCT_NAME = GeneralToolsFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		154A2FEF0B5DA82E42CE541B99BDED6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9879B2AD92EE0ADEA87E28C7DA7A3779 /* Pods-GeneralToolsFramework Example tvOS.release.xcconfig */;
@@ -2590,6 +2557,38 @@
 			};
 			name = Release;
 		};
+		2C37B2CC38AD3BEDC1AA5DF130AC3263 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 736B7C7EF3C4210BA0E34705D1FED044 /* GeneralToolsFramework-iOS.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS.modulemap";
+				PRODUCT_MODULE_NAME = GeneralToolsFramework;
+				PRODUCT_NAME = GeneralToolsFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		32FD9B9AC7F097220727F7931D9C6E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B26201D07384745522C0EE1DCF73CA32 /* Connectivity-iOS.debug.xcconfig */;
@@ -2621,38 +2620,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		37B0FC05059BADA0B37A7166DBA7B913 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B6F41CDAE5CC3DE68EDCAE91770F268 /* GeneralToolsFramework-tvOS.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS.modulemap";
-				PRODUCT_MODULE_NAME = GeneralToolsFramework;
-				PRODUCT_NAME = GeneralToolsFramework;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		437A9229CF24CB53C19BB3A655CBC478 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2781,37 +2748,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		6047E9BA88730144FC7BE4DF98F31E28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 528A5E53983CF0D8282D5C269D309C60 /* GeneralToolsFramework-tvOS.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS.modulemap";
-				PRODUCT_MODULE_NAME = GeneralToolsFramework;
-				PRODUCT_NAME = GeneralToolsFramework;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		6E9768596B246D39CA773E06948F538D /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3044,12 +2980,10 @@
 			};
 			name = Debug;
 		};
-		94EF3F6913186FCD5C2C47ADAE9E2F7E /* Debug */ = {
+		9020C31C476CC7F4F8464A7706FF4F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 736B7C7EF3C4210BA0E34705D1FED044 /* GeneralToolsFramework-iOS.debug.xcconfig */;
+			baseConfigurationReference = 528A5E53983CF0D8282D5C269D309C60 /* GeneralToolsFramework-tvOS.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -3058,19 +2992,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS.modulemap";
+				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS.modulemap";
 				PRODUCT_MODULE_NAME = GeneralToolsFramework;
 				PRODUCT_NAME = GeneralToolsFramework;
-				SDKROOT = iphoneos;
+				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -3409,6 +3344,71 @@
 			};
 			name = Release;
 		};
+		DC81309711DD3398BFF8217ADC1260E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6F41CDAE5CC3DE68EDCAE91770F268 /* GeneralToolsFramework-tvOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-tvOS/GeneralToolsFramework-tvOS.modulemap";
+				PRODUCT_MODULE_NAME = GeneralToolsFramework;
+				PRODUCT_NAME = GeneralToolsFramework;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E23C370B9E25C932AEEAA52AC888F4FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7866AB8A18404C9D43E89ECD97B34848 /* GeneralToolsFramework-iOS.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GeneralToolsFramework-iOS/GeneralToolsFramework-iOS.modulemap";
+				PRODUCT_MODULE_NAME = GeneralToolsFramework;
+				PRODUCT_NAME = GeneralToolsFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E89467E284AFE181A8F8E6365621C4F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39E46FD58C5941C0CB65F09B61858DBC /* Connectivity-iOS.release.xcconfig */;
@@ -3598,8 +3598,8 @@
 		7AD7CABC477A2C6306E1EE6E826255A4 /* Build configuration list for PBXNativeTarget "GeneralToolsFramework-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6047E9BA88730144FC7BE4DF98F31E28 /* Debug */,
-				37B0FC05059BADA0B37A7166DBA7B913 /* Release */,
+				9020C31C476CC7F4F8464A7706FF4F4C /* Debug */,
+				DC81309711DD3398BFF8217ADC1260E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3652,8 +3652,8 @@
 		B0445CADA2B803A7103FFA7217181A20 /* Build configuration list for PBXNativeTarget "GeneralToolsFramework-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				94EF3F6913186FCD5C2C47ADAE9E2F7E /* Debug */,
-				0F317100E67F3C05B36F5240338D1426 /* Release */,
+				2C37B2CC38AD3BEDC1AA5DF130AC3263 /* Debug */,
+				E23C370B9E25C932AEEAA52AC888F4FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

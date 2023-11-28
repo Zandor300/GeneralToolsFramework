@@ -1,6 +1,6 @@
 PODS:
   - Connectivity (6.0.0)
-  - GeneralToolsFramework (1.20.0):
+  - GeneralToolsFramework (1.22.0):
     - Connectivity (~> 6.0)
     - ZSPickerView (~> 1.4)
     - ZSPINCache (~> 3.1)
@@ -30,11 +30,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Connectivity: 1919d4dc94c63514a2ec0574336f2e83857a20a8
-  GeneralToolsFramework: ecb964ecaaff7d6991ca473ad25f40a23c02cf2e
+  GeneralToolsFramework: 80df8c364f5e044b68d01c082e6e9af05df6564e
   ZSPickerView: 24e8927e8e589ff581f658751ab6c51b5bf63902
   ZSPINCache: 2d7737e1420588a9ff09aef40304b3f227724d28
   ZSPINOperation: 988f490c06b840ee8992d59be4e0ec37c10052c0
 
 PODFILE CHECKSUM: 761a7e019bc82012fd77d24754d46569a2f5476b
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.2

@@ -69,6 +69,17 @@ open class Image {
         return nil
     }
 
+    @available(iOS 13.0.0, *)
+    open func getImage() async throws -> UIImage {
+        return try await withCheckedThrowingContinuation { continuation in
+            self.getImage(available: { image in
+                continuation.resume(returning: image)
+            }, onError: { error in
+                continuation.resume(throwing: error)
+            })
+        }
+    }
+
     open func getImage(available: @escaping (UIImage) -> Void, onError: @escaping (APICallError) -> Void) {
         if let image = self.getImageFromCache() {
             print("[Image] Taken image from cache: \(self.url)")

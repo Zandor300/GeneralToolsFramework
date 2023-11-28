@@ -69,7 +69,7 @@ open class Image {
         return nil
     }
 
-    @available(iOS 13.0.0, *)
+    @available(iOS 13.0.0, tvOS 13.0.0, *)
     open func getImage() async throws -> UIImage {
         return try await withCheckedThrowingContinuation { continuation in
             self.getImage(available: { image in

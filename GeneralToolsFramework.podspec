@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GeneralToolsFramework'
-  s.version          = '1.22.1'
+  s.version          = '1.23.0'
   s.summary          = 'Contains general tools used in my iOS apps.'
 
 # This description is used to generate tags and improve search results.

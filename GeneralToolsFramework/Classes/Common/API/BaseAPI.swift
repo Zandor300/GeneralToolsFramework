@@ -241,17 +241,10 @@ open class BaseAPI {
             return
         }
 
-        guard let contents = String(data: data, encoding: .utf8) else {
-            #if os(iOS)
-            NetworkActivityHandler.popNetworkActivity()
-            #endif
-            onError(.serverUnavailable)
-            return
-        }
-
-        if printResponses {
+        if printResponses, let contents = String(data: data, encoding: .utf8) {
             printWithPrefix(contents)
         }
+
         #if os(iOS)
         NetworkActivityHandler.popNetworkActivity()
         #endif

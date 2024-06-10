@@ -1,0 +1,6 @@
+framework module ZSConnectivity {
+  umbrella header "ZSConnectivity-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

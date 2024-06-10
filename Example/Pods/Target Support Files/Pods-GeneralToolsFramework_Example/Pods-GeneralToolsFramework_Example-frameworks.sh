@@ -176,15 +176,15 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSConnectivity-iOS/ZSConnectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSConnectivity-iOS/ZSConnectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework"

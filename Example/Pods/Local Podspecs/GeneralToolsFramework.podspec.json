@@ -1,6 +1,6 @@
 {
   "name": "GeneralToolsFramework",
-  "version": "1.22.0",
+  "version": "1.24.0",
   "summary": "Contains general tools used in my iOS apps.",
   "description": "I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I use these classes all the time, I decided to write my own Cocoapod with all these classes.",
   "homepage": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git",
-    "tag": "1.22.0"
+    "tag": "1.24.0"
   },
   "platforms": {
     "ios": "12.0",
@@ -31,8 +31,8 @@
       "Security"
     ],
     "dependencies": {
-      "Connectivity": [
-        "~> 6.0"
+      "ZSConnectivity": [
+        "~> 7.1"
       ],
       "ZSPickerView": [
         "~> 1.4"
@@ -43,8 +43,8 @@
     "source_files": "GeneralToolsFramework/Classes/Common/**/*",
     "frameworks": "Security",
     "dependencies": {
-      "Connectivity": [
-        "~> 6.0"
+      "ZSConnectivity": [
+        "~> 7.1"
       ]
     }
   },

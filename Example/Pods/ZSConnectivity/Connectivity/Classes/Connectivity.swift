@@ -50,13 +50,27 @@ public class Connectivity: NSObject {
     /// network actually being available.
     public var connectivityCheckLatency: Double = 0.5
     
+    @available(*, deprecated, renamed: "connectivityURLRequests")
+    public var connectivityURLs: [URL] {
+        get {
+            connectivityURLRequests.compactMap { urlRequest in
+                urlRequest.url
+            }
+        }
+        set {
+            connectivityURLRequests = newValue.map { url in
+                URLRequest(url: url)
+            }
+        }
+    }
+
     /// URLs to contact in order to check connectivity
-    public var connectivityURLs: [URL] = Connectivity
-        .defaultConnectivityURLs(shouldUseHTTPS: Connectivity.isHTTPSOnly) {
+    public var connectivityURLRequests: [URLRequest] = Connectivity
+        .defaultConnectivityURLRequests(shouldUseHTTPS: Connectivity.isHTTPSOnly) {
             didSet {
                 if Connectivity.isHTTPSOnly { // if HTTPS only set only allow HTTPS URLs
-                    connectivityURLs = connectivityURLs.filter { url in
-                        return url.absoluteString.lowercased().starts(with: "https")
+                    connectivityURLRequests = connectivityURLRequests.filter { request in
+                        return request.url?.absoluteString.lowercased().starts(with: "https") ?? false
                     }
                 }
             }
@@ -83,7 +97,7 @@ public class Connectivity: NSObject {
     private (set) var externalQueue = DispatchQueue.main
     
     /// Whether or not to use System Configuration or Network (on iOS 12+) framework.
-    public var framework: Connectivity.Framework = .systemConfiguration
+    public var framework: Connectivity.Framework = .network
     
     /// Used to for checks using NWPathMonitor
     private (set) var internalQueue = DispatchQueue.global(qos: .default)
@@ -249,7 +263,7 @@ public extension Connectivity {
         }
     }
     
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     private func startPathMonitorNotifier() {
         let monitor = NWPathMonitor()
         pathMonitor = monitor
@@ -284,7 +298,7 @@ public extension Connectivity {
         isObservingInterfaceChanges = false
     }
     
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     private func stopPathMonitorNotifier() {
         if isObservingInterfaceChanges, let monitor = pathMonitor as? NWPathMonitor {
             monitor.cancel()
@@ -313,7 +327,7 @@ private extension Connectivity {
     /// Returns a URL request for an Authorization header if `authorizationHeader` or `bearerToken` property is set,
     /// `authorizationHeader` is prefered over `bearerToken`
     /// otherwise `nil` is returned.
-    func authorizedURLRequest(with url: URL) -> URLRequest? {
+    func authorizedURLRequest(with urlRequest: URLRequest) -> URLRequest? {
         var authHeader: String? = authorizationHeader
         if let bearerToken {
             authHeader = authHeader ?? "Bearer \(bearerToken)"
@@ -321,7 +335,7 @@ private extension Connectivity {
         guard let authHeader else {
             return nil
         }
-        var request = URLRequest(url: url)
+        var request = urlRequest
         request.setValue(authHeader, forHTTPHeaderField: "Authorization")
         return request
     }
@@ -351,16 +365,16 @@ private extension Connectivity {
         let dispatchGroup = DispatchGroup()
         var tasks: [URLSessionDataTask] = []
         var successfulChecks: UInt = 0, failedChecks: UInt = 0
-        let totalChecks = UInt(connectivityURLs.count)
+        let totalChecks = UInt(connectivityURLRequests.count)
         
         // Ensure that we are using the latest session configuration.
         urlSession = defaultURLSession()
         
         // Connectivity check callback
-        let completionHandlerForUrl: (URL) -> ((Data?, URLResponse?, Error?) -> Void) = { url in
+        let completionHandlerForURLRequest: (URLRequest) -> ((Data?, URLResponse?, Error?) -> Void) = { urlRequest in
             return { [weak self] data, response, _ in
                 let connectivityCheckSuccess = self?.connectivityCheckSucceeded(
-                    for: url,
+                    for: urlRequest,
                     response: response,
                     data: data
                 ) ?? false
@@ -376,11 +390,9 @@ private extension Connectivity {
         }
         
         // Check each of the specified URLs in turn
-        tasks = connectivityURLs.map {
-            guard let urlRequest = authorizedURLRequest(with: $0) else {
-                return urlSession.dataTask(with: $0, completionHandler: completionHandlerForUrl($0))
-            }
-            return urlSession.dataTask(with: urlRequest, completionHandler: completionHandlerForUrl($0))
+        tasks = connectivityURLRequests.map { request in
+            let urlRequest = authorizedURLRequest(with: request) ?? request
+            return urlSession.dataTask(with: urlRequest, completionHandler: completionHandlerForURLRequest(request))
         }
         
         tasks.forEach { task in
@@ -409,7 +421,7 @@ private extension Connectivity {
 #if canImport(UIKit)
         checkWhenApplicationDidBecomeActive = configuration.checkWhenApplicationDidBecomeActive
 #endif
-        connectivityURLs = configuration.connectivityURLs
+        connectivityURLRequests = configuration.connectivityURLRequests
         externalQueue = configuration.callbackQueue
         framework = configuration.framework
         internalQueue = configuration.connectivityQueue
@@ -425,13 +437,13 @@ private extension Connectivity {
     }
     
     /// Determines whether or not the connectivity check was successful.
-    private func connectivityCheckSucceeded(for url: URL, response: URLResponse?, data: Data?) -> Bool {
+    private func connectivityCheckSucceeded(for urlRequest: URLRequest, response: URLResponse?, data: Data?) -> Bool {
         let validator = responseValidatorFactory.manufacture()
-        return validator.isResponseValid(url: url, response: response, data: data)
+        return validator.isResponseValid(urlRequest: urlRequest, response: response, data: data)
     }
     
     /// Set of connectivity URLs used by default if none are otherwise specified.
-    static func defaultConnectivityURLs(shouldUseHTTPS: Bool) -> [URL] {
+    static func defaultConnectivityURLRequests(shouldUseHTTPS: Bool) -> [URLRequest] {
         var result: [URL] = []
         let connectivityURLs: [String] = shouldUseHTTPS
         ? ["https://www.apple.com/library/test/success.html",
@@ -449,7 +461,9 @@ private extension Connectivity {
                 result.append(connectivityURL)
             }
         }
-        return result
+        return result.map {
+            URLRequest(url: $0)
+        }
     }
     
     /// Ensures that the instance var `urlSessionConfiguration` is used to create a session.
@@ -477,7 +491,7 @@ private extension Connectivity {
         }
     }
     
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     func interface(from path: NWPath) -> ConnectivityInterface {
         if path.usesInterfaceType(.wifi) {
             return .wifi
@@ -490,7 +504,7 @@ private extension Connectivity {
         }
     }
     
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     func interfaces(from path: NWPath) -> [ConnectivityInterface] {
         return path.availableInterfaces.map { interface in
             switch interface.type {
@@ -565,7 +579,7 @@ private extension Connectivity {
     }
     
     /// Maps a NetworkStatus to a NWInterface.InterfaceType, if possible.
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     private func interfaceType(from networkStatus: NetworkStatus) -> NWInterface.InterfaceType? {
         switch networkStatus {
         case ReachableViaWiFi:
@@ -656,7 +670,7 @@ private extension Connectivity {
     }
     
     /// Determines the connectivity status using network interface info provided by `NWPath`.
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     func status(from path: NWPath, isConnected: Bool) -> ConnectivityStatus {
         switch interface(from: path) {
         case .cellular:
@@ -679,7 +693,7 @@ private extension Connectivity {
     }
     
     /// Updates the connectivity status using network interface info provided by `NWPath`.
-    @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+    @available(OSX 10.14, iOS 12.0, tvOS 12.0, visionOS 1.0, *)
     func updateStatus(from path: NWPath, isConnected: Bool) {
         availableInterfaces = interfaces(from: path)
         currentInterface = interface(from: path)

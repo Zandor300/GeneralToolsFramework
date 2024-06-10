@@ -528,16 +528,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework_Example/Pods-GeneralToolsFramework_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Connectivity-iOS/Connectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-iOS/GeneralToolsFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSConnectivity-iOS/ZSConnectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSPINCache-iOS/ZSPINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSPINOperation-iOS/ZSPINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSPickerView/ZSPickerView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Connectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSConnectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPickerView.framework",
@@ -612,15 +612,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeneralToolsFramework Example tvOS/Pods-GeneralToolsFramework Example tvOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Connectivity-tvOS/Connectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-tvOS/GeneralToolsFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ZSConnectivity-tvOS/ZSConnectivity.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSPINCache-tvOS/ZSPINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSPINOperation-tvOS/ZSPINOperation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Connectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeneralToolsFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSConnectivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZSPINOperation.framework",
 			);

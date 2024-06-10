@@ -1,9 +1,9 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## Connectivity
+## GeneralToolsFramework
 
-Copyright (c) 2017 - 2018 Ross Butler
+Copyright (c) 2018 Zandor Smith <info@zsinfo.nl>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,9 +24,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## GeneralToolsFramework
+## ZSConnectivity
 
-Copyright (c) 2018 Zandor Smith <info@zsinfo.nl>
+Copyright (c) 2017 - 2018 Ross Butler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

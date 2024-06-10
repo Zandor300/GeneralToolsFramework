@@ -176,14 +176,14 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-tvOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-tvOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSConnectivity-tvOS/ZSConnectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-tvOS/ZSPINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-tvOS/ZSPINOperation.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Connectivity-tvOS/Connectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GeneralToolsFramework-tvOS/GeneralToolsFramework.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZSConnectivity-tvOS/ZSConnectivity.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINCache-tvOS/ZSPINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ZSPINOperation-tvOS/ZSPINOperation.framework"
 fi

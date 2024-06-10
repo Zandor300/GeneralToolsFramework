@@ -12,6 +12,6 @@
 
 #import "Reachability.h"
 
-FOUNDATION_EXPORT double ConnectivityVersionNumber;
-FOUNDATION_EXPORT const unsigned char ConnectivityVersionString[];
+FOUNDATION_EXPORT double ZSConnectivityVersionNumber;
+FOUNDATION_EXPORT const unsigned char ZSConnectivityVersionString[];
 

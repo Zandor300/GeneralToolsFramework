@@ -53,8 +53,8 @@ open class BaseAPI {
 
     #if canImport(ZSConnectivity)
     open func addConnectivityCheckURL(_ url: URL) {
-        connectivity.connectivityURLs.append(url)
-        printWithPrefix(String(connectivity.connectivityURLs.count) + " connectivity urls currently added.")
+        connectivity.connectivityURLRequests.append(URLRequest(url: url))
+        printWithPrefix(String(connectivity.connectivityURLRequests.count) + " connectivity urls currently added.")
     }
     #endif
 

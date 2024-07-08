@@ -1,14 +1,14 @@
 //
 //  PINOperationGroup.h
-//  PINQueue
+//  PINOperation
 //
 //  Created by Garrett Moon on 10/8/16.
 //  Copyright © 2016 Pinterest. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "PINOperationTypes.h"
-#import "PINOperationMacros.h"
+#import <ZSPINOperation/PINOperationTypes.h>
+#import <ZSPINOperation/PINOperationMacros.h>
 
 @class PINOperationQueue;
 

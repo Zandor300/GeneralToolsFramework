@@ -28,9 +28,10 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.source           = { :git => 'https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '12.0'
-  s.tvos.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
+  s.tvos.deployment_target = '13.0'
   s.watchos.deployment_target = '7.0'
+  s.visionos.deployment_target = '1.0'
   s.swift_version = '5.0'
 
   s.ios.source_files = 'GeneralToolsFramework/Classes/Common/**/*', 'GeneralToolsFramework/Classes/iOS/**/*'
@@ -46,7 +47,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.tvos.frameworks = 'Security'
   s.watchos.frameworks = 'Security'
 
-  s.dependency 'ZSPINCache', '~> 3.1'
+  s.dependency 'ZSPINCache', '~> 3.1.2'
   s.ios.dependency 'ZSConnectivity', '~> 7.1'
   s.tvos.dependency 'ZSConnectivity', '~> 7.1'
   s.ios.dependency 'ZSPickerView', '~> 1.4'

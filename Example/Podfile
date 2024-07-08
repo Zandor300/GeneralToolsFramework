@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'GeneralToolsFramework_Example' do
-  platform :ios, '12.0'
+  platform :ios, '13.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 
@@ -22,9 +22,15 @@ target 'GeneralToolsFramework Example Watch App' do
 
 end
 
-
 target 'GeneralToolsFramework Example tvOS' do
-  platform :tvos, '16.0'
+  platform :tvos, '13.0'
+
+  pod 'GeneralToolsFramework', :path => '../'
+
+end
+
+target 'GeneralToolsFramework Example visionOS' do
+  platform :visionos, '1.0'
 
   pod 'GeneralToolsFramework', :path => '../'
 
@@ -34,8 +40,8 @@ post_install do |installer|
   installer.generated_projects.each do |project|
     project.targets.each do |target|
       target.build_configurations.each do |config|
-        if Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']) < Gem::Version.new('12.0')
-          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        if Gem::Version.new(config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']) < Gem::Version.new('13.0')
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
         end
       end
     end

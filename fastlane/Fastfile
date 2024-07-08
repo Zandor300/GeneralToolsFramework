@@ -1,0 +1,69 @@
+
+default_platform(:ios)
+xcodes(
+    select_for_current_build_only: true,
+)
+
+platform :ios do
+
+    lane :buildios do
+        xcodebuild(
+            workspace: "Example/GeneralToolsFramework.xcworkspace",
+            scheme: "GeneralToolsFramework-iOS",
+            clean: true,
+            build: true,
+        )
+    end
+
+    lane :unittestios do
+        run_tests(
+            workspace: "Example/GeneralToolsFramework.xcworkspace",
+            scheme: "GeneralToolsFramework_Tests",
+            devices: ["iPhone 14 Pro"],
+            buildlog_path: "./fastlane/fastlane-buildlog",
+            derived_data_path: "~/Library/Developer/Xcode/DerivedData",
+            result_bundle: true,
+            clean: true
+        )
+    end
+
+end
+
+platform :tvos do
+    
+    lane :buildtvos do
+        xcodebuild(
+            workspace: "Example/GeneralToolsFramework.xcworkspace",
+            scheme: "GeneralToolsFramework-tvOS",
+            clean: true,
+            build: true,
+        )
+    end
+
+end
+
+platform :watchos do
+    
+    lane :buildwatchos do
+        xcodebuild(
+            workspace: "Example/GeneralToolsFramework.xcworkspace",
+            scheme: "GeneralToolsFramework-watchOS",
+            clean: true,
+            build: true,
+        )
+    end
+
+end
+
+platform :visionos do
+
+    lane :buildvisionos do
+        xcodebuild(
+            workspace: "Example/GeneralToolsFramework.xcworkspace",
+            scheme: "GeneralToolsFramework-visionOS",
+            clean: true,
+            build: true,
+        )
+    end
+
+end

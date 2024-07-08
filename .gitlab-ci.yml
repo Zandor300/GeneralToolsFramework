@@ -15,7 +15,7 @@ build-ios:
     - cd Example/
     - bundle exec pod install --repo-update
     - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - bundle exec fastlane ios buildios
   tags:
     - xcode15
   needs: []
@@ -27,7 +27,7 @@ build-tvos:
     - cd Example/
     - bundle exec pod install --repo-update
     - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-tvOS -sdk appletvsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - bundle exec fastlane tvos buildtvos
   tags:
     - xcode15
   needs: []
@@ -39,7 +39,7 @@ build-watchos:
     - cd Example/
     - bundle exec pod install --repo-update
     - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-watchOS -sdk watchsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - bundle exec fastlane watchos buildwatchos
   tags:
     - xcode15
   needs: []
@@ -51,7 +51,7 @@ build-visionos:
     - cd Example/
     - bundle exec pod install --repo-update
     - cd ../
-    - set -o pipefail && xcodebuild build -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-visionOS -sdk xrsimulator ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty
+    - bundle exec fastlane visionos buildvisionos
   tags:
     - xcode15
   needs: []
@@ -63,14 +63,14 @@ test:
     - cd Example/
     - bundle exec pod install --repo-update
     - cd ../
-    - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/GeneralToolsFramework.xcworkspace -scheme GeneralToolsFramework-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" ONLY_ACTIVE_ARCH=NO | bundle exec xcpretty -r junit
+    - bundle exec fastlane ios unittestios
   tags:
     - xcode15
   artifacts:
     paths:
-      - build/reports/junit.xml
+      - fastlane/test-output/*
     reports:
-      junit: build/reports/junit.xml
+      junit: fastlane/test-output/report.junit
   needs: []
 
 cocoapods-lint:
@@ -114,6 +114,7 @@ pages:
     - mv docs/ public/
   tags:
     - xcode15
+  allow_failure: true
   artifacts:
     paths:
       - public

@@ -1,6 +1,6 @@
 //
 //  UIGradientButton.swift
-//  Connectivity
+//  GeneralToolsFramework
 //
 //  Created by Zandor Smith on 15/09/2019.
 //

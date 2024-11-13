@@ -48,7 +48,7 @@ I, Zandor Smith, use a general set of classes in all of my iOS apps. Because I u
   s.watchos.frameworks = 'Security'
 
   s.dependency 'ZSPINCache', '~> 3.1.2'
-  s.ios.dependency 'ZSConnectivity', '~> 7.1'
-  s.tvos.dependency 'ZSConnectivity', '~> 7.1'
+  s.ios.dependency 'ZSConnectivity', '~> 8.0'
+  s.tvos.dependency 'ZSConnectivity', '~> 8.0'
   s.ios.dependency 'ZSPickerView', '~> 1.4'
 end

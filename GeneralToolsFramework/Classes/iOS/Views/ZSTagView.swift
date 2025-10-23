@@ -22,6 +22,15 @@ public class ZSTagView: UIView {
         }
     }
 
+    public var textColor: UIColor! {
+        get {
+            return label.textColor
+        }
+        set {
+            label.textColor = newValue
+        }
+    }
+
     public var allowClearBackgroundColor: Bool = false
 
     public override var backgroundColor: UIColor? {

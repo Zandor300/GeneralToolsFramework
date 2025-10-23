@@ -985,7 +985,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1006,7 +1006,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1096,7 +1096,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-visionOS";
@@ -1138,7 +1138,7 @@
 					"@executable_path/Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-visionOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1168,7 +1168,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_KEY_CFBundleDisplayName = "GeneralToolsFramework watch Example";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example";
@@ -1194,7 +1194,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_KEY_CFBundleDisplayName = "GeneralToolsFramework watch Example";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1228,7 +1228,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example.watchkitapp";
@@ -1268,7 +1268,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-watch-Example.watchkitapp";
 				PRODUCT_NAME = "GeneralToolsFramework Example";
@@ -1306,7 +1306,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-tvOS";
@@ -1344,7 +1344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.26.0;
+				MARKETING_VERSION = 1.27.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zandorsmith.GeneralToolsFramework-Example-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";

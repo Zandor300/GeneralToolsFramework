@@ -68,11 +68,11 @@ open class BaseAPI {
         #endif
     }
 
-    public func doGetApiCall(_ url: String, onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    open func doGetApiCall(_ url: String, onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         self.doGetApiCall(url, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
-
-    public func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    
+    open func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         #if canImport(ZSConnectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
@@ -101,11 +101,11 @@ open class BaseAPI {
         }).resume()
     }
 
-    public func doPostApiCall(_ url: String, postContent: [String: String], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    open func doPostApiCall(_ url: String, postContent: [String: String], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         self.doPostApiCall(url, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
-
-    public func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    
+    open func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         #if canImport(ZSConnectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
@@ -141,11 +141,11 @@ open class BaseAPI {
         }).resume()
     }
 
-    public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    open func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         self.doPostUploadApiCall(url, upload: upload, postContent: postContent, httpHeaderFields: [:], onCompletion: onCompletion, onError: onError)
     }
-
-    public func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
+    
+    open func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
         #if canImport(ZSConnectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)

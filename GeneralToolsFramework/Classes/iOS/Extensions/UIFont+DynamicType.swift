@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 14/10/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 extension UIFont {
@@ -30,3 +31,4 @@ extension UIFont {
     }
 
 }
+#endif

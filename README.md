@@ -17,6 +17,37 @@ GeneralToolsFramework is using the [Connectivity](https://cocoapods.org/pods/Con
 
 ## Installation
 
+### Swift Package Manager
+
+Requires Xcode 15.3 or later (Swift 5.10), with iOS 13+, tvOS 13+, watchOS 7+, or visionOS 1+.
+
+In Xcode, choose **File > Add Package Dependencies**, enter
+`https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git`, and add the
+`GeneralToolsFramework` library to your app target. Select a branch or release
+that contains `Package.swift`; older releases only support CocoaPods.
+
+To depend on the current development version from another package, add:
+
+```swift
+.package(url: "https://git.zsinfo.nl/Zandor300/GeneralToolsFramework.git", branch: "master")
+```
+
+Then add this product to your target's dependencies:
+
+```swift
+.product(name: "GeneralToolsFramework", package: "GeneralToolsFramework")
+```
+
+Import the framework with `import GeneralToolsFramework` as usual. Swift Package
+Manager resolves upstream PINCache and the Zandor300 Connectivity fork automatically.
+ZSPINCache 3.1.2 has CocoaPods-specific header imports that prevent its Swift
+package from building, so the package uses PINCache 3.0.4 or later. The iOS
+picker dependency is bundled with its MIT license because ZSPickerView 1.4 does
+not provide a package manifest. Connectivity checks are enabled on iOS and tvOS,
+matching the CocoaPods configuration.
+
+### CocoaPods
+
 GeneralToolsFramework is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your `Podfile`:
 
@@ -39,6 +70,19 @@ pod 'GeneralToolsFramework', :git => 'https://git.zsinfo.nl/Zandor300/GeneralToo
 ```
 
 Note: The build on here might be broken.
+
+## Validating the Swift package
+
+Run `swift package resolve` to check dependency resolution. To build or test the
+package independently of the root CocoaPods project, use:
+
+```sh
+bash scripts/check-swift-package.sh -destination 'generic/platform=iOS Simulator' build
+bash scripts/check-swift-package.sh -destination 'platform=iOS Simulator,name=iPhone 15' test
+```
+
+Choose an installed simulator for tests. For other platform builds, replace
+`iOS` with `tvOS`, `watchOS`, or `visionOS`. CI builds all four platforms.
 
 ## Author
 

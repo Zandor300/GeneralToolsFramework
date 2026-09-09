@@ -5,6 +5,8 @@ disabled_rules:
 
 excluded:
   - Example
+  - Vendor
+  - .build
 
 identifier_name:
   excluded:

@@ -8,6 +8,8 @@
 import Foundation
 #if canImport(ZSConnectivity)
 import ZSConnectivity
+#elseif canImport(Connectivity)
+import Connectivity
 #endif
 
 open class BaseAPI {
@@ -18,7 +20,7 @@ open class BaseAPI {
     public var printResponses: Bool = false
     public var requireConnectivity: Bool = true {
         didSet {
-            #if canImport(ZSConnectivity)
+            #if canImport(ZSConnectivity) || canImport(Connectivity)
             if self.requireConnectivity {
                 self.connectivity.startNotifier()
             } else {
@@ -28,7 +30,7 @@ open class BaseAPI {
         }
     }
 
-    #if canImport(ZSConnectivity)
+    #if canImport(ZSConnectivity) || canImport(Connectivity)
     private let connectivity = Connectivity()
     #endif
 
@@ -36,7 +38,7 @@ open class BaseAPI {
         self.baseUrl = baseUrl
         self.apiName = name
 
-        #if canImport(ZSConnectivity)
+        #if canImport(ZSConnectivity) || canImport(Connectivity)
         connectivity.framework = .network
 
         self.addConnectivityCheckURL(URL(string: "https://web3.zsnode.com/success.html")!)
@@ -51,7 +53,7 @@ open class BaseAPI {
         self.baseUrl = baseUrl
     }
 
-    #if canImport(ZSConnectivity)
+    #if canImport(ZSConnectivity) || canImport(Connectivity)
     open func addConnectivityCheckURL(_ url: URL) {
         connectivity.connectivityURLRequests.append(URLRequest(url: url))
         printWithPrefix(String(connectivity.connectivityURLRequests.count) + " connectivity urls currently added.")
@@ -59,7 +61,7 @@ open class BaseAPI {
     #endif
 
     open func forceConnectivityCheck(_ onCompletion: @escaping () -> Void) {
-        #if canImport(ZSConnectivity)
+        #if canImport(ZSConnectivity) || canImport(Connectivity)
         connectivity.checkConnectivity { _ in
             onCompletion()
         }
@@ -73,7 +75,7 @@ open class BaseAPI {
     }
     
     open func doGetApiCall(_ url: String, httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        #if canImport(ZSConnectivity)
+        #if canImport(ZSConnectivity) || canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
@@ -106,7 +108,7 @@ open class BaseAPI {
     }
     
     open func doPostApiCall(_ url: String, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        #if canImport(ZSConnectivity)
+        #if canImport(ZSConnectivity) || canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return
@@ -146,7 +148,7 @@ open class BaseAPI {
     }
     
     open func doPostUploadApiCall(_ url: String, upload: Upload, postContent: [String: String], httpHeaderFields: [String: String?], onCompletion: @escaping (Data) -> Void, onError: @escaping (APICallError) -> Void) {
-        #if canImport(ZSConnectivity)
+        #if canImport(ZSConnectivity) || canImport(Connectivity)
         if !connectivity.isConnected && self.requireConnectivity {
             onError(.noInternet)
             return

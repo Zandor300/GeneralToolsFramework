@@ -5,6 +5,7 @@
 //  Created by Zandor Smith on 07/11/2019.
 //
 
+#if os(iOS)
 import UIKit
 
 public extension UIImage {
@@ -63,3 +64,4 @@ public extension UIImage {
         return UIImage(cgImage: ctx.makeImage()!)
     }
 }
+#endif

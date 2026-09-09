@@ -7,8 +7,11 @@
 
 #if os(iOS) || os(tvOS)
 import Foundation
+import UIKit
 #if canImport(ZSPINCache)
 import ZSPINCache
+#elseif canImport(PINCache)
+import PINCache
 #endif
 
 open class Image {
@@ -22,7 +25,7 @@ open class Image {
     private var getCallbacks: [(UIImage) -> Void] = []
 
     public var downloaded: Bool {
-        #if canImport(ZSPINCache)
+        #if canImport(ZSPINCache) || canImport(PINCache)
         return PINCache.shared.containsObject(forKey: self.cachingKey)
         #else
         return false
@@ -49,19 +52,19 @@ open class Image {
     public init(url: String, cachingKey: String? = nil, imageData: NSData) {
         self.url = url
         self.cachingKey = cachingKey ?? url
-        #if canImport(ZSPINCache)
+        #if canImport(ZSPINCache) || canImport(PINCache)
         PINCache.shared.setObject(imageData, forKey: self.cachingKey)
         #endif
     }
 
     public func removeCachedImage() {
-        #if canImport(ZSPINCache)
+        #if canImport(ZSPINCache) || canImport(PINCache)
         PINCache.shared.removeObject(forKey: self.cachingKey)
         #endif
     }
 
     private func getImageFromCache() -> UIImage? {
-        #if canImport(ZSPINCache)
+        #if canImport(ZSPINCache) || canImport(PINCache)
         if let data = PINCache.shared.object(forKey: self.cachingKey) as? NSData {
             return UIImage(data: data as Data)
         }
@@ -160,7 +163,7 @@ open class Image {
                 #if os(iOS)
                 NetworkActivityHandler.popNetworkActivity()
                 #endif
-                #if canImport(ZSPINCache)
+                #if canImport(ZSPINCache) || canImport(PINCache)
                 PINCache.shared.setObject(data, forKey: self.cachingKey)
                 #endif
                 self.downloading = false

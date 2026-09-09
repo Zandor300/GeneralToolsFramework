@@ -8,6 +8,17 @@ stages:
   - docs
   - deploy
 
+build-swift-package:
+  stage: build
+  parallel:
+    matrix:
+      - SPM_PLATFORM: [iOS, tvOS, watchOS, visionOS]
+  script:
+    - bash scripts/check-swift-package.sh -destination "generic/platform=$SPM_PLATFORM Simulator" build
+  tags:
+    - xcode15
+  needs: []
+
 build-ios:
   stage: build
   script:

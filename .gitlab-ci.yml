@@ -1,6 +1,14 @@
 variables:
   LANG: en_US.UTF-8
 
+before_script:
+  - "export PATH=\"$HOME/.rbenv/bin:$PATH\""
+  - "eval \"$(rbenv init - bash)\""
+  - "rbenv install -s 3.3.5"   # "-s" skips if already installed
+  - "rbenv global 3.3.5"
+  - "ruby -v"
+  - "which ruby"
+
 stages:
   - build
   - test

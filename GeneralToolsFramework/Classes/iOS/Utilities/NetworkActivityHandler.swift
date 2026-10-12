@@ -22,12 +22,26 @@ public class NetworkActivityHandler {
         updateActivityIndicator()
     }
 
-    /// The network activity indicator of the status bar has been removed in iOS 13, so only the count is validated.
-    /// `UIApplication.shared` isn't used, so the framework can be used in app extensions.
+    /// `UIApplication.shared` is unavailable in app extensions, so it's looked up at runtime instead.
+    /// Returns `nil` when running in an app extension, since there is no shared application there.
+    private static var sharedApplication: UIApplication? {
+        guard Bundle.main.bundleURL.pathExtension != "appex" else { return nil }
+        return UIApplication.perform(NSSelectorFromString("sharedApplication"))?.takeUnretainedValue() as? UIApplication
+    }
+
     private static func updateActivityIndicator() {
-        if count < 0 {
-            assertionFailure("Count is below 0. You used one too many popNetworkActivity()")
+        #if !targetEnvironment(macCatalyst)
+        DispatchQueue.main.async {
+            if count > 0 {
+                sharedApplication?.isNetworkActivityIndicatorVisible = true
+            } else {
+                sharedApplication?.isNetworkActivityIndicatorVisible = false
+                if count < 0 {
+                    assertionFailure("Count is below 0. You used one too many popNetworkActivity()")
+                }
+            }
         }
+        #endif
     }
 
 }

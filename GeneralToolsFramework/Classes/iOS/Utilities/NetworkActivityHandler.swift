@@ -22,13 +22,20 @@ public class NetworkActivityHandler {
         updateActivityIndicator()
     }
 
+    /// `UIApplication.shared` is unavailable in app extensions, so it's looked up at runtime instead.
+    /// Returns `nil` when running in an app extension, since there is no shared application there.
+    private static var sharedApplication: UIApplication? {
+        guard Bundle.main.bundleURL.pathExtension != "appex" else { return nil }
+        return UIApplication.perform(NSSelectorFromString("sharedApplication"))?.takeUnretainedValue() as? UIApplication
+    }
+
     private static func updateActivityIndicator() {
         #if !targetEnvironment(macCatalyst)
         DispatchQueue.main.async {
             if count > 0 {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                sharedApplication?.isNetworkActivityIndicatorVisible = true
             } else {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                sharedApplication?.isNetworkActivityIndicatorVisible = false
                 if count < 0 {
                     assertionFailure("Count is below 0. You used one too many popNetworkActivity()")
                 }

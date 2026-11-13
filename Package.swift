@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/pinterest/PINCache.git", from: "3.0.4"),
-        .package(url: "https://git.zsinfo.nl/Zandor300/Connectivity.git", from: "8.0.2")
+        .package(url: "https://git.zsinfo.nl/Zandor300/Connectivity.git", from: "8.1.0")
     ],
     targets: [
         .target(

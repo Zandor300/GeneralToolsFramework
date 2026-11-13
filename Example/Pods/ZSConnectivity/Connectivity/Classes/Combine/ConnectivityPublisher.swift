@@ -15,8 +15,12 @@ public struct ConnectivityPublisher: Publisher {
     public typealias Output = Connectivity
     public typealias Failure = Never
     private let configuration: ConnectivityConfiguration
-    
-    public init(configuration: ConnectivityConfiguration = ConnectivityConfiguration()) {
+
+    public init() {
+        self.init(configuration: ConnectivityConfiguration())
+    }
+
+    public init(configuration: ConnectivityConfiguration) {
         self.configuration = configuration
     }
     

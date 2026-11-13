@@ -1,18 +1,18 @@
 PODS:
-  - GeneralToolsFramework (1.25.1):
-    - ZSConnectivity (~> 7.1)
-    - ZSPickerView (~> 1.4)
-    - ZSPINCache (~> 3.1.2)
-  - ZSConnectivity (7.1.0)
-  - ZSPickerView (1.4)
-  - ZSPINCache (3.1.2):
-    - ZSPINCache/Arc-exception-safe (= 3.1.2)
-    - ZSPINCache/Core (= 3.1.2)
-  - ZSPINCache/Arc-exception-safe (3.1.2):
+  - GeneralToolsFramework (1.29.0):
+    - ZSConnectivity (~> 8.1)
+    - ZSPickerView (~> 1.5)
+    - ZSPINCache (~> 3.2)
+  - ZSConnectivity (8.1.0)
+  - ZSPickerView (1.5)
+  - ZSPINCache (3.2.0):
+    - ZSPINCache/Arc-exception-safe (= 3.2.0)
+    - ZSPINCache/Core (= 3.2.0)
+  - ZSPINCache/Arc-exception-safe (3.2.0):
     - ZSPINCache/Core
-  - ZSPINCache/Core (3.1.2):
-    - ZSPINOperation (~> 1.3.3)
-  - ZSPINOperation (1.3.3)
+  - ZSPINCache/Core (3.2.0):
+    - ZSPINOperation (~> 1.4)
+  - ZSPINOperation (1.4.0)
 
 DEPENDENCIES:
   - GeneralToolsFramework (from `../`)
@@ -29,12 +29,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GeneralToolsFramework: f39d0093ad8c7e365436ac5ccbb7492ff00f393f
-  ZSConnectivity: efd17bafa78a090e8022e4f9294b05dc5255e5ae
-  ZSPickerView: 24e8927e8e589ff581f658751ab6c51b5bf63902
-  ZSPINCache: b095162e32d29b99accb4c830c0502918d88a625
-  ZSPINOperation: 8407da08ec4780f52beae1713279fef0c9dec938
+  GeneralToolsFramework: 885e56a095dc4ca70e9b2c828faba8c76499232b
+  ZSConnectivity: 124cb2d2454389ea380810a6de57c144c610b845
+  ZSPickerView: d96cafbbcb8ea0033cebfb5e194b6dc11906bbe5
+  ZSPINCache: 031395f62fa36eb353300ab1236977992bd4ea7f
+  ZSPINOperation: e2c1e0fcc1fa0091b37e6c26afac67184d6957fb
 
-PODFILE CHECKSUM: 45a3f2d8aca7e026d8678f7a3b85770980569271
+PODFILE CHECKSUM: 267cf24254be83f5ce1ce6de601bb41d743ba708
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

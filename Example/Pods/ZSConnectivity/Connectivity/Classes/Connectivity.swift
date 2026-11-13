@@ -94,13 +94,13 @@ public class Connectivity: NSObject {
     }
     
     /// Queue to callback on
-    private (set) var externalQueue = DispatchQueue.main
-    
+    private(set) var externalQueue = DispatchQueue.main
+
     /// Whether or not to use System Configuration or Network (on iOS 12+) framework.
     public var framework: Connectivity.Framework = .network
     
     /// Used to for checks using NWPathMonitor
-    private (set) var internalQueue = DispatchQueue.global(qos: .default)
+    private(set) var internalQueue = DispatchQueue.global(qos: .default)
     
     /// Whether or not we are currently deemed to have connectivity
     public private(set) var isConnected: Bool = false
@@ -289,6 +289,7 @@ public extension Connectivity {
     /// Stop listening for Reachability changes
     func stopNotifier() {
         timer?.invalidate()
+        // swiftlint:disable:next notification_center_detachment
         NotificationCenter.default.removeObserver(self)
         if #available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 5.0, *), isNetworkFramework() {
             stopPathMonitorNotifier()

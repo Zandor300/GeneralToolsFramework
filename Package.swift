@@ -5,9 +5,9 @@ import PackageDescription
 let package = Package(
     name: "GeneralToolsFramework",
     platforms: [
-        .iOS(.v13),
-        .tvOS(.v13),
-        .watchOS(.v7),
+        .iOS(.v15),
+        .tvOS(.v15),
+        .watchOS(.v9),
         .visionOS(.v1)
     ],
     products: [
@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/pinterest/PINCache.git", from: "3.0.4"),
-        .package(url: "https://git.zsinfo.nl/Zandor300/Connectivity.git", from: "8.0.2")
+        .package(url: "https://git.zsinfo.nl/Zandor300/Connectivity.git", from: "8.1.0")
     ],
     targets: [
         .target(
